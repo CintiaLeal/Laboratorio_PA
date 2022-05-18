@@ -1,0 +1,13 @@
+Restricciones:
+-Usuario se identifica con email
+-Videojuego se identifica con nombre
+-Categoría se identifica por nombre
+-Comentario se identifica por su id
+-Suscripcion se identifica por su nombre
+-Partida se identifica por su id
+-Las suscripciones temporales pueden ser de un mes, tres meses y un año.
+-Si un jugador ya tiene una suscripción y desea cambiarla, tiene que cancelar la anterior primero.
+-Los comentarios se identifican por un número
+-La partida finaliza cuando se retira el jugador que la inició.
+-Solo las partidas multijugador que son trasmitidas en vivo pueden tener comentarios
+-Un juego debe pertenecer a al menos una categoría de genero y una de plataformas

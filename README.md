@@ -6,4 +6,6 @@ Laboratorio Programación Avanzada 2022
 - Guzmán Vera <br>
 - Cintia Leal <br>
 
-![logocm](https://user-images.githubusercontent.com/66495366/169088880-5a162b93-d677-4d70-b95f-1be402cc4266.png)
+
+
+![paflo](https://user-images.githubusercontent.com/66495366/172197277-86cfa017-11d0-4cb5-9a7a-299939652e23.png)

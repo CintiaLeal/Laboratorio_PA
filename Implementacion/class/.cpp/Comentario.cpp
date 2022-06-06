@@ -1,9 +1,9 @@
-//#include "../"
+#include "../../class/.h/Comentario.h"
 
-Comentario::Comentario(int idComentario, string texto, dtFechaHora fechaHora){
+Comentario::Comentario(int idComentario, string texto, dtFecha fecha){
     this->idComentario = idComentario;
     this->texto = texto;
-    this->fechaHora = fechaHora;    
+    this->fecha = fecha;    
 }
 Comentario::Comentario(){
 
@@ -17,8 +17,8 @@ string Comentario::getTexto(){
     return this->texto;
 }
 
-dtFechaHora Comentario::getFechaHora(){
-    return this->fechaHora;
+dtFecha Comentario::getFecha(){
+    return this->fecha;
 }
 //No se puede cambiar el id o si?
 void Comentario::setIdComentario(int idComentario){
@@ -29,8 +29,8 @@ void Comentario::setTexto(string texto){
     this->texto = texto;
 }
 //No se puede cambiar la fecha y hora o si?
-void Comentario::setFechaHora(dtFechaHora fechaHora){
-    this->fechaHora = fechaHora;
+void Comentario::setFecha(dtFecha fecha){
+    this->fecha = fecha;
 }
 
 void eliminarComentario(){

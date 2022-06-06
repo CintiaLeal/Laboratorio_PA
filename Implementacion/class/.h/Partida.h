@@ -5,6 +5,7 @@
 #include "../../dtType/.h/dtPartida.h"
 #include "../../dtType/.h/dtVideojuego.h"
 #include "../../dtType/.h/dtUsuario.h"
+#include "../../dtType/.h/dtMostrarPartida.h"
 using namespace std;
 
 class Partida{
@@ -32,7 +33,7 @@ class Partida{
         
         //metodos
         void eliminarPartida();
-        DtMostrarPartida getPartida();
+        dtMostrarPartida getMostrarPartida();
         void confirmarPartida(int);
         void continuar();
 };

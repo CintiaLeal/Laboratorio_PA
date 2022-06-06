@@ -1,7 +1,8 @@
 #ifndef partidaIndividual_
 #define partidaIndividual_
 #include <iostream>
-//#include "../"
+#include "../../dtType/.h/dtPartidaIndividual.h"
+#include "../../class/.h/Partida.h"
 using namespace std;
 
 class PartidaIndividual:public Partida{
@@ -21,8 +22,9 @@ class PartidaIndividual:public Partida{
         //dtPartidaIndividual *getPartidas();
         void confirmarPartida(int);
         bool esFinalizada();
-        bool iguales(num);
+        bool iguales(int);
         //dtPartidaIndividual *getData();
-}
+};
 
-#endif //PartidaIndividual class
+#endif 
+

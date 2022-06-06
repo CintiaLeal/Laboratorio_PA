@@ -2,27 +2,27 @@
 #define comentario_
 
 #include <iostream>
-//#include "../"
+#include "../../dtType/.h/dtFecha.h"
 using namespace std;
 
 class Comentario{
     private:
         int idComentario;
         string texto;
-        dtFechaHora fechaHora;
+        dtFecha fecha;
     public:
-        Comentario(int,string,dtFechaHora);
+        Comentario(int,string,dtFecha);
         Comentario();
         ~Comentario();
 
         //get y set
         int getIdComentario();
         string getTexto();
-        dtFechaHora getFechaHora();
+        dtFecha getFecha();
 
         void setIdComentario(int);
         void setTexto(string);
-        void setFechaHora(dtFechaHora);
+        void setFecha(dtFecha);
 
         void eliminarComentario();
 };

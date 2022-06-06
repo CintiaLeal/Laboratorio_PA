@@ -2,7 +2,9 @@
 #define partida_
 
 #include <iostream>
-//#include "../"
+#include "../../dtType/.h/dtPartida.h"
+#include "../../dtType/.h/dtVideojuego.h"
+
 using namespace std;
 
 class Partida{

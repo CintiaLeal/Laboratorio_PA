@@ -1,7 +1,10 @@
 #ifndef partidaMultijugador_
 #define partidaMultijugador_
 #include <iostream>
-//#include "../"
+#include "../../class/.h/Partida.h"
+#include "../../dtType/.h/dtPartidaMultijugador.h"
+//#include "../../dtType/.h/dtComentario.h"
+
 using namespace std;
 
 class PartidaMultijugador:public Partida{
@@ -24,6 +27,6 @@ class PartidaMultijugador:public Partida{
         void agregarPartida(string);
 
         //El getPatidas del diagrama suponemos que es el getPartidaMultijugador y no lo ponemos 
-}
+};
 
 #endif //PartidaMultijugador class

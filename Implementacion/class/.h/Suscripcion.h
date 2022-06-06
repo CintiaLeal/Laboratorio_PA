@@ -21,8 +21,7 @@ class Suscripcion{
         void setNombre(string);
         void setPrecio(int);
     //methods
-        tipoSuscripcion getTipo();
-        float getCosto();
+        virtual tipoSuscripcion getTipo() = 0;
 };
 
 #endif

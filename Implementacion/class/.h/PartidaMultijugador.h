@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../../class/.h/Partida.h"
 #include "../../dtType/.h/dtPartidaMultijugador.h"
-//#include "../../dtType/.h/dtComentario.h"
+#include "../../dtType/.h/dtComentario.h"
 
 using namespace std;
 

@@ -1,3 +1,6 @@
+#ifndef Pago_
+#define Pago_
+
 #include <iostream>
 
 using namespace std;
@@ -28,3 +31,5 @@ class Pago{
 
         void cambiarEstado();
 };
+
+#endif

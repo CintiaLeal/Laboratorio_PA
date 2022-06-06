@@ -4,7 +4,7 @@
 #include <iostream>
 #include "../../dtType/.h/dtPartida.h"
 #include "../../dtType/.h/dtVideojuego.h"
-
+#include "../../dtType/.h/dtUsuario.h"
 using namespace std;
 
 class Partida{

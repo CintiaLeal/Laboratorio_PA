@@ -2,7 +2,7 @@
 #define Pago_
 
 #include <iostream>
-
+#include "../../dtType/.h/dtFecha.h"
 using namespace std;
 
 class Pago{

@@ -3,7 +3,7 @@
 
 #include "../../dtType/.h/dtFecha.h"
 #include <iostream>
-#include "../../dtType/.h/dtFecha.h"
+
 using namespace std;
 
 class Comentario{

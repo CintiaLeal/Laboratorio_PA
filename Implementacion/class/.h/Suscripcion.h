@@ -21,7 +21,7 @@ class Suscripcion{
         void setNombre(string);
         void setPrecio(int);
     //methods
-        virtual tipoSuscripcion getTipo() = 0;
+        virtual string getTipo() = 0; /* 0=vitalicia, 1=mensual, 2=trimestral, 3=anual */
 };
 
 #endif

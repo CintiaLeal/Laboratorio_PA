@@ -1,6 +1,7 @@
 #ifndef comentario_
 #define comentario_
 
+#include "../../dtType/.h/dtFecha.h"
 #include <iostream>
 //#include "../"
 using namespace std;
@@ -9,20 +10,20 @@ class Comentario{
     private:
         int idComentario;
         string texto;
-        dtFechaHora fechaHora;
+        dtFecha fechaHora;
     public:
-        Comentario(int,string,dtFechaHora);
+        Comentario(int,string,dtFecha);
         Comentario();
         ~Comentario();
 
         //get y set
         int getIdComentario();
         string getTexto();
-        dtFechaHora getFechaHora();
+        dtFecha getFechaHora();
 
         void setIdComentario(int);
         void setTexto(string);
-        void setFechaHora(dtFechaHora);
+        void setFechaHora(dtFecha);
 
         void eliminarComentario();
 };

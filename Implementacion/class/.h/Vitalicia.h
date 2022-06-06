@@ -17,7 +17,7 @@ class Vitalicia : public Suscripcion{
         Vitalicia(string, int);
         //methods
         bool buscarSuscripcion();
-        tipoSuscripcion getTipo();
+        string getTipo();
 };
 
 #endif

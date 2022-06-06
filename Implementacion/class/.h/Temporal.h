@@ -20,7 +20,7 @@ class Temporal : public Suscripcion{
         //set
         void setPeriodo(string);
         //methods
-        tipoSuscripcion getTipo();
+        string getTipo();
 };
 
 #endif

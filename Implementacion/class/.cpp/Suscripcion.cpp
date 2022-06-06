@@ -1,4 +1,4 @@
-#include <Implementacion/.h>
+#include <class/.h/Suscripcion.h>
 #include <iostream>
 //Falta el include
 

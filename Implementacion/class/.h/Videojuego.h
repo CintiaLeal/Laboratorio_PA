@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include "../../dtType/.h/dtVideojuego.h"
-#include "../.cpp/PartidaMultijugador.cpp"
-#include "../.cpp/PartidaIndividual.cpp"
+#include "class/.h/PartidaMultijugador.h"
+#include "class/.h/PartidaIndividual.h"
 using namespace std;
 
 class Videojuego{

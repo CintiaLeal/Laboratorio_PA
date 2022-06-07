@@ -21,4 +21,6 @@ void Desarrollador::setNombreEmpresa(string nombre){
 }
 
 //methods
-dtPublicarVideojuego Desarrollador::altaVideojuego(string ,string){}
+dtPublicarVideojuego Desarrollador::altaVideojuego(string ,string){
+    
+}

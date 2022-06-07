@@ -2,7 +2,7 @@
 #define dtMostrarPartida_
 
 #include <iostream>
-#include "dtPartida"
+#include "dtPartida.h"
 using namespace std;
 
 class dtMostrarPartida{

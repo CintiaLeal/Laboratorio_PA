@@ -1,41 +1,44 @@
-#ifndef partida_
-#define partida_
+#ifndef usuario_
+#define usuario_
 
 #include <iostream>
+
+#include "Partida.h"
+#include "../../dtType/.h/dtPartidaIndividual.h"
 #include "../../dtType/.h/dtPartida.h"
-#include "../../dtType/.h/dtVideojuego.h"
 #include "../../dtType/.h/dtUsuario.h"
 #include "../../dtType/.h/dtMostrarPartida.h"
 using namespace std;
 
-class Partida{
+class Usuario{
     protected:
-        int idPartida;
-        dtPartida * partida;
-        dtUsuario * jugadores;
-        dtVideojuego * videojuego;
+        string email;
+        string contrasenia;
+        dtPartida * partidas; 
     public:
-        Partida(int idPartida, dtPartida * partida ,dtUsuario * jugadores,dtVideojuego * videojuego);
-        Partida();
-        ~Partida();
+        Usuario(string,string,Partida);
+        Usuario();
+        ~Usuario();
 
         //get y set
-        int getIdPartida();
-        dtPartida getPartida();
-        dtUsuario getJugadores();
-        dtVideojuego getVideojuego();
+        string getEmail();
+        string getContrasenia();
+        dtPartida * getPartidas();
 
-
-        void setIdPartida(int);
-        void setPartida(dtPartida*);
-        void setJugadores(dtUsuario*);
-        void setVideojuego(dtVideojuego*);
+        void setEmail(string);
+        void setContrasenia(string);
+        void setPartidas(dtPartida*);
+        
         
         //metodos
-        void eliminarPartida();
-        dtMostrarPartida getMostrarPartida();
-        void confirmarPartida(int);
-        void continuar();
+        dtMostrarPartida ListarPartidas();
+        void confirmarPartidas(int);
+        void confirmarMultijugador(/*set<string>*/);
+        void agregarPartida(Partida);
+        dtPartidaIndividual getPartidasFinalizadas(string);
+        void confirmarContinuar(int);
+        void confirmarNueva(string);
+
 };
 
 #endif //Partida class

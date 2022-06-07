@@ -2,9 +2,10 @@
 #define desarrollador_
 #include <iostream>
 
-#include "../../dtType/.h/dtPartidaIndividual.h"
-#include "../../class/.h/Partida.h"
+
+
 #include "Usuario.h"
+#include "../../dtType/.h/dtPublicarVideojuego.h"
 using namespace std;
 
 class Desarrollador:public Usuario{
@@ -20,6 +21,6 @@ class Desarrollador:public Usuario{
         void setPartidaIndividual(dtPartidaIndividual*);
 
         //metodo
-        //dtpPublicarVideojuego altaVideojuego(string,string); //implementar dtpPublicarvideojuego en los dtyp
+        dtpPublicarVideojuego altaVideojuego(string,string); //implementar dtpPublicarvideojuego en los dtyp
 };
 #endif 

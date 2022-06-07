@@ -1,4 +1,4 @@
-#include "class/.h/pago.h"
+#include "../class/.h/pago.h"
 #include <iostream>
 
 using namespace std;

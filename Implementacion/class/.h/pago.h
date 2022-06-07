@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include "../../dtType/.h/dtFecha.h"
+#include "../../dtType/.h/dtVideojuego.h"
+//#include "class/.h/Videojuego.h"
 using namespace std;
 
 class Pago{
@@ -26,7 +28,7 @@ class Pago{
         void setMetodoPago(string);
         void setActiva(bool);
         //methods
-        Videojuego getJuego();
+        //Videojuego getJuego();
         dtVideojuego buscarVideojuego(string);
 
         void cambiarEstado();

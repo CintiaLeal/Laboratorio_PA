@@ -21,9 +21,9 @@ class Partida{
 
         //get y set
         int getIdPartida();
-        dtPartida getPartida();
-        dtUsuario getJugadores();
-        dtVideojuego getVideojuego();
+        dtPartida* getPartida();
+        dtUsuario* getJugadores();
+        dtVideojuego* getVideojuego();
 
 
         void setIdPartida(int);

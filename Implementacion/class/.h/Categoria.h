@@ -1,9 +1,12 @@
+#ifndef Categoria_
+#define Categoria_
+
 #include <iostream>
 
 using namespace std;
 
 class Categoria{
-    private:
+    protected:
         string nombre;
         string descripcion;
     public:
@@ -14,6 +17,8 @@ class Categoria{
         string getNombre();
         string getDescripcion();
         //sets
-        void setNombre();
-        void setDescripcion();
+        void setNombre(string);
+        void setDescripcion(string);
 };
+
+#endif

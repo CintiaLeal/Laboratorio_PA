@@ -13,6 +13,9 @@ Partida::Partida(int idPartida, dtPartida* partida, dtUsuario* jugadores, dtVide
     this->videojuego = videojuego;
 }
 
+//destructor
+Partida::~Partida(){}
+
 //gets
 int Partida::getIdPartida(){
     return this->idPartida;

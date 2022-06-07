@@ -12,16 +12,14 @@ class Jugador:public Usuario{
         dtJugador * jugador;
         dtPago * pagos; //implementar pago
     public:
-        Jugador(dtJugador *, dtPago *);
+        Jugador(dtJugador *);
         Jugador();
         ~Jugador();
 
         //get y set 
-        dtJugador getJugador();
-        dtPago  getPagos();
+        dtJugador * getJugador();
 
         void setJugador(dtJugador *);
-        void setPagos(dtPago *);
 
         //metodo
         bool member(string);

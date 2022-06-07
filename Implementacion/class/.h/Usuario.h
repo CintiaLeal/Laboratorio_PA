@@ -31,7 +31,7 @@ class Usuario{
         
         
         //metodos
-        dtMostrarPartida ListarPartidas();
+        dtMostrarPartida listarPartidas();
         void confirmarPartidas(int);
         void confirmarMultijugador(/*set<string>*/);
         void agregarPartida(Partida);

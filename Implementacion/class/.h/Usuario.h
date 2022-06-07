@@ -16,7 +16,7 @@ class Usuario{
         string contrasenia;
         dtPartida * partidas; 
     public:
-        Usuario(string,string,Partida);
+        Usuario(string,string,dtPartida*);
         Usuario();
         ~Usuario();
 

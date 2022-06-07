@@ -21,6 +21,6 @@ class Desarrollador:public Usuario{
         void setPartidaIndividual(dtPartidaIndividual*);
 
         //metodo
-        dtpPublicarVideojuego altaVideojuego(string,string); //implementar dtpPublicarvideojuego en los dtyp
+        dtPublicarVideojuego altaVideojuego(string,string); 
 };
 #endif 

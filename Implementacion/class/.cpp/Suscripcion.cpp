@@ -7,10 +7,11 @@ using namespace std;
 //constructores
 Suscripcion::Suscripcion(){}
 
-Suscripcion::Suscripcion(string nombre, int precio, string periodo){
+Suscripcion::Suscripcion(string nombre, int precio, string periodo, string tipo){
     this->nombre = nombre;
     this->precio = precio;
     this->periodo = periodo;
+    this->tipo = tipo;
 }
 
 //gets
@@ -26,6 +27,10 @@ string Suscripcion::getPeriodo(){
     return this->periodo;
 }
 
+string Suscripcion::getTipo(){
+    return this->tipo;
+}
+
 //sets
 void Suscripcion::setNombre(string nom){
     this->nombre = nom;
@@ -39,7 +44,11 @@ void Suscripcion::setPeriodo(string periodo){
     this->periodo = periodo;
 }
 
+void Suscripcion::setTipo(string tipo){
+    this->tipo = tipo;
+}
+
 //Method
 string Suscripcion::getTipo(){
-    return this->periodo;
+    return this->tipo;
 }

@@ -11,21 +11,24 @@ class Suscripcion{
         string nombre;
         int precio;
         string periodo;
+        string tipo;
     public:
     //constructores
         Suscripcion();
-        Suscripcion(string, int, string);
+        Suscripcion(string, int, string, string);
     //gets
         string getNombre();
         int getPrecio();
         string getPeriodo();
+        string getTipo();
     //sets
         void setNombre(string);
         void setPrecio(int);
         void setPeriodo(string);
+        void setTipo(string);
     //methods
         string getTipo(); /* 0=vitalicia, 1=mensual, 2=trimestral, 3=anual */
-        string Suscripcion::getTipo();
+        string getTipo();
 };
 
 #endif

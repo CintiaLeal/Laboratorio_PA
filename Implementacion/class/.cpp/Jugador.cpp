@@ -12,7 +12,6 @@ dtJugador * Jugador::getJugador(){
     return this->jugador;
 }
 
-
 //sets
 void Jugador::setJugador(dtJugador * jugador){
     this->jugador = jugador;
@@ -32,4 +31,5 @@ void Jugador::buscarSuscripcion(int){}
 void Jugador::cancelarSuscripcion(){}
 
 void Jugador::nuevoSuscripcion(string){}
+
 void Jugador::cancelar(){}

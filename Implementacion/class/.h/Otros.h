@@ -4,5 +4,5 @@
 using namespace std;
 
 class Otros : public Categoria{
-    
+    Otros();
 };

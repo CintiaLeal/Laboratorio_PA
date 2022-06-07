@@ -24,7 +24,7 @@ class Pago{
         void setFechaV(dtFecha);
         void setFechaC(dtFecha);
         void setMetodoPago(string);
-        void setFechaC(bool);
+        void setActiva(bool);
         //methods
         Videojuego getJuego();
         dtVideojuego buscarVideojuego(string);

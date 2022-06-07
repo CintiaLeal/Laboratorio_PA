@@ -18,7 +18,8 @@ class Desarrollador:public Usuario{
 
         //get y set 
         string getNombreEmpresa();
-        void setPartidaIndividual(dtPartidaIndividual*);
+        void setNombreEmpresa(string);
+        //void setPartidaIndividual(dtPartidaIndividual*); RANDOM
 
         //metodo
         dtPublicarVideojuego altaVideojuego(string,string); 

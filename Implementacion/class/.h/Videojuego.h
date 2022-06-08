@@ -41,7 +41,7 @@ class Videojuego{
         void agregarPI(PartidaIndividual);
         string getDescripcion();
         float getCantHorasJug();
-        set<DtSuscripciones> listarSusSuscripciones();
+       // set<DtSuscripciones> listarSusSuscripciones();
         void nuevaSuscripcion(string);
 };
 

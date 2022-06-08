@@ -1,10 +1,11 @@
-#ifndef Dt_PartidaIndividual
+/*#ifndef Dt_PartidaIndividual
 #define Dt_PartidaIndividual
 #include <iostream>
-#include "Partida.h"
+#include "dtPartida.h"
 #include "dtFecha.h"
 using namespace std;
-class dtPartidaIndividual{
+
+class dtPartidaIndividual:public dtPartida{
     private:
        dtPartidaIndividual* continua;
     public:
@@ -15,3 +16,4 @@ class dtPartidaIndividual{
 };
 #endif //Dt_PartidaIndividual
 
+*/

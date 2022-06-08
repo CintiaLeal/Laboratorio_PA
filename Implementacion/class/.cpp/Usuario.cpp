@@ -1,12 +1,16 @@
 #include "../../class/.h/Usuario.h"
-
-Usuario::Usuario(string email, string contrasenia, dtPartida * partidas){
+#include <stdexcept>
+Usuario::Usuario(string email, string contrasenia){
     this->email = email;
     this->contrasenia = contrasenia;
-    this->partidas = partidas;    
+    this->partidas = new OrderedDictionary();  
 }
 Usuario::Usuario(){
+    this->partidas = new OrderedDictionary();  
+}
 
+Usuario::~Usuario(){
+    delete this->partidas;
 }
 
 string Usuario::getEmail(){
@@ -17,9 +21,6 @@ string Usuario::getContrasenia(){
     return this->contrasenia;
 }
 
-dtPartida * Usuario::getPartidas(){
-    return this->partidas;
-}
 
 void Usuario::setEmail(string email){
     this->email = email;
@@ -29,9 +30,7 @@ void Usuario::setContrasenia(string contrasenia){
 
 }
 
-void Usuario::setPartidas(dtPartida * partidas){
-    this->partidas = partidas;
-}
+
 
 //metodos
 dtMostrarPartida listarPartidas(){}
@@ -40,4 +39,16 @@ void confirmarMultijugador(/*set<string>*/){}
 void agregarPartida(Partida){}
 dtPartidaIndividual getPartidasFinalizadas(string){}
 void confirmarContinuar(int){}
-void confirmarNueva(string){}
+
+void Usuario::confirmarNueva(Partida * p){
+    if(p == NULL){
+        throw std::invalid_argument("Partida es null");
+    }
+
+    // crea una clave para el nuevo elemento coleccionado
+    IKey *k = new Integer((p->getIdPartida()));
+    // agrega a la coleccion
+    this->partidas->add(k, p);
+    // no se debe borrar la k, ya que es a esta instancia a la cual queda referenciando la coleccion
+
+}

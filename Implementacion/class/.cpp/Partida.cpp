@@ -1,4 +1,4 @@
-#include "class/.h/Partida.h"
+#include "../../class/.h/Partida.h"
 #include <iostream>
 
 using namespace std;
@@ -6,55 +6,32 @@ using namespace std;
 //constructores
 Partida::Partida(){}
 
-Partida::Partida(int idPartida, dtPartida* partida, dtUsuario* jugadores, dtVideojuego* videojuego){
+Partida::Partida(int idPartida, dtPartida * p){
     this->idPartida = idPartida;
-    this->partida = partida;
-    this->jugadores = jugadores;
-    this->videojuego = videojuego;
+    this->partida = p;
+    this->jugadores = new OrderedDictionary();
+    this->videojuego = new OrderedDictionary();
 }
 
 //destructor
 Partida::~Partida(){}
-
 //gets
 int Partida::getIdPartida(){
     return this->idPartida;
 }
-
-dtPartida* Partida::getPartida(){
+dtPartida *Partida::getPartida(){
     return this->partida;
 }
-
-dtUsuario* Partida::getJugadores(){
-    return this->jugadores;
-}
-
-dtVideojuego* Partida::getVideojuego(){
-    return this->videojuego;
-}
-
 //sets
 void Partida::setIdPartida(int idPartida){
     this->idPartida = idPartida;
 }
-
-void Partida::setPartida(dtPartida * partida){
-    this->partida = partida;
-}
-
-void Partida::setJugadores(dtUsuario * jugadores){
-    this->jugadores = jugadores;
-}
-
-void Partida::setVideojuego(dtVideojuego * videojuego){
-    this->videojuego = videojuego;
+void Partida::setPartida(dtPartida *p){
+    this->partida = p;
 }
 
 //methods
 void eliminarPartida(){}
-
 dtMostrarPartida getMostrarPartida(){}
-
 void confirmarPartida(){}
-
 void continuar(){}

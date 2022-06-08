@@ -8,28 +8,29 @@
 #include "../../dtType/.h/dtPartida.h"
 #include "../../dtType/.h/dtUsuario.h"
 #include "../../dtType/.h/dtMostrarPartida.h"
+#include "../../ICollection/interfaces/ICollectible.h"
+#include "../../ICollection/collections/OrderedDictionary.h"
+#include "../../ICollection/String.h"
+#include "../../ICollection/Integer.h"
 using namespace std;
 
-class Usuario{
+class Usuario: public ICollectible{
     protected:
         string email;
         string contrasenia;
-        dtPartida * partidas; 
+        IDictionary * partidas; 
     public:
-        Usuario(string,string,dtPartida*);
+        Usuario(string,string);
         Usuario();
         ~Usuario();
 
         //get y set
         string getEmail();
         string getContrasenia();
-        dtPartida * getPartidas();
-
+        
         void setEmail(string);
         void setContrasenia(string);
-        void setPartidas(dtPartida*);
-        
-        
+             
         //metodos
         dtMostrarPartida listarPartidas();
         void confirmarPartidas(int);
@@ -37,7 +38,7 @@ class Usuario{
         void agregarPartida(Partida);
         dtPartidaIndividual getPartidasFinalizadas(string);
         void confirmarContinuar(int);
-        void confirmarNueva(string);
+        void confirmarNueva(Partida *p);
 
 };
 

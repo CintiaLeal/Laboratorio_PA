@@ -1,4 +1,4 @@
-/*#ifndef Dt_PartidaIndividual
+#ifndef Dt_PartidaIndividual
 #define Dt_PartidaIndividual
 #include <iostream>
 #include "dtPartida.h"
@@ -15,5 +15,3 @@ class dtPartidaIndividual:public dtPartida{
         ~dtPartidaIndividual();
 };
 #endif //Dt_PartidaIndividual
-
-*/

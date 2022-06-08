@@ -24,7 +24,7 @@ public:
      * Agrega un elemento a la colección al final de la lista.
      * Si ya existía no hace nada
      */
-    void add(ICollectible *);
+    void add(ICollectible *){}
     
     
     /**

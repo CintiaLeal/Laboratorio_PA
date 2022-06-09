@@ -2,7 +2,7 @@
 #define Pago_
 
 #include <iostream>
-#include "../../dtType/.cpp/dtFecha.cpp"
+#include "Suscripcion.h"
 #include "../../dtType/.h/dtVideojuego.h"
 #include "../../dtType/.h/dtPartidaIndividual.h"
 #include "../../dtType/.h/dtPartida.h"
@@ -12,7 +12,7 @@
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
 #include "../../ICollection/Integer.h"
-#include "Suscripcion.h"
+
 using namespace std;
 
 class Pago: public ICollectible{

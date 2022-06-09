@@ -1,12 +1,16 @@
 #ifndef comentario_
 #define comentario_
 
-#include "../../dtType/.h/dtFecha.h"
 #include <iostream>
 
+#include "../../ICollection/interfaces/ICollectible.h"
+#include "../../ICollection/collections/OrderedDictionary.h"
+#include "../../ICollection/String.h"
+#include "../../ICollection/Integer.h"
+#include "../../dtType/.h/dtFecha.h"
 using namespace std;
 
-class Comentario{
+class Comentario: public ICollectible{
     private:
         int idComentario;
         string texto;

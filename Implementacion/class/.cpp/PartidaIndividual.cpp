@@ -7,8 +7,6 @@ using namespace std;
 PartidaIndividual::PartidaIndividual(){}
 
 PartidaIndividual::PartidaIndividual(int idPartida, dtPartida * p, dtPartidaIndividual * partidaIndividual):Partida(idPartida, p){
-    this->idPartida = idPartida;
-    this->partida = p;
     this->partidaIndividual = partidaIndividual;
 }
 

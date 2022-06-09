@@ -6,11 +6,12 @@ using namespace std;
 //constructores
 Pago::Pago(){}
 
-Pago::Pago(dtFecha fechaV, dtFecha fechaC, string metodoPago, bool activa){
+Pago::Pago(dtFecha fechaV, dtFecha fechaC, string metodoPago, bool activa, Suscripcion * suscripcion){
     this->fechaV =  fechaV;
     this->fechaContrato = fechaC;
     this->metodoPago = metodoPago;
     this->activa = activa;
+    this->suscripcion = suscripcion;
 }
 
 //gets

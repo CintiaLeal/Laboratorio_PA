@@ -13,7 +13,7 @@ class Jugador:public Usuario{
         dtJugador * jugador;
         ICollection * pagos;
     public:
-        Jugador(dtJugador *);
+        Jugador(string, string, dtJugador *);
         Jugador();
         ~Jugador();
 

@@ -16,7 +16,7 @@ class dtMostrarPartida{
 
         //get y set
         string getNombreVideojuego();
-        dtPartida getPartida();
+        dtPartida *getPartida();
        
 };
 

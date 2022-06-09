@@ -1,35 +1,31 @@
-#include <class/.h/Videojuego.h>
+#include "../.h/Videojuego.h"
 #include <iostream>
 
 using namespace std;
 
 //constructores
 Videojuego::Videojuego(){
-    /*
-    partidas = new OrderedDictionary;
-    VJ = new OrderedDictionary;
-    Suscripciones = new OrderedDictionary;
-    Categorias = new OrderedDictionary;
-    */
+    this->partidas = new OrderedDictionary();
+    this->suscripciones = new OrderedDictionary();  
+    this->categorias = new OrderedDictionary();  
+    this->VJ = new List();
 }
 
 Videojuego::Videojuego(dtVideojuego * juego){
     this->videojuego = juego;
-    /*
-    partidas = new OrderedDictionary;
-    VJ = new OrderedDictionary;
-    Suscripciones = new OrderedDictionary;
-    Categorias = new OrderedDictionary;
-    */
+    this->partidas = new OrderedDictionary();  
+    this->suscripciones = new OrderedDictionary(); 
+    this->categorias = new OrderedDictionary();  
+    this->VJ = new List();
 }
 
 //gets
-dtVideojuego Videojuego::getVideojuego(){
+dtVideojuego* Videojuego::getVideojuego(){
     return this->videojuego;
 }
 
 //sets
-void Videojuego::setVideojuego(dtVideojuego juego){
+void Videojuego::setVideojuego(dtVideojuego * juego){
     this->videojuego = juego;
 }
 
@@ -62,9 +58,10 @@ void Videojuego::setVideojuego(dtVideojuego juego){
         */
 
 //Method
+/*
 string Videojuego::getNombre(){
    return this->videojuego->getNombre();
-}
+}*/
 
  void Videojuego::eliminarVideojuego(){
 
@@ -75,16 +72,15 @@ void Videojuego::agregarPM(PartidaMultijugador){
 }
 void Videojuego::agregarPI(PartidaIndividual){
 
-}
+}/*
 string Videojuego::getDescripcion(){
 return this->videojuego->getDescripcion();
 }
 float Videojuego::getCantHorasJug(){
 return this->videojuego->getCantHorasJug();
-}
-set<DtSuscripciones> Videojuego::listarSusSuscripciones(){
+}*/
+//set<DtSuscripciones> Videojuego::listarSusSuscripciones(){}
 
-}
 void Videojuego::nuevaSuscripcion(string){
 
 }

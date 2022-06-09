@@ -3,25 +3,26 @@
 
 #include <iostream>
 #include "../../dtType/.h/dtVideojuego.h"
-#include "class/.h/PartidaMultijugador.h"
-#include "class/.h/PartidaIndividual.h"
+#include "PartidaMultijugador.h"
+#include "PartidaIndividual.h"
+#include "VJ.h"
 using namespace std;
 
 class Videojuego{
     private:
-        dtVideojuego videojuego;
-        //coleccion de partidas (IDictionary *partidas)
-        //coleccion de V-J (IDictionary *VJ)
-        //coleccion de Suscripciones (IDictionary *Suscripciones)
-        //coleccion de Categorias (IDictionary *Categorias)
+        dtVideojuego * videojuego;
+        IDictionary * partidas;
+        ICollection * VJ;
+        IDictionary * suscripciones;
+        IDictionary * categorias;
     public:
         //constructores
         Videojuego();
-        Videojuego(dtVideojuego);
+        Videojuego(dtVideojuego*);
         //gets
-        dtVideojuego getVideojuego();
+        dtVideojuego * getVideojuego();
         //sets
-        void setVideojuego(dtVideojuego);
+        void setVideojuego(dtVideojuego*);
         //asuntos de la coleccion
         /*
         void agregarPartida(partida *p);

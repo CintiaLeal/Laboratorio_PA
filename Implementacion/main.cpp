@@ -1,6 +1,7 @@
 #include <iostream>
 #include "class\.cpp\Usuario.cpp"
 #include "class\.cpp\Partida.cpp"
+#include "class\.cpp\Videojuego.cpp"
 #include "ICollection\collections\List.cpp"
 #include "ICollection\collections\ListIterator.cpp"
 #include "ICollection\collections\ListNode.cpp"

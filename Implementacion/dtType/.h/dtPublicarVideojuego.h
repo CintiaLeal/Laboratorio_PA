@@ -5,19 +5,21 @@
 #include "dtGenero.h"
 #include "dtPlataforma.h"
 #include "dtOtros.h"
+#include "ICollection\interfaces\ICollection.cpp"
+#include "ICollection\collections\List.cpp"
 using namespace std;
 class dtPublicarVideojuego{
     private:
-        dtGenero * genero;
-        dtOtros * otros;
-        dtPlataforma * plataforma;
-
+        ICollection * Generos;
+        ICollection * Otros;
+        ICollection * Plataformas;
     public:
-        dtPublicarVideojuego(dtGenero, dtOtros, dtPlataforma);
         dtPublicarVideojuego();
+        List* getGeneros();
+        List* getOtros();
+        List* getPlataformas();
+    // FALTA HACER FUNCIONES QUE AGREGEN ELEMENTOS A LAS COLECCIONES
 
-        dtGenero getGenero();
-        dtOtros getOtros();
-        dtPlataforma getPlataforma();
+        ~dtPublicarVideojuego();
 };
 #endif //Dt_Pago

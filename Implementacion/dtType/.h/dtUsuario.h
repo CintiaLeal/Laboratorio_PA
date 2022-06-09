@@ -10,8 +10,8 @@ class dtUsuario{
     public:
         dtUsuario();
         dtUsuario(string, string);
-        dtUsuario getEmail();
-        float getContrasenia();
+        string getEmail();
+        string getContrasenia();
         ~dtUsuario();
 };
 #endif //Dt_Usuario

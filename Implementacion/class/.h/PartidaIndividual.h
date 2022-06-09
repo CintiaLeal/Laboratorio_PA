@@ -9,7 +9,7 @@ class PartidaIndividual:public Partida{
     private:
             dtPartidaIndividual * partidaIndividual;
     public:
-        PartidaIndividual(dtPartidaIndividual * partidaIndividual);
+        PartidaIndividual(int idPartida, dtPartida * p,dtPartidaIndividual * partidaIndividual);
         PartidaIndividual();
         ~PartidaIndividual();
 

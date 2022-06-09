@@ -7,7 +7,7 @@ Jugador::Jugador(){
     this->pagos = new List();
 }
 
-Jugador::Jugador(dtJugador * jugador){
+Jugador::Jugador(string email, string contrasenia, dtJugador * jugador): Usuario(email, contrasenia){
     this->jugador = jugador;
     this->pagos = new List();
 }

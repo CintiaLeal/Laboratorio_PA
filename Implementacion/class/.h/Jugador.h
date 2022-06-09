@@ -5,12 +5,13 @@
 #include "../../class/.h/Usuario.h"
 #include "../../dtType/.h/dtJugador.h"
 #include "../../dtType/.h/dtPago.h"
+#include "../../ICollection/collections/List.h"
 using namespace std;
 
 class Jugador:public Usuario{
     private:
         dtJugador * jugador;
-        dtPago * pagos; //implementar pago
+        ICollection * pagos;
     public:
         Jugador(dtJugador *);
         Jugador();

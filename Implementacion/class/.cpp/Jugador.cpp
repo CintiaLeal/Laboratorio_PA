@@ -3,9 +3,14 @@
 
 using namespace std;
 
-Jugador::Jugador(){}
+Jugador::Jugador(){
+    this->pagos = new List();
+}
 
-Jugador::Jugador(dtJugador * jugador){}
+Jugador::Jugador(dtJugador * jugador){
+    this->jugador = jugador;
+    this->pagos = new List();
+}
 
 //gets
 dtJugador * Jugador::getJugador(){

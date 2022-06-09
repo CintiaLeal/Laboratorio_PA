@@ -2,7 +2,7 @@
 #define Pago_
 
 #include <iostream>
-#include "../../dtType/.h/dtFecha.h"
+#include "../../dtType/.cpp/dtFecha.cpp"
 #include "../../dtType/.h/dtVideojuego.h"
 #include "../../dtType/.h/dtPartidaIndividual.h"
 #include "../../dtType/.h/dtPartida.h"

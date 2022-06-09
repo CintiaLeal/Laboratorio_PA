@@ -1,28 +1,28 @@
-#include "../h/dtVideojuego.h"
+#include "../.h/dtVideojuego.h"
 
-DtVideojuego::dtVideojuego(){
+dtVideojuego::dtVideojuego(){
     this->nombre = "";
     this->descripcion = "";
     this->cantHorasJug = 0;
 };
 
-DtVideojuego::dtVideojuego(string n, string d, float c){
+dtVideojuego::dtVideojuego(string n, string d, float c){
     this->nombre = n;
     this->descripcion = d;
     this->cantHorasJug = c;
 };
 
-string DtVideojuego::getNombre(){
+string dtVideojuego::getNombre(){
     return this->nombre;
 };
-string DtVideojuego::getDescripcion(){
+string dtVideojuego::getDescripcion(){
     return this->descripcion;
 };
-float DtVideojuego::getCantHorasJug(){
+float dtVideojuego::getCantHorasJug(){
     return this->cantHorasJug;
 };
 
-DtVideojuego::~dtVideojuego(){};
+dtVideojuego::~dtVideojuego(){};
 
 
         

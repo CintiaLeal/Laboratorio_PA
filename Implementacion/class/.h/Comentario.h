@@ -7,7 +7,7 @@
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
 #include "../../ICollection/Integer.h"
-#include "../../dtType/.h/dtFecha.h"
+#include "../../dtType/.cpp/dtFecha.cpp"
 using namespace std;
 
 class Comentario: public ICollectible{

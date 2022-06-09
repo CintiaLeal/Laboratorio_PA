@@ -9,8 +9,8 @@ using namespace std;
 
 class PartidaMultijugador:public Partida{
     private:
-            dtPartidaMultijugador * partidaMultijugador;
-            dtComentario * comentario;
+        dtPartidaMultijugador * partidaMultijugador;
+        dtComentario * comentario;
     public:
         PartidaMultijugador(dtPartidaMultijugador * partidaMultijugador, dtComentario comentario);
         PartidaMultijugador();

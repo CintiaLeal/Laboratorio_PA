@@ -1,15 +1,18 @@
 #ifndef Dt_Partida
 #define Dt_Partida
 #include <iostream>
-#include "dtFecha.h"
+#include "../.cpp/dtFecha.cpp"
 using namespace std;
 class dtPartida{
     private:
-       dtFecha fecha;
-       float durcion;
+        int idPartida;
+        dtFecha * fecha;
+        float duracion;
     public:
         dtPartida();
-        dtFecha getFecha();
+        dtPartida(int , dtFecha * , float );
+        int getIdPartida();
+        dtFecha *getFecha();
         float getDuracion();
         ~dtPartida();
 };

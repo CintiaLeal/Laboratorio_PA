@@ -2,8 +2,19 @@
 #define ISISTEMA
 #include <iostream>
 
-#include "../../ICollection/interfaces/ICollection.h"
-#include "../../ICollection/interfaces/IDictionary.h"
+
+#include "../../ICollection\collections\ListIterator.cpp"
+#include "../../ICollection\collections\ListNode.cpp"
+#include "../../ICollection\collections\OrderedDictionary.cpp"
+#include "../../ICollection\collections\OrderedDictionaryEntry.cpp"
+#include "../../ICollection\interfaces\ICollectible.cpp"
+#include "../../ICollection\interfaces\ICollection.cpp"
+#include "../../ICollection\interfaces\IDictionary.cpp"
+#include "../../ICollection\interfaces\IIterator.cpp"
+#include "../../ICollection\interfaces\IKey.cpp"
+#include "../../ICollection\interfaces\OrderedKey.cpp"
+#include "../../ICollection\Integer.cpp"
+#include "../../ICollection\String.cpp"
 using namespace std;
 
 class ISistema{
@@ -11,7 +22,7 @@ public:
     virtual ~ISistema(); //Destructor
 
 //<------------------Operaciones----------------------->
-    virtual string listarVideojuego() = 0;
+ /*   virtual string listarVideojuego() = 0;
     virtual void elegirVideojuegoEliminar(string) = 0;
     virtual void confirmarEliminarVideojuego() = 0;
     virtual void ingersarJugador(string, string, string, string) = 0;
@@ -31,7 +42,9 @@ public:
     virtual void seleccionarVideojuegoSuscripcion(string) = 0;
     virtual void cancelarSuscr() = 0;
     virtual void confirmarSuscripcion(string,string) = 0;
-    virtual void cancelar() = 0;
+    virtual void cancelar() = 0;*/
+
+    virtual int hola() = 0;
 
 };
 #endif // ISISTEMA

@@ -1,22 +1,33 @@
 #include "../.h/dtPublicarVideojuego.h"
 
-// FALTA HACER FUNCIONES QUE AGREGEN ELEMENTOS A LAS COLECCIONES
-//DTGENERO, DTOTROS Y DT PLATAFORMA VAN A SER ICOLECTIBLE
 dtPublicarVideojuego::dtPublicarVideojuego(){
     this->Generos = new List();
     this->Otros = new List();
     this->Plataformas = new List();
 };
 
-List* dtPublicarVideojuego::getGeneros(){
-    return (List *)this->Generos;
+ICollection* dtPublicarVideojuego::getGeneros(){
+    return this->Generos;
 }
-List* dtPublicarVideojuego::getOtros(){
-    return (List *)this->Otros;
+ICollection* dtPublicarVideojuego::getOtros(){
+    return this->Otros;
 }
-List* dtPublicarVideojuego::getPlataformas(){
-    return (List *)this->Plataformas;
+ICollection* dtPublicarVideojuego::getPlataformas(){
+    return this->Plataformas;
 }
+
+void dtPublicarVideojuego::agregarGenero(dtGenero * data){
+    this->Generos->add(data);
+}
+
+void dtPublicarVideojuego::agregarOtro(dtOtros * data){
+    this->Otros->add(data);
+}
+
+void dtPublicarVideojuego::agregarPlataforma(dtPlataforma * data){
+    this->Plataformas->add(data);
+}
+
 dtPublicarVideojuego::~dtPublicarVideojuego(){}
 
 

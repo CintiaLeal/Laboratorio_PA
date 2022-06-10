@@ -10,17 +10,15 @@ using namespace std;
 class PartidaMultijugador:public Partida{
     private:
         dtPartidaMultijugador * partidaMultijugador;
-        dtComentario * comentario;
+        IDictionary * comentarios; 
     public:
-        PartidaMultijugador(dtPartidaMultijugador * partidaMultijugador, dtComentario comentario);
+        PartidaMultijugador(int idPartida, dtPartida * p,dtPartidaMultijugador * partidaMultijugador);
         PartidaMultijugador();
         ~PartidaMultijugador();
 
         //get y set 
         dtPartidaMultijugador * getPartidaMultijugador();
-        dtComentario * getComentario();
         void setPartidaMultijugador(dtPartidaMultijugador*);
-        void setComentario(dtComentario*);
         
         //metodo
         void confirmarPartida(int);

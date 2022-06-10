@@ -8,6 +8,10 @@ class Sistema: public ISistema{
         Sistema();
         static Sistema * instancia;
     public:
+        virtual ~Sistema();              //Destructor
+        static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
+
+    /*    //<------------------Operaciones----------------------->
         string listarVideojuego();
         void elegirVideojuegoEliminar(string);
         void confirmarEliminarVideojuego();
@@ -29,7 +33,11 @@ class Sistema: public ISistema{
         void cancelarSuscr();
         void confirmarSuscripcion(string, string);
         void cancelar();
-    
+    */
+        int hola(){
+         int hola = 10;
+         return hola;  
+        }
 
 
 };

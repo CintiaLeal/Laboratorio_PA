@@ -2,10 +2,10 @@
 #define dtCategoria_
 
 #include <iostream>
-
+#include "..\..\ICollection\interfaces\ICollectible.h"
 using namespace std;
 
-class dtCategoria{
+class dtCategoria : public ICollectible{
     protected:
         string nombre;
         string descripcion;

@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include "class\.cpp\Usuario.cpp"
 #include "class\.cpp\Partida.cpp"
 #include "class\.cpp\Videojuego.cpp"
@@ -15,11 +15,25 @@
 #include "ICollection\interfaces\IKey.cpp"
 #include "ICollection\interfaces\OrderedKey.cpp"
 #include "ICollection\Integer.cpp"
-#include "ICollection\String.cpp"
+#include "ICollection\String.cpp"*/
+
+#include <iostream>
+using namespace std;
+
+
+#include "class/.h/ISistema.h"
+#include "class/.h/Sistema.h"
+#include "class/.h/Fabrica.h"
 
 int main(){
-Usuario *u = new Usuario("cintia@gmail.com","1233");
+/*Usuario *u = new Usuario("cintia@gmail.com","1233");
 std:cout <<u->getEmail();
-return 0;
+return 0;*/
+ //ISistema *system = Fabrica::crearSistema();
+    
+    Sistema * sis;
+    sis->hola();
+   int holas = sis->hola();
+   std:cout <<sis->hola();
 
 }

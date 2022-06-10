@@ -18,22 +18,20 @@
 #include "ICollection\String.cpp"*/
 
 #include <iostream>
+#include "class/.cpp/Fabrica.cpp"
+#include "class/.cpp/Sistema.cpp"
+#include "class/.cpp/ISistema.cpp"
+
+
+
 using namespace std;
-
-
-#include "class/.h/ISistema.h"
-#include "class/.h/Sistema.h"
-#include "class/.h/Fabrica.h"
-
 int main(){
-/*Usuario *u = new Usuario("cintia@gmail.com","1233");
-std:cout <<u->getEmail();
-return 0;*/
- //ISistema *system = Fabrica::crearSistema();
-    
-    Sistema * sis;
-    sis->hola();
+
+
+ ISistema * sis = Fabrica::crearSistema();
+   sis->hola();
    int holas = sis->hola();
-   std:cout <<sis->hola();
+   cout <<sis->hola();
+   return 0;
 
 }

@@ -27,8 +27,8 @@ class Suscripcion{
         void setPeriodo(string);
         void setTipo(string);
     //methods
-        string getTipo(); /* 0=vitalicia, 1=mensual, 2=trimestral, 3=anual */
-        string getTipo();
+        //string getTipo(); /* 0=vitalicia, 1=mensual, 2=trimestral, 3=anual */
+        //string getTipo();
 };
 
 #endif

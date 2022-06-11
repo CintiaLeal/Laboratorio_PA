@@ -3,7 +3,11 @@
 
 Sistema * Sistema::instancia = 0;
 
-Sistema::Sistema(){ }
+Sistema::Sistema(){
+    this->dicUsuario = new OrderedDictionary();
+    this->dicCategoria = new OrderedDictionary();
+    this->dicVideojuego = new OrderedDictionary();
+}
 Sistema::~Sistema(){ }
 
 Sistema * Sistema::getInstancia() {
@@ -11,4 +15,27 @@ Sistema * Sistema::getInstancia() {
         instancia = new Sistema();
     }
     return instancia;
+}
+/*
+void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa){
+    IKey * k = new String(email.c_str());
+    if(this->dicUsuario->member(k)){
+        cout<<"Ya existe";
+    }
+    else{
+        Desarrollador *d = new Desarrollador(email,contrasenia,nombreEmpresa);
+        dicUsuario->add(k,d);
+    }
+}*/
+void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa){
+    IKey * k = new String(email.c_str());
+    if(this->dicUsuario->member(k)){
+        cout<<"Ya existe";
+        
+    }
+    else{
+        Usuario *d = new Usuario(email,contrasenia);
+        dicUsuario->add(k,d);
+        
+    }
 }

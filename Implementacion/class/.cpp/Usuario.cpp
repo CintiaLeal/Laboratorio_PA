@@ -3,14 +3,14 @@
 Usuario::Usuario(string email, string contrasenia){
     this->email = email;
     this->contrasenia = contrasenia;
-    this->partidas = new OrderedDictionary();  
+//    this->partidas = new OrderedDictionary();  
 }
 Usuario::Usuario(){
-    this->partidas = new OrderedDictionary();  
+  //  this->partidas = new OrderedDictionary();  
 }
 
 Usuario::~Usuario(){
-    delete this->partidas;
+    //delete this->partidas;
 }
 
 string Usuario::getEmail(){
@@ -32,10 +32,10 @@ void Usuario::setContrasenia(string contrasenia){
 
 
 
-//metodos
+/*/metodos
 dtMostrarPartida listarPartidas(){}
 void confirmarPartidas(){}
-void confirmarMultijugador(/*set<string>*/){}
+void confirmarMultijugador(){}
 void agregarPartida(Partida){}
 dtPartidaIndividual getPartidasFinalizadas(string){}
 void confirmarContinuar(int){}
@@ -51,4 +51,4 @@ void Usuario::confirmarNueva(Partida * p){
     this->partidas->add(k, p);
     // no se debe borrar la k, ya que es a esta instancia a la cual queda referenciando la coleccion
 
-}
+}*/

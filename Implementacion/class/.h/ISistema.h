@@ -2,7 +2,8 @@
 #define ISISTEMA
 #include <iostream>
 
-
+#include "../.cpp/Usuario.cpp"
+//#include "../.cpp/Desarrollador.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
 #include "../../ICollection\collections\OrderedDictionary.cpp"
@@ -15,19 +16,20 @@
 #include "../../ICollection\interfaces\OrderedKey.cpp"
 #include "../../ICollection\Integer.cpp"
 #include "../../ICollection\String.cpp"
+
 using namespace std;
 
 class ISistema{
 public:
     virtual ~ISistema(); //Destructor
-
+  //  virtual void confirmarAltaUsuario(string,string,string,string) = 0;
+    virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
 //<------------------Operaciones----------------------->
  /*   virtual string listarVideojuego() = 0;
     virtual void elegirVideojuegoEliminar(string) = 0;
     virtual void confirmarEliminarVideojuego() = 0;
     virtual void ingersarJugador(string, string, string, string) = 0;
     virtual void ingresarDesarrollador(string, string, string) = 0;
-    virtual void confirmarAltaUsuario() = 0;
     virtual ICollection * altaVideojuego(string, string) = 0; //Retorna una lista de DtpPublicarVideojuego
    // virtual DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>) = 0;
     virtual void confirmarPublicarVideojuego() = 0;

@@ -2,17 +2,15 @@
 #define desarrollador_
 #include <iostream>
 
-
-
 #include "Usuario.h"
-#include "../../dtType/.h/dtPublicarVideojuego.h"
+//#include "../../dtType/.h/dtPublicarVideojuego.h"
 using namespace std;
 
 class Desarrollador:public Usuario{
     private:
             string nombreEmpresa;
     public:
-        Desarrollador(string);
+        Desarrollador(string, string, string);
         Desarrollador();
         ~Desarrollador();
 
@@ -22,6 +20,6 @@ class Desarrollador:public Usuario{
         //void setPartidaIndividual(dtPartidaIndividual*); RANDOM
 
         //metodo
-        dtPublicarVideojuego altaVideojuego(string,string); 
+        //dtPublicarVideojuego altaVideojuego(string,string); 
 };
 #endif 

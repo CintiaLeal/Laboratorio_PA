@@ -22,16 +22,18 @@
 #include "class/.cpp/Sistema.cpp"
 #include "class/.cpp/ISistema.cpp"
 
-
-
 using namespace std;
 int main(){
 
 
- ISistema * sis = Fabrica::crearSistema();
-   sis->hola();
-   int holas = sis->hola();
-   cout <<sis->hola();
-   return 0;
+ISistema * sis = Fabrica::crearSistema();
+  //sis->hola();
+ // int holas = sis->hola();
+  //cout <<sis->hola();
+
+  
+  sis->altaUsuarioDesarrollador("sd","sd","fg");
+  return 0;
+
 
 }

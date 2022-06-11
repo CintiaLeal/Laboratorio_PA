@@ -6,8 +6,8 @@
 #include "dtOtros.h"
 #include "dtPlataforma.h"
 
-#include "ICollection\interfaces\ICollection.cpp"
-#include "ICollection\collections\List.cpp"
+#include "../../ICollection\interfaces\ICollection.cpp"
+#include "../../ICollection\collections\List.cpp"
 
 
 using namespace std;

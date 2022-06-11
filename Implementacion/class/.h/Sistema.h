@@ -7,17 +7,21 @@ class Sistema: public ISistema{
         // constructor
         Sistema();
         static Sistema * instancia;
+        IDictionary * dicUsuario;
+        IDictionary * dicCategoria;
+        IDictionary * dicVideojuego;
     public:
         virtual ~Sistema();              //Destructor
         static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
+        //void confirmarAltaUsuario(string,string,string,string);
+        void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
 
     /*    //<------------------Operaciones----------------------->
+        void ingersarJugador(string,string,string,string);
+        void ingresarDesarrollador(string,string,string);
         string listarVideojuego();
         void elegirVideojuegoEliminar(string);
         void confirmarEliminarVideojuego();
-        void ingersarJugador(string,string,string,string);
-        void ingresarDesarrollador(string,string ,string);
-        void confirmarAltaUsuario();
         //DtpPublicarVideojuego altaVideojuego(String,String);
         //DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>);
         void confirmarPublicarVideojuego();

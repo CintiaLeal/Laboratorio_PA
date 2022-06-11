@@ -24,35 +24,27 @@
 
 #include "consola.cpp"
 using namespace std;
-int main(){
-
 int op;
 ISistema * sis = Fabrica::crearSistema();
-  //sis->hola();
- // int holas = sis->hola();
-  //cout <<sis->hola();
+int main(){
+op=0;
 menuAdmin();
+while (op != 7){
 cin>>op;
+
 if(op==1){
   string nombre, descripcion;
-  cout <<"nombre"<<endl;
+  cout <<"INGRESAR INFORMACION PARA UNA NUEVA CATEGORIA"<<endl;
+  cout <<"Nombre:"<<endl;
   cin>>nombre;
-  cout <<"descripcion"<<endl;
+  cout <<"Descripcion:"<<endl;
   cin>>descripcion;
   sis->nuevaCategoria(nombre,descripcion);
   menuAdmin();
-   cout <<"nombre"<<endl;
-  cin>>nombre;
-  cout <<"descripcion"<<endl;
-  cin>>descripcion;
-  sis->nuevaCategoria(nombre,descripcion);
 }
 else{
-cout <<"descripcion"<<endl;
 menuAdmin();
 }
-  sis->altaUsuarioDesarrollador("sd","sd","fg");
+}
   return 0;
-
-
 }

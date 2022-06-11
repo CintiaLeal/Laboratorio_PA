@@ -43,7 +43,7 @@ void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string no
 void Sistema::nuevaCategoria(string nombre,string descripcion){
      IKey * k = new String(nombre.c_str());
     if(this->dicCategoria->member(k)){
-        cout<<"Ya existe"; 
+        cout<<"Ya existe"<<endl; 
     }
     else{
         Categoria *c = new Categoria(nombre,descripcion);

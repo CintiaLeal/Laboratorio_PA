@@ -15,6 +15,7 @@ class Sistema: public ISistema{
         static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
         //void confirmarAltaUsuario(string,string,string,string);
         void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
+        void nuevaCategoria(string nombre, string descripcion);
 
     /*    //<------------------Operaciones----------------------->
         void ingersarJugador(string,string,string,string);

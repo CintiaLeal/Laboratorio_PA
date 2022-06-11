@@ -22,16 +22,35 @@
 #include "class/.cpp/Sistema.cpp"
 #include "class/.cpp/ISistema.cpp"
 
+#include "consola.cpp"
 using namespace std;
 int main(){
 
-
+int op;
 ISistema * sis = Fabrica::crearSistema();
   //sis->hola();
  // int holas = sis->hola();
   //cout <<sis->hola();
-
-  
+menuAdmin();
+cin>>op;
+if(op==1){
+  string nombre, descripcion;
+  cout <<"nombre"<<endl;
+  cin>>nombre;
+  cout <<"descripcion"<<endl;
+  cin>>descripcion;
+  sis->nuevaCategoria(nombre,descripcion);
+  menuAdmin();
+   cout <<"nombre"<<endl;
+  cin>>nombre;
+  cout <<"descripcion"<<endl;
+  cin>>descripcion;
+  sis->nuevaCategoria(nombre,descripcion);
+}
+else{
+cout <<"descripcion"<<endl;
+menuAdmin();
+}
   sis->altaUsuarioDesarrollador("sd","sd","fg");
   return 0;
 

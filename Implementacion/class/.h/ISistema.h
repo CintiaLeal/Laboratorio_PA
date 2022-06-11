@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "../.cpp/Usuario.cpp"
+#include "../.cpp/Categoria.cpp"
 //#include "../.cpp/Desarrollador.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
@@ -24,6 +25,8 @@ public:
     virtual ~ISistema(); //Destructor
   //  virtual void confirmarAltaUsuario(string,string,string,string) = 0;
     virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
+    virtual void nuevaCategoria(string nombre, string descripcion) = 0;
+
 //<------------------Operaciones----------------------->
  /*   virtual string listarVideojuego() = 0;
     virtual void elegirVideojuegoEliminar(string) = 0;

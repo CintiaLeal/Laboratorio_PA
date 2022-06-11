@@ -1,12 +1,13 @@
 #ifndef Categoria_
 #define Categoria_
-
+#include "../../ICollection/interfaces/ICollectible.h"
+#include "../../ICollection/collections/OrderedDictionary.h"
 #include <iostream>
 
 using namespace std;
 
-class Categoria{
-    protected:
+class Categoria:public ICollectible{
+    private:
         string nombre;
         string descripcion;
     public:

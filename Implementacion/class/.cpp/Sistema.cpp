@@ -41,7 +41,7 @@ void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string no
 }
 
 void Sistema::nuevaCategoria(string nombre,string descripcion){
-     IKey * k = new String(nombre.c_str());
+    IKey * k = new String(nombre.c_str());
     if(this->dicCategoria->member(k)){
         cout<<"Ya existe"<<endl; 
     }
@@ -51,3 +51,28 @@ void Sistema::nuevaCategoria(string nombre,string descripcion){
         
     }
 }
+//ICollection* Sistema::listarCategoria(){ }
+/*
+ICollection* Sistema::listarCategoria(){     // Terminada Verificar
+    ICollection * res = new List();
+    IIterator * it = dicCategoria->getIterator();
+    while (it->hasCurrent()) {
+        dtCategoria * p = dynamic_cast<Categoria *>(it->getCurrent())->getDataType();
+        res->add(p);
+        it->next();
+    }
+    delete it;
+    return res;
+}*/
+
+
+ICollection* Sistema::listarCategoria(){ 
+
+IIterator * it;
+	for (it= this->dicCategoria->getIterator();it->hasCurrent();it -> next()){
+		Categoria * u = (Categoria*)it->getCurrent();
+		string nombre = u->getNombre();
+		cout << nombre << endl;
+	}
+}
+

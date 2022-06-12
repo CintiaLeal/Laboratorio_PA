@@ -4,7 +4,9 @@
 
 #include "../.cpp/Usuario.cpp"
 #include "../.cpp/Categoria.cpp"
+//#include "../../dtType/.cpp/dtCategoria.cpp"
 //#include "../.cpp/Desarrollador.cpp"
+#include "../../ICollection/collections/List.h"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
 #include "../../ICollection\collections\OrderedDictionary.cpp"
@@ -26,6 +28,7 @@ public:
   //  virtual void confirmarAltaUsuario(string,string,string,string) = 0;
     virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
     virtual void nuevaCategoria(string nombre, string descripcion) = 0;
+    virtual ICollection* listarCategoria() = 0;
 
 //<------------------Operaciones----------------------->
  /*   virtual string listarVideojuego() = 0;

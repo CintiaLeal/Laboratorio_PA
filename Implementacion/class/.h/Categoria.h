@@ -2,6 +2,7 @@
 #define Categoria_
 #include "../../ICollection/interfaces/ICollectible.h"
 #include "../../ICollection/collections/OrderedDictionary.h"
+#include "../../dtType/.cpp/dtCategoria.cpp"
 #include <iostream>
 
 using namespace std;
@@ -20,6 +21,7 @@ class Categoria:public ICollectible{
         //sets
         void setNombre(string);
         void setDescripcion(string);
+        dtCategoria* getDataType();
 };
 
 #endif

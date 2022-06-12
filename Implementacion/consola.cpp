@@ -9,6 +9,7 @@ printf(" ||=======================|| \n");
 printf(" ||======MENU ADMIN=======|| \n");
 printf(" ||=======================|| \n");
 printf(" ||=1-Nueva Categoria=====|| \n");
+printf(" ||=2-Listar Categoria====|| \n");
 printf(" ||=======================|| \n");
 }
 

@@ -28,3 +28,9 @@ void Categoria::setNombre(string nombre){
 void Categoria::setDescripcion(string descripcion){
     this->descripcion = descripcion;
 }
+
+//Para listar
+dtCategoria* Categoria::getDataType(){
+    dtCategoria *dtRes = new dtCategoria(this->nombre,this->descripcion);
+    return dtRes;
+}

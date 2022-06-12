@@ -1,6 +1,7 @@
 #ifndef SISTEMA
 #define SISTEMA
 #include "ISistema.h"
+//#include "../../dtType/.cpp/dtCategoria.cpp"
 
 class Sistema: public ISistema{
     private:
@@ -13,11 +14,11 @@ class Sistema: public ISistema{
     public:
         virtual ~Sistema();              //Destructor
         static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
-        //void confirmarAltaUsuario(string,string,string,string);
         void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
         void nuevaCategoria(string nombre, string descripcion);
-
+        ICollection* listarCategoria();
     /*    //<------------------Operaciones----------------------->
+        //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);
         void ingresarDesarrollador(string,string,string);
         string listarVideojuego();

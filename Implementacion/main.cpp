@@ -40,11 +40,20 @@ if(op==1){
   cout <<"Descripcion:"<<endl;
   cin>>descripcion;
   sis->nuevaCategoria(nombre,descripcion);
+  sis->listarCategoria();
   menuAdmin();
+ 
+}
+if(op==2){
+  cout <<"LISTA CATEGORIAS"<<endl;
+  sis->listarCategoria();
+  menuAdmin();
+ 
 }
 else{
 menuAdmin();
 }
 }
+
   return 0;
 }

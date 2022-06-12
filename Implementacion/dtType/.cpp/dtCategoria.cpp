@@ -1,23 +1,19 @@
 #include "../.h/dtCategoria.h"
 
-dtCategoria::dtCategoria(){
-    this->nombre = "";
-    this->descripcion = "";
-};
+
 
 dtCategoria::dtCategoria(string n, string d){
     this->nombre = n;
     this->descripcion = d;
-};
+}
 
-string dtCategoria::getNombre(){
+string dtCategoria::getNombredt(){
     return this->nombre;
-};
-string dtCategoria::getDescripcion(){
+}
+string dtCategoria::getDescripciondt(){
     return this->descripcion;
-};
+}
 
-dtCategoria::~dtCategoria(){};
 
 
         

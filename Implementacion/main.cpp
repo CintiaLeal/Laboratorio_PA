@@ -28,8 +28,10 @@ int op;
 ISistema * sis = Fabrica::crearSistema();
 int main(){
 op=0;
-menuAdmin();
-while (op != 7){
+
+
+menuDesarrollador();
+while (op != 9){
 cin>>op;
 
 if(op==1){
@@ -41,17 +43,17 @@ if(op==1){
   cin>>descripcion;
   sis->nuevaCategoria(nombre,descripcion);
   sis->listarCategoria();
-  menuAdmin();
+  menuDesarrollador();
  
 }
-if(op==2){
+if(op==8){
   cout <<"LISTA CATEGORIAS"<<endl;
   sis->listarCategoria();
-  menuAdmin();
+  menuDesarrollador();
  
 }
 else{
-menuAdmin();
+menuDesarrollador();
 }
 }
 

@@ -44,8 +44,19 @@ printf(" ||=8-Listar Categoria=================|| \n");
 printf(" ||=9-Salir============================|| \n");
 printf(" ||====================================|| \n");
 }
+void titulo(){
+    //https://www.topster.es/texto-ascii/alpha.html
+    //https://patorjk.com/software/taag/#p=display&f=Swamp%20Land&t=Type%20Something%20
+    std::cout << R"(
+  _             _      ___     _   
+ | |     __ _  | |__  | _ \   /_\  
+ | |__  / _` | | '_ \ |  _/  / _ \ 
+ |____| \__,_| |_.__/ |_|   /_/ \_\)" << '\n';
+
+
+}
 void caraArte(){
-    printf("╲╲╭━━━━━━━╮╱╱ \n");
+   std::cout << R"(╲╲╭━━━━━━━╮╱╱ )" << '\n';
     cout <<"╲╭╯╭━╮┈╭━╮╰╮╱"<<endl;
     cout <<"╲┃┈┃┈▊┈┃┈▊┈┃╱"<<endl;
     cout <<"╲┃┈┗━┛┈┗━┛┈┃╱"<<endl;

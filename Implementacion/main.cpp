@@ -30,6 +30,7 @@ int main(){
 op=0;
 
 
+titulo();
 menuDesarrollador();
 while (op != 9){
 cin>>op;

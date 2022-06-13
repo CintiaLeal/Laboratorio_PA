@@ -10,10 +10,12 @@ using namespace std;
 
 class Jugador:public Usuario{
     private:
-        dtJugador * jugador;
+        string nick;
+        string descripcion;
+      
         ICollection * pagos;
     public:
-        Jugador(string, string, dtJugador *);
+        Jugador(string, string, string, string);
         Jugador();
         ~Jugador();
 
@@ -32,3 +34,4 @@ class Jugador:public Usuario{
         void cancelar();
 };
 #endif 
+

@@ -16,7 +16,7 @@ class Sistema: public ISistema{
         static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
      void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion);
         void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
-        void nuevaCategoria(string nombre, string descripcion);
+         void nuevaCategoria(string nombre, string descripcion,int tipo);
         virtual ICollection * altaVideojuego(string, string);
         ICollection* listarCategoria();
     /*    //<------------------Operaciones----------------------->

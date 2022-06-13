@@ -52,9 +52,9 @@ void Sistema::nuevaCategoria(string nombre,string descripcion,int tipo){
         tipog="Plataforma";
     }
     if(tipo==2){
-        tipog="General";
+        tipog="Genero";
     }
-    else{
+    if(tipo==3){
         tipog="Otro";
     }
     IKey * k = new String(nombre.c_str());

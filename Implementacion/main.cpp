@@ -85,7 +85,7 @@ if(op==1){
   cin>>tipo;
   sis->nuevaCategoria(nombre,descripcion,tipo);
   sis->listarCategoria();
-  menuDesarrollador();
+  //menuDesarrollador();
  
 }
 if(op == 2){

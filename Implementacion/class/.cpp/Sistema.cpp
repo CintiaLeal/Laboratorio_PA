@@ -44,7 +44,19 @@ void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string no
         
     }
 }
-
+void Sistema::altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion){
+    IKey * k = new String(email.c_str());
+    if(this->dicUsuario->member(k)){
+        cout<<"Ya existe";
+        
+    }
+    else{
+        
+        Jugador * jug = new Jugador(email,contrasenia,nick,descripcion);
+        dicUsuario->add(k,jug);
+        
+    }
+}
 void Sistema::nuevaCategoria(string nombre,string descripcion){
     IKey * k = new String(nombre.c_str());
     if(this->dicCategoria->member(k)){

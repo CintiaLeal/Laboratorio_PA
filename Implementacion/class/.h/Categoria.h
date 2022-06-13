@@ -11,13 +11,15 @@ class Categoria:public ICollectible{
     private:
         string nombre;
         string descripcion;
+        string tipog;
     public:
         //constructores
         Categoria();
-        Categoria(string, string);
+        Categoria(string, string,string);
         //gets
         string getNombre();
         string getDescripcion();
+        string getTipog();
         //sets
         void setNombre(string);
         void setDescripcion(string);

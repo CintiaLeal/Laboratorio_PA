@@ -5,6 +5,7 @@
 #include "../.cpp/Usuario.cpp"
 #include "../.cpp/Categoria.cpp"
 #include "../.cpp/Desarrollador.cpp"
+#include "../.cpp/Jugador.cpp"
 #include "../../ICollection/collections/List.h"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
@@ -26,6 +27,7 @@ public:
     virtual ~ISistema(); //Destructor
   //  virtual void confirmarAltaUsuario(string,string,string,string) = 0;
     virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
+     virtual void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion) = 0;
     virtual void nuevaCategoria(string nombre, string descripcion) = 0;
     virtual ICollection* listarCategoria() = 0;
     virtual void confirmarPublicarVideojuego(string, string) = 0;

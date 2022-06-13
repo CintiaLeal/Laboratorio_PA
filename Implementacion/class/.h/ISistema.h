@@ -5,7 +5,7 @@
 #include "../.cpp/Usuario.cpp"
 #include "../.cpp/Categoria.cpp"
 //#include "../../dtType/.cpp/dtCategoria.cpp"
-//#include "../.cpp/Desarrollador.cpp"
+#include "../.cpp/Desarrollador.cpp"
 #include "../../ICollection/collections/List.h"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"

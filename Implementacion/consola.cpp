@@ -9,7 +9,7 @@ printf(" ||========BIENVENIDO========|| \n");
 printf(" ||==========================|| \n");
 printf(" ||=1-Alta Usuario===========|| \n");
 printf(" ||=2-Iniciar Sesion=========|| \n");
-printf(" ||=2-Cargar datos prueba====|| \n");
+printf(" ||=3-Cargar datos prueba====|| \n");
 printf(" ||=4-Salir==================|| \n");
 printf(" ||==========================|| \n");
 }

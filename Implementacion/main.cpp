@@ -29,12 +29,47 @@ ISistema * sis = Fabrica::crearSistema();
 int main(){
 op=0;
 
+do{
+  system("cls");
+  titulo();
+  menuPrincipal();
+  cin >> op;
+  if(op == 1){
+    system("cls");
+    string nombre, descripcion, nombreEmpresa, email, nick;
+    int si;
+    cout << "Ingrese su nombre" << endl;
+    cin >> nombre;
 
-titulo();
+    cout << "Ingrse su descripcion" << endl;
+    cin >> descripcion;
+
+    cout << "Es usted un Jugador? 1-Si || 2-No" << endl;
+    cin >> si;
+
+    if(si == 1){
+      cout << "Ingrese su email" << endl;
+      cin >> email;
+
+      cout << "Ingrese su nick" << endl;
+      cin >> nick;
+      
+      //sis->altaUsuarioJugador(nombre, descripcion, email, nick);
+    }else{
+      cout << "Ingrese el Nombre de Empresa" << endl;
+      cin >> nombreEmpresa;
+
+      sis->altaUsuarioDesarrollador(nombre, descripcion, nombreEmpresa);
+    }
+    
+  }else if(op == 2){
+    
+  }
+}while(op != 4);
+/*
 menuDesarrollador();
-while (op != 9){
+while (op != 8){
 cin>>op;
-
 if(op==1){
   string nombre, descripcion;
   cout <<"INGRESAR INFORMACION PARA UNA NUEVA CATEGORIA"<<endl;
@@ -47,7 +82,7 @@ if(op==1){
   menuDesarrollador();
  
 }
-if(op==8){
+if(op==7){
   cout <<"LISTA CATEGORIAS"<<endl;
   sis->listarCategoria();
   menuDesarrollador();
@@ -57,6 +92,6 @@ else{
 menuDesarrollador();
 }
 }
-
+*/
   return 0;
 }

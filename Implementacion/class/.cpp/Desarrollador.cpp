@@ -8,6 +8,9 @@ Desarrollador::Desarrollador(){}
 Desarrollador::Desarrollador(string email, string contrasenia, string nombreEmpresa):Usuario(email,contrasenia){
     this->nombreEmpresa = nombreEmpresa;
 }
+
+
+Desarrollador::~Desarrollador(){}
 //get
 string Desarrollador::getNombreEmpresa(){
     return this->nombreEmpresa;

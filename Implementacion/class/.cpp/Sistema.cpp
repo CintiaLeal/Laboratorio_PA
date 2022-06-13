@@ -1,5 +1,9 @@
 #include "../../class/.h/Sistema.h"
 #include <stdexcept>
+#include <limits>
+#include <iostream>
+
+using namespace std;
 
 Sistema * Sistema::instancia = 0;
 
@@ -16,6 +20,7 @@ Sistema * Sistema::getInstancia() {
     }
     return instancia;
 }
+
 /*
 void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa){
     IKey * k = new String(email.c_str());
@@ -30,11 +35,11 @@ void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string no
 void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa){
     IKey * k = new String(email.c_str());
     if(this->dicUsuario->member(k)){
-        cout<<"Ya existe";
+        cout<<"Un usuario con este nombre ya existe, por favor ingrese otro";
         
     }
     else{
-        Usuario *d = new Usuario(email,contrasenia);
+        Desarrollador *d = new Desarrollador(email,contrasenia, nombreEmpresa);
         dicUsuario->add(k,d);
         
     }

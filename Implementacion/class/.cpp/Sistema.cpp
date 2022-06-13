@@ -21,17 +21,6 @@ Sistema * Sistema::getInstancia() {
     return instancia;
 }
 
-/*
-void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa){
-    IKey * k = new String(email.c_str());
-    if(this->dicUsuario->member(k)){
-        cout<<"Ya existe";
-    }
-    else{
-        Desarrollador *d = new Desarrollador(email,contrasenia,nombreEmpresa);
-        dicUsuario->add(k,d);
-    }
-}*/
 void Sistema::altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa){
     IKey * k = new String(email.c_str());
     if(this->dicUsuario->member(k)){
@@ -56,19 +45,10 @@ void Sistema::nuevaCategoria(string nombre,string descripcion){
         
     }
 }
-//ICollection* Sistema::listarCategoria(){ }
-/*
-ICollection* Sistema::listarCategoria(){     // Terminada Verificar
-    ICollection * res = new List();
-    IIterator * it = dicCategoria->getIterator();
-    while (it->hasCurrent()) {
-        dtCategoria * p = dynamic_cast<Categoria *>(it->getCurrent())->getDataType();
-        res->add(p);
-        it->next();
-    }
-    delete it;
-    return res;
-}*/
+
+void confirmarPublicarVideojuego(string, string){
+
+}
 
 
 ICollection* Sistema::listarCategoria(){ 

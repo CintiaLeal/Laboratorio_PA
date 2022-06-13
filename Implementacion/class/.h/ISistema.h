@@ -4,7 +4,6 @@
 
 #include "../.cpp/Usuario.cpp"
 #include "../.cpp/Categoria.cpp"
-//#include "../../dtType/.cpp/dtCategoria.cpp"
 #include "../.cpp/Desarrollador.cpp"
 #include "../../ICollection/collections/List.h"
 #include "../../ICollection\collections\ListIterator.cpp"
@@ -29,16 +28,17 @@ public:
     virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
     virtual void nuevaCategoria(string nombre, string descripcion) = 0;
     virtual ICollection* listarCategoria() = 0;
+    virtual void confirmarPublicarVideojuego(string, string) = 0;
 
 //<------------------Operaciones----------------------->
- /*   virtual string listarVideojuego() = 0;
+ /* virtual string listarVideojuego() = 0;
     virtual void elegirVideojuegoEliminar(string) = 0;
     virtual void confirmarEliminarVideojuego() = 0;
     virtual void ingersarJugador(string, string, string, string) = 0;
     virtual void ingresarDesarrollador(string, string, string) = 0;
     virtual ICollection * altaVideojuego(string, string) = 0; //Retorna una lista de DtpPublicarVideojuego
    // virtual DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>) = 0;
-    virtual void confirmarPublicarVideojuego() = 0;
+    
     //virtual DtMostrarPartida listarPartidas() = 0;
     virtual void confirmarPartida(int) = 0;
     virtual string nuevaPartidaMultijugador(string, bool) = 0;

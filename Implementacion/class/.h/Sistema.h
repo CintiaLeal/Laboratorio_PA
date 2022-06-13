@@ -16,6 +16,7 @@ class Sistema: public ISistema{
         static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
         void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
         void nuevaCategoria(string nombre, string descripcion);
+        void confirmarPublicarVideojuego(string, string);
         ICollection* listarCategoria();
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
@@ -26,7 +27,7 @@ class Sistema: public ISistema{
         void confirmarEliminarVideojuego();
         //DtpPublicarVideojuego altaVideojuego(String,String);
         //DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>);
-        void confirmarPublicarVideojuego();
+        
         //DtMostrarPartida listarPartidas();
         void confirmarPartida(int);
         string nuevaPartidaMultijugador(string,bool);

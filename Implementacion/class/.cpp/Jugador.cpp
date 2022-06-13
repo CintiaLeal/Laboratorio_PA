@@ -1,26 +1,21 @@
-#include "class/.h/Jugador.h"
+#include "../.h/Jugador.h"
 #include <iostream>
 
 using namespace std;
 
 Jugador::Jugador(){
-    this->pagos = new List();
+    
+}
+Jugador::~Jugador(){
+    
+}
+Jugador::Jugador(string email, string contrasenia,string nick, string descripcion): Usuario(email, contrasenia){
+    this->nick = nick;
+    this->descripcion = descripcion;
+  
 }
 
-Jugador::Jugador(string email, string contrasenia, dtJugador * jugador): Usuario(email, contrasenia){
-    this->jugador = jugador;
-    this->pagos = new List();
-}
 
-//gets
-dtJugador * Jugador::getJugador(){
-    return this->jugador;
-}
-
-//sets
-void Jugador::setJugador(dtJugador * jugador){
-    this->jugador = jugador;
-}
 
 //methods 
 bool Jugador::member(string){}

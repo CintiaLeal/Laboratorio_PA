@@ -104,7 +104,7 @@ void Sistema::confirmarPublicarVideojuego(IDictionary * cat, IDictionary * sus, 
     Videojuego * vid = new Videojuego(videojuego);
     vid->setSuscripciones(sus);
     vid->setCategorias(cat);
-    IKey * k = new String(vid->getNombre().c_str());
+    IKey * k = new String(videojuego->getNombre().c_str());
     dicVideojuego->add(k,vid);
 }
 

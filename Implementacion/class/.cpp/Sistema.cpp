@@ -58,7 +58,7 @@ void Sistema::nuevaCategoria(string nombre,string descripcion){
     }
 }
 
-ICollection* Sistema::altaVideojuego(string nombre, string descripcion){
+dtVideojuego* Sistema::altaVideojuego(string nombre, string descripcion){
     bool existe = true;
     string nom = nombre;
     do{
@@ -71,11 +71,9 @@ ICollection* Sistema::altaVideojuego(string nombre, string descripcion){
         }
     }while(existe);
     dtVideojuego * vid = new dtVideojuego(nom, descripcion, 0);
-
-    listarCategoria();
 }
 
-ICollection* Sistema::listarCategoria(){ 
+void Sistema::listarCategoria(){ 
 
 IIterator * it;
 	for (it= this->dicCategoria->getIterator();it->hasCurrent();it -> next()){

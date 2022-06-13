@@ -29,8 +29,8 @@ public:
     virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
      virtual void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion) = 0;
     virtual void nuevaCategoria(string nombre, string descripcion) = 0;
-    virtual ICollection* listarCategoria() = 0;
-    virtual ICollection * altaVideojuego(string, string) = 0;
+    virtual void listarCategoria() = 0;
+    virtual dtVideojuego * altaVideojuego(string, string) = 0;
 
 //<------------------Operaciones----------------------->
  /* virtual string listarVideojuego() = 0;

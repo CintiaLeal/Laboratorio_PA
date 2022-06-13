@@ -17,8 +17,8 @@ class Sistema: public ISistema{
      void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion);
         void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
         void nuevaCategoria(string nombre, string descripcion);
-        virtual ICollection * altaVideojuego(string, string);
-        ICollection* listarCategoria();
+        virtual dtVideojuego * altaVideojuego(string, string);
+        void listarCategoria();
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

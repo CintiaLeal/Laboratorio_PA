@@ -28,7 +28,7 @@ int op;
 ISistema * sis = Fabrica::crearSistema();
 int main(){
 op=0;
-
+/*
 do{
   system("cls");
   titulo();
@@ -65,8 +65,8 @@ do{
   }else if(op == 2){
 
   }
-}while(op != 4);
-/*
+}while(op != 4);*/
+
 menuDesarrollador();
 while (op != 8){
 cin>>op;
@@ -82,6 +82,20 @@ if(op==1){
   menuDesarrollador();
  
 }
+if(op == 2){
+  string nombre, descripcion;
+  cout << "Ingrese el nombre del Videojuego" << endl;
+  cin >> nombre;
+
+  cout << "Ingrse la descripcion del Videojuego" << endl;
+  cin >> descripcion;
+
+  dtVideojuego * datosVideojuego = sis->altaVideojuego(nombre, descripcion);
+
+  sis->listarCategoria();
+  
+
+}
 if(op==7){
   cout <<"LISTA CATEGORIAS"<<endl;
   sis->listarCategoria();
@@ -92,6 +106,6 @@ else{
 menuDesarrollador();
 }
 }
-*/
+
   return 0;
 }

@@ -27,10 +27,10 @@ public:
     virtual ~ISistema(); //Destructor
   //  virtual void confirmarAltaUsuario(string,string,string,string) = 0;
     virtual void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa) = 0;
-     virtual void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion) = 0;
-    virtual void nuevaCategoria(string nombre, string descripcion) = 0;
+    virtual void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion) = 0;
     virtual void listarCategoria() = 0;
     virtual dtVideojuego * altaVideojuego(string, string) = 0;
+    virtual void nuevaCategoria(string nombre, string descripcion,int tipo) = 0;
 
 //<------------------Operaciones----------------------->
  /* virtual string listarVideojuego() = 0;

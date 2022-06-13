@@ -6,9 +6,10 @@ using namespace std;
 //constructores
 Categoria::Categoria(){}
 
-Categoria::Categoria(string nombre, string descripcion){
+Categoria::Categoria(string nombre, string descripcion,string tipog){
     this->nombre = nombre;
     this->descripcion = descripcion;
+    this->tipog = tipog;
 }
 
 //gets
@@ -19,7 +20,9 @@ string Categoria::getNombre(){
 string Categoria::getDescripcion(){
     return this->descripcion;
 }
-
+string Categoria::getTipog(){
+    return this->tipog;
+}
 //sets
 void Categoria::setNombre(string nombre){
     this->nombre = nombre;

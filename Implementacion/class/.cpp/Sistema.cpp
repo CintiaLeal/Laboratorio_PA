@@ -46,13 +46,23 @@ void Sistema::altaUsuarioJugador(string email,string contrasenia,string nick,str
         
     }
 }
-void Sistema::nuevaCategoria(string nombre,string descripcion){
+void Sistema::nuevaCategoria(string nombre,string descripcion,int tipo){
+    string tipog;
+    if(tipo==1){
+        tipog="Plataforma";
+    }
+    if(tipo==2){
+        tipog="General";
+    }
+    else{
+        tipog="Otro";
+    }
     IKey * k = new String(nombre.c_str());
     if(this->dicCategoria->member(k)){
         cout<<"Ya existe"<<endl; 
     }
     else{
-        Categoria *c = new Categoria(nombre,descripcion);
+        Categoria *c = new Categoria(nombre,descripcion,tipog);
         dicCategoria->add(k,c);
         
     }

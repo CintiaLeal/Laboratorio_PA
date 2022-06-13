@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class dtCategoria{
+class dtCategoria : public ICollectible{
     protected:
         string nombre;
         string descripcion;

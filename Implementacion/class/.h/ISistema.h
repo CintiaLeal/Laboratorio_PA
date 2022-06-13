@@ -30,7 +30,7 @@ public:
      virtual void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion) = 0;
     virtual void nuevaCategoria(string nombre, string descripcion) = 0;
     virtual ICollection* listarCategoria() = 0;
-    virtual void confirmarPublicarVideojuego(string, string) = 0;
+    virtual ICollection * altaVideojuego(string, string) = 0;
 
 //<------------------Operaciones----------------------->
  /* virtual string listarVideojuego() = 0;
@@ -38,9 +38,9 @@ public:
     virtual void confirmarEliminarVideojuego() = 0;
     virtual void ingersarJugador(string, string, string, string) = 0;
     virtual void ingresarDesarrollador(string, string, string) = 0;
-    virtual ICollection * altaVideojuego(string, string) = 0; //Retorna una lista de DtpPublicarVideojuego
+     //Retorna una lista de DtpPublicarVideojuego
    // virtual DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>) = 0;
-    
+    virtual void confirmarPublicarVideojuego(string, string) = 0;
     //virtual DtMostrarPartida listarPartidas() = 0;
     virtual void confirmarPartida(int) = 0;
     virtual string nuevaPartidaMultijugador(string, bool) = 0;

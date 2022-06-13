@@ -36,34 +36,34 @@ do{
   cin >> op;
   if(op == 1){
     system("cls");
-    string nombre, descripcion, nombreEmpresa, email, nick;
+    string descripcion, nombreEmpresa, email, nick, contrasenia;
     int si;
-    cout << "Ingrese su nombre" << endl;
-    cin >> nombre;
-
-    cout << "Ingrse su descripcion" << endl;
-    cin >> descripcion;
+    cout << "Ingrese su email" << endl;
+    cin >> email;
+    
+    cout << "Ingrse su contrasenia" << endl;
+    cin >> contrasenia;
 
     cout << "Es usted un Jugador? 1-Si || 2-No" << endl;
     cin >> si;
 
     if(si == 1){
-      cout << "Ingrese su email" << endl;
-      cin >> email;
-
       cout << "Ingrese su nick" << endl;
       cin >> nick;
+
+      cout << "Ingrese su descripcion" << endl;
+      cin >> descripcion;
       
-      //sis->altaUsuarioJugador(nombre, descripcion, email, nick);
+      sis->altaUsuarioJugador(email, contrasenia, nick, descripcion);
     }else{
       cout << "Ingrese el Nombre de Empresa" << endl;
       cin >> nombreEmpresa;
 
-      sis->altaUsuarioDesarrollador(nombre, descripcion, nombreEmpresa);
+      sis->altaUsuarioDesarrollador(email, contrasenia, nombreEmpresa);
     }
     
   }else if(op == 2){
-    
+
   }
 }while(op != 4);
 /*

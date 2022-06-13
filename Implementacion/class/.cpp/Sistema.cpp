@@ -58,10 +58,22 @@ void Sistema::nuevaCategoria(string nombre,string descripcion){
     }
 }
 
-void confirmarPublicarVideojuego(string, string){
+ICollection* Sistema::altaVideojuego(string nombre, string descripcion){
+    bool existe = true;
+    string nom = nombre;
+    do{
+        IKey * k = new String(nom.c_str());
+        if(this->dicVideojuego->member(k)){
+            cout << "Este videojuego ya existe, ingrese otro nombre" << endl;
+            cin >> nom;
+        }else{
+            existe = false;
+        }
+    }while(existe);
+    dtVideojuego * vid = new dtVideojuego(nom, descripcion, 0);
 
+    listarCategoria();
 }
-
 
 ICollection* Sistema::listarCategoria(){ 
 

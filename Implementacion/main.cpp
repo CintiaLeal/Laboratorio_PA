@@ -71,13 +71,19 @@ menuDesarrollador();
 while (op != 8){
 cin>>op;
 if(op==1){
-  string nombre, descripcion;
+ string nombre, descripcion;
+  int tipo;
   cout <<"INGRESAR INFORMACION PARA UNA NUEVA CATEGORIA"<<endl;
   cout <<"Nombre:"<<endl;
   cin>>nombre;
   cout <<"Descripcion:"<<endl;
   cin>>descripcion;
-  sis->nuevaCategoria(nombre,descripcion);
+  cout <<"Tipo:"<<endl;
+  cout <<"1-Plataforma"<<endl;
+  cout <<"2-Genero"<<endl;
+  cout <<"3-Otra"<<endl;
+  cin>>tipo;
+  sis->nuevaCategoria(nombre,descripcion,tipo);
   sis->listarCategoria();
   menuDesarrollador();
  

@@ -102,14 +102,86 @@ if(op == 2){
 
   cout << "Seleccione las categorías de su videojuego" << endl;
   cout << "Debe incluir al menos una categoría de tipo Plataforma y Genero" << endl;
-  //IDictionary * aux = new OrderedDictionary();
+  cout << "Ingrese 0 para salir" << endl;
+  IDictionary * aux = new OrderedDictionary();
   string opcion;
+  int gen = 0;
+  int plat = 0;
   do{
-    cin >> opcion;
-    if(sis->existeCategoria(opcion)){
-      aux->add(sis->buscarCat(opcion));
+    do{
+      cin >> opcion;
+      IKey * k = new String(opcion.c_str());
+      if(sis->existeCategoria(opcion) && !aux->member(k)){
+        aux->add(k,sis->buscarCat(opcion));
+      }else{
+        cout << "Ingrese una categoría valida" << endl;
+      }
+    }while(opcion != "0");
+
+    IIterator * it;
+    for(it = aux->getIterator(); it->hasCurrent(); it->next()){
+      Categoria * u = (Categoria*)it->getCurrent();
+      if(u->getTipog() == "Plataforma")
+        plat++;
+      else if(u->getTipog() == "Genero")
+        gen++;
     }
-  }while(opcion != "0");
+  system("cls");
+  }while(gen == 0 || plat == 0);
+
+  int sus;
+  //Suscripcion Mensual
+  cout << "Ingrese el costo de la suscripcion MENSUAL en dolares" << endl;
+  cin >> sus;
+  Suscripcion * mensual = new Suscripcion("Mensual", sus, "Temporal");
+  //Suscripcion Trimestral
+  cout << "Ingrese el costo de la suscripcion TRIMESTRAL en dolares" << endl;
+  cin >> sus;
+  Suscripcion * trimestral = new Suscripcion("Trimestral", sus, "Temporal");
+  //Suscripcion Anual
+  cout << "Ingrese el costo de la suscripcion Anual en dolares" << endl;
+  cin >> sus;
+  Suscripcion * anual = new Suscripcion("Anual", sus, "Temporal");
+    //Suscripcion Vitalicia
+  cout << "Ingrese el costo de la suscripcion Vitalicia en dolares" << endl;
+  cin >> sus;
+  Suscripcion * vitalicia = new Suscripcion("Vitalicia", sus, "Vitalicia");
+
+  system("cls");
+  cout << "DATOS DE SU VIDEOJUEGO" << endl;
+  cout << "Nombre:" << nombre << endl;
+  cout << "Descripcion:" << descripcion << endl;
+  cout << "Categorias" << endl;
+  IIterator * it;
+	for (it= aux->getIterator();it->hasCurrent();it -> next()){
+        Categoria * u = (Categoria*)it->getCurrent();
+        cout << "-" << u->getNombre() << endl;
+	}
+  cout << "Suscripciones" << endl;
+  cout << "-Nombre:" << mensual->getNombre() << " Precio:" << mensual->getPrecio() << endl;
+  cout << "-Nombre:" << trimestral->getNombre() << " Precio:" << trimestral->getPrecio() << endl;  
+  cout << "-Nombre:" << anual->getNombre() << " Precio:" << anual->getPrecio() << endl;  
+  cout << "-Nombre:" << vitalicia->getNombre() << " Precio:" << vitalicia->getPrecio() << endl;
+
+  cout << "Desea confirmar? 1-si || 2-no" << endl;
+  int confirmar;
+  cin >> confirmar;
+  IDictionary * aux2 = new OrderedDictionary();
+  if(confirmar == 1){
+    IKey * kmensual = new String(mensual->getNombre().c_str());
+    IKey * ktrimestral = new String(trimestral->getNombre().c_str());
+    IKey * kanual = new String(anual->getNombre().c_str());
+    IKey * kvitalicia = new String(vitalicia->getNombre().c_str());
+    aux2->add(kmensual, mensual);
+    aux2->add(ktrimestral, trimestral);
+    aux2->add(kanual, anual);
+    aux2->add(kvitalicia, vitalicia);
+    sis->confirmarPublicarVideojuego(aux, aux2, datosVideojuego);
+  }else{
+    delete(datosVideojuego);
+    delete(aux);
+    delete(aux2);
+  }
 }
 if(op==7){
   cout <<"LISTA CATEGORIAS"<<endl;

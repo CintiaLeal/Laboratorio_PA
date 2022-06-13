@@ -1,34 +1,30 @@
 #ifndef Suscripcion_
 #define Suscripcion_
 
+#include "../../ICollection/interfaces/ICollectible.h"
 #include <iostream>
 //INCLUIR TIPO SUSCRIPCION
 
 using namespace std;
 
-class Suscripcion{
+class Suscripcion : public ICollectible{
     private:
         string nombre;
         int precio;
         string periodo;
-        string tipo;
     public:
     //constructores
         Suscripcion();
-        Suscripcion(string, int, string, string);
+        Suscripcion(string, int, string);
     //gets
         string getNombre();
         int getPrecio();
         string getPeriodo();
-        string getTipo();
     //sets
         void setNombre(string);
         void setPrecio(int);
         void setPeriodo(string);
-        void setTipo(string);
     //methods
-        //string getTipo(); /* 0=vitalicia, 1=mensual, 2=trimestral, 3=anual */
-        //string getTipo();
 };
 
 #endif

@@ -29,6 +29,14 @@ void Videojuego::setVideojuego(dtVideojuego * juego){
     this->videojuego = juego;
 }
 
+void Videojuego::setSuscripciones(IDictionary * sus){
+    this->suscripciones = sus;
+}
+
+void Videojuego::setCategorias(IDictionary * cat){
+    this->categorias = cat;
+}
+
  //asuntos de la coleccion
         /*
         void Videojuego::agregarPartida(partida *p){

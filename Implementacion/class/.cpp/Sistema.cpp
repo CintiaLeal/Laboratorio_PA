@@ -99,6 +99,15 @@ dtVideojuego* Sistema::altaVideojuego(string nombre, string descripcion){
     dtVideojuego * vid = new dtVideojuego(nom, descripcion, 0);
 }
 
+void Sistema::confirmarPublicarVideojuego(IDictionary * cat, IDictionary * sus, dtVideojuego * videojuego){
+
+    Videojuego * vid = new Videojuego(videojuego);
+    vid->setSuscripciones(sus);
+    vid->setCategorias(cat);
+    IKey * k = new String(vid->getNombre().c_str());
+    dicVideojuego->add(k,vid);
+}
+
 void Sistema::listarCategoria(){ 
     IIterator * it;
     //IMPRIMIR SOLO PLATAFORMAS

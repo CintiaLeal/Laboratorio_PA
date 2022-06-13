@@ -7,6 +7,7 @@
 #include "../.cpp/Desarrollador.cpp"
 #include "../.cpp/Jugador.cpp"
 #include "../.cpp/Videojuego.cpp"
+#include "../.cpp/Suscripcion.cpp"
 #include "../../ICollection/collections/List.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
@@ -34,6 +35,7 @@ public:
     virtual void nuevaCategoria(string nombre, string descripcion,int tipo) = 0;
     virtual bool existeCategoria(string) = 0;
     virtual Categoria * buscarCat(string) = 0;
+    virtual void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *) = 0;
 
 //<------------------Operaciones----------------------->
  /* virtual string listarVideojuego() = 0;
@@ -43,7 +45,7 @@ public:
     virtual void ingresarDesarrollador(string, string, string) = 0;
      //Retorna una lista de DtpPublicarVideojuego
    // virtual DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>) = 0;
-    virtual void confirmarPublicarVideojuego(string, string) = 0;
+  
     //virtual DtMostrarPartida listarPartidas() = 0;
     virtual void confirmarPartida(int) = 0;
     virtual string nuevaPartidaMultijugador(string, bool) = 0;

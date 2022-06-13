@@ -21,6 +21,7 @@ class Sistema: public ISistema{
         void listarCategoria();
         bool existeCategoria(string);
         Categoria * buscarCat(string);
+        void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

@@ -6,7 +6,8 @@
 #include "../.cpp/Categoria.cpp"
 #include "../.cpp/Desarrollador.cpp"
 #include "../.cpp/Jugador.cpp"
-#include "../../ICollection/collections/List.h"
+#include "../.cpp/Videojuego.cpp"
+#include "../../ICollection/collections/List.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
 #include "../../ICollection\collections\OrderedDictionary.cpp"
@@ -31,6 +32,8 @@ public:
     virtual void listarCategoria() = 0;
     virtual dtVideojuego * altaVideojuego(string, string) = 0;
     virtual void nuevaCategoria(string nombre, string descripcion,int tipo) = 0;
+    virtual bool existeCategoria(string) = 0;
+    virtual Categoria * buscarCat(string) = 0;
 
 //<------------------Operaciones----------------------->
  /* virtual string listarVideojuego() = 0;

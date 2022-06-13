@@ -68,6 +68,22 @@ void Sistema::nuevaCategoria(string nombre,string descripcion,int tipo){
     }
 }
 
+bool Sistema::existeCategoria(string nombre){
+    IKey * k = new String(nombre.c_str());
+    if(dicCategoria->member(k)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+Categoria * Sistema::buscarCat(string nombre){
+    IKey * k = new String(nombre.c_str());
+    Categoria * aux = (Categoria *)dicCategoria->find(k);
+    delete(k);
+    return aux;
+}
+
 dtVideojuego* Sistema::altaVideojuego(string nombre, string descripcion){
     bool existe = true;
     string nom = nombre;
@@ -84,12 +100,33 @@ dtVideojuego* Sistema::altaVideojuego(string nombre, string descripcion){
 }
 
 void Sistema::listarCategoria(){ 
-
-IIterator * it;
+    IIterator * it;
+    //IMPRIMIR SOLO PLATAFORMAS
+    cout << "PLATAFORMAS" << endl;
 	for (it= this->dicCategoria->getIterator();it->hasCurrent();it -> next()){
-		Categoria * u = (Categoria*)it->getCurrent();
-		string nombre = u->getNombre();
-		cout << nombre << endl;
+        Categoria * u = (Categoria*)it->getCurrent();
+        if(u->getTipog() == "Plataforma"){
+		    string nombre = u->getNombre();
+		    cout << nombre << endl;
+        }
+	}
+    //IMPRIMIR SOLO GENEROS
+    cout << "GENEROS" << endl;
+    for (it= this->dicCategoria->getIterator();it->hasCurrent();it -> next()){
+        Categoria * u = (Categoria*)it->getCurrent();
+        if(u->getTipog() == "Genero"){
+		    string nombre = u->getNombre();
+		    cout << nombre << endl;
+        }
+	}
+    //IMPRIMIR SOLO OTROS
+    cout << "OTROS" << endl;
+    for (it= this->dicCategoria->getIterator();it->hasCurrent();it -> next()){
+        Categoria * u = (Categoria*)it->getCurrent();
+        if(u->getTipog() == "Otro"){
+		    string nombre = u->getNombre();
+		    cout << nombre << endl;
+        }
 	}
 }
 

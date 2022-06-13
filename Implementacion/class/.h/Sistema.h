@@ -19,6 +19,8 @@ class Sistema: public ISistema{
         void nuevaCategoria(string nombre, string descripcion, int tipo);
         virtual dtVideojuego * altaVideojuego(string, string);
         void listarCategoria();
+        bool existeCategoria(string);
+        Categoria * buscarCat(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

@@ -2,13 +2,13 @@
 #define Videojuego_
 
 #include <iostream>
-#include "../../dtType/.h/dtVideojuego.h"
+#include "../../dtType/.cpp/dtVideojuego.cpp"
 #include "PartidaMultijugador.h"
 #include "PartidaIndividual.h"
 #include "VJ.h"
 using namespace std;
 
-class Videojuego{
+class Videojuego : public ICollectible{
     private:
         dtVideojuego * videojuego;
         IDictionary * partidas;

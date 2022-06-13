@@ -99,8 +99,17 @@ if(op == 2){
   dtVideojuego * datosVideojuego = sis->altaVideojuego(nombre, descripcion);
 
   sis->listarCategoria();
-  
 
+  cout << "Seleccione las categorías de su videojuego" << endl;
+  cout << "Debe incluir al menos una categoría de tipo Plataforma y Genero" << endl;
+  //IDictionary * aux = new OrderedDictionary();
+  string opcion;
+  do{
+    cin >> opcion;
+    if(sis->existeCategoria(opcion)){
+      aux->add(sis->buscarCat(opcion));
+    }
+  }while(opcion != "0");
 }
 if(op==7){
   cout <<"LISTA CATEGORIAS"<<endl;

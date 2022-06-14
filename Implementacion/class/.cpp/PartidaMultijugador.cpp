@@ -11,9 +11,16 @@ PartidaMultijugador::PartidaMultijugador(int idPartida, dtPartida * p,dtPartidaM
     this->comentarios = new OrderedDictionary();
 }
 
+PartidaMultijugador::~PartidaMultijugador(){
+}
+
 //gets
 dtPartidaMultijugador * PartidaMultijugador::getPartidaMultijugador(){
     return this->partidaMultijugador;
+}
+
+IDictionary * PartidaMultijugador::getComentarios(){
+    return this->comentarios;
 }
 
 //sets

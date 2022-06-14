@@ -27,6 +27,10 @@ dtPartida *Partida::getPartida(){
 bool Partida::getActiva(){
     return this->activa;
 }
+
+bool Partida::getIndividual(){
+    return this->individual;
+}
 //sets
 void Partida::setIdPartida(int idPartida){
     this->idPartida = idPartida;
@@ -39,8 +43,13 @@ void Partida::setActiva(bool b){
     this->activa = b;
 }
 
+void Partida::setIndividual(bool b){
+    this->individual = b;
+}
+
 //methods
+/*
 void eliminarPartida(){}
 dtMostrarPartida getMostrarPartida(){}
 void confirmarPartida(){}
-void continuar(){}
+void continuar(){}*/

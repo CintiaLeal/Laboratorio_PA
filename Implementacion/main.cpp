@@ -149,7 +149,7 @@ if(op == 2){
 
   system("cls");
   cout << "DATOS DE SU VIDEOJUEGO" << endl;
-  cout << "Nombre:" << nombre << endl;
+  cout << "Nombre:" << datosVideojuego->getNombre() << endl;
   cout << "Descripcion:" << descripcion << endl;
   cout << "Categorias" << endl;
   IIterator * it;

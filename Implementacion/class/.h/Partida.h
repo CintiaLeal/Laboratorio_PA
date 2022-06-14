@@ -17,6 +17,7 @@ class Partida: public ICollectible{
     protected:
         int idPartida;
         bool activa;
+        bool individual;
         dtPartida * partida;
         IDictionary * jugadores;
         IDictionary * videojuego;
@@ -29,9 +30,11 @@ class Partida: public ICollectible{
         int getIdPartida();
         dtPartida * getPartida();
         bool getActiva();
+        bool getIndividual();
         void setIdPartida(int);
         void setPartida(dtPartida*);
         void setActiva(bool);
+        void setIndividual(bool);
         //metodos
         void eliminarPartida();
         dtMostrarPartida getMostrarPartida();

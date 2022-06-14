@@ -7,7 +7,6 @@
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
 #include "../../ICollection/Integer.h"
-#include "../../dtType/.cpp/dtFecha.cpp"
 using namespace std;
 
 class Comentario: public ICollectible{
@@ -24,18 +23,12 @@ class Comentario: public ICollectible{
         //get y set
         int getIdComentario();
         string getTexto();
-
-        dtFecha getFechaHora();
-
-        void setIdComentario(int);
-        void setTexto(string);
-        void setFechaHora(dtFecha);
-
         dtFecha getFecha();
 
         void setIdComentario(int);
         void setTexto(string);
         void setFecha(dtFecha);
+        
         void eliminarComentario();
 };
 

@@ -8,6 +8,9 @@
 #include "../.cpp/Jugador.cpp"
 #include "../.cpp/Videojuego.cpp"
 #include "../.cpp/Suscripcion.cpp"
+#include "../.cpp/Partida.cpp"
+#include "../.cpp/Comentario.cpp"
+#include "../.cpp/PartidaMultijugador.cpp"
 #include "../../ICollection/collections/List.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
@@ -37,12 +40,11 @@ public:
     virtual Categoria * buscarCat(string) = 0;
     virtual void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *) = 0;
     virtual void listarVideojuego() = 0;
-    //virtual void elegirVideojuegoEliminar(string) = 0;
+    virtual void confirmarEliminarVideojuego(string) = 0;
 
 //<------------------Operaciones----------------------->
  /* 
     
-    virtual void confirmarEliminarVideojuego() = 0;
     virtual void ingersarJugador(string, string, string, string) = 0;
     virtual void ingresarDesarrollador(string, string, string) = 0;
      //Retorna una lista de DtpPublicarVideojuego

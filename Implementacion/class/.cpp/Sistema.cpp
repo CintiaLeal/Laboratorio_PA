@@ -97,6 +97,7 @@ dtVideojuego* Sistema::altaVideojuego(string nombre, string descripcion){
         }
     }while(existe);
     dtVideojuego * vid = new dtVideojuego(nom, descripcion, 0);
+    return vid;
 }
 
 void Sistema::confirmarPublicarVideojuego(IDictionary * cat, IDictionary * sus, dtVideojuego * videojuego){
@@ -142,20 +143,64 @@ void Sistema::listarCategoria(){
 void Sistema::listarVideojuego(){
     IIterator * it;
     IIterator * it2;
+    
     for(it=this->dicVideojuego->getIterator(); it->hasCurrent(); it->next()){
         Videojuego * v = (Videojuego*)it->getCurrent();
+
         if(!v->getPartidas()->getIterator()->hasCurrent()){
             cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
         }else{
             for (it2 = v->getPartidas()->getIterator(); it2->hasCurrent(); it2->next()){
                 Partida * p = (Partida*)it->getCurrent();
-                cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;/*
-                if(!p->getActiva()){
-                    
-                }*/
+                
+                if(p->getActiva()){
+                    cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
+                }
             }
         }
     }
 }
 
-//void elegirVideojuegoEliminar(string){}
+void Sistema::confirmarEliminarVideojuego(string nombre){
+    string nom = nombre; 
+    bool existe = false;
+    
+    do{
+        IKey * k = new String(nom.c_str());
+        if(dicVideojuego->member(k)){
+            existe = true;
+            delete k;
+        }else{
+            cout << "No existe este videojuego, ingrese uno correcto" << endl;
+            cin >> nom;
+        }
+    }while(!existe);
+
+    IIterator * it;
+    IIterator * it2;
+
+    IKey * k = new String(nom.c_str());
+    Videojuego * vid = (Videojuego *)dicVideojuego->find(k);
+
+    for(it = vid->getPartidas()->getIterator(); it->hasCurrent(); it->next()){
+        Partida * p = (Partida *)it->getCurrent();
+        
+        if(!p->getIndividual()){
+            PartidaMultijugador * pm = (PartidaMultijugador *)p;
+
+            for(it2 = pm->getComentarios()->getIterator(); it2->hasCurrent(); it2->next()){
+                Comentario * c = (Comentario *)it2->getCurrent();
+                IKey * k2 = new Integer(c->getIdComentario());
+                pm->getComentarios()->remove(k2);
+                delete(k2);
+                delete(it2->getCurrent());
+            }
+            delete(pm);
+        }
+        IKey * k2 = new Integer(p->getIdPartida());
+        vid->getPartidas()->remove(k2);
+        delete(k2);
+        delete(it->getCurrent());
+    }
+    
+}

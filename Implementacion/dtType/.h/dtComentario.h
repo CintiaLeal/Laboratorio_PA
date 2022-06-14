@@ -1,7 +1,7 @@
 #ifndef Dt_Comentario
 #define Dt_Comentario
 #include <iostream>
-#include "dtFecha.h"
+#include "dtPartida.h"
 using namespace std;
 class dtComentario{
     private:

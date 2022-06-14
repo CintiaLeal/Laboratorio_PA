@@ -6,7 +6,6 @@ Comentario::Comentario(int idComentario, string texto, dtFecha fecha){
     this->fecha = fecha;    
 }
 Comentario::Comentario(){
-
 }
 
 int Comentario::getIdComentario(){
@@ -33,6 +32,6 @@ void Comentario::setFecha(dtFecha fecha){
     this->fecha = fecha;
 }
 
-void eliminarComentario(){
+Comentario::~Comentario(){
     //Implementar
 }

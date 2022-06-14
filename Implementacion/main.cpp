@@ -183,6 +183,9 @@ if(op == 2){
     delete(aux2);
   }
 }
+if(op==3){
+  sis->listarVideojuego();
+}
 if(op==7){
   cout <<"LISTA CATEGORIAS"<<endl;
   sis->listarCategoria();

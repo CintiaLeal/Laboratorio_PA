@@ -21,6 +21,7 @@ class Videojuego : public ICollectible{
         Videojuego(dtVideojuego*);
         //gets
         dtVideojuego * getVideojuego();
+        IDictionary * getPartidas();
         //sets
         void setVideojuego(dtVideojuego*);
         void setSuscripciones(IDictionary *);

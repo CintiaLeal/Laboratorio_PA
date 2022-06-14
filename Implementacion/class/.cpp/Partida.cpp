@@ -9,6 +9,7 @@ Partida::Partida(){}
 Partida::Partida(int idPartida, dtPartida * p){
     this->idPartida = idPartida;
     this->partida = p;
+    this->activa = true;
     this->jugadores = new OrderedDictionary();
     this->videojuego = new OrderedDictionary();
 }
@@ -22,12 +23,20 @@ int Partida::getIdPartida(){
 dtPartida *Partida::getPartida(){
     return this->partida;
 }
+
+bool Partida::getActiva(){
+    return this->activa;
+}
 //sets
 void Partida::setIdPartida(int idPartida){
     this->idPartida = idPartida;
 }
 void Partida::setPartida(dtPartida *p){
     this->partida = p;
+}
+
+void Partida::setActiva(bool b){
+    this->activa = b;
 }
 
 //methods

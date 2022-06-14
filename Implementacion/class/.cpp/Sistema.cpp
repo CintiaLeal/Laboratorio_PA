@@ -139,3 +139,23 @@ void Sistema::listarCategoria(){
 	}
 }
 
+void Sistema::listarVideojuego(){
+    IIterator * it;
+    IIterator * it2;
+    for(it=this->dicVideojuego->getIterator(); it->hasCurrent(); it->next()){
+        Videojuego * v = (Videojuego*)it->getCurrent();
+        if(!v->getPartidas()->getIterator()->hasCurrent()){
+            cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
+        }else{
+            for (it2 = v->getPartidas()->getIterator(); it2->hasCurrent(); it2->next()){
+                Partida * p = (Partida*)it->getCurrent();
+                cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;/*
+                if(!p->getActiva()){
+                    
+                }*/
+            }
+        }
+    }
+}
+
+//void elegirVideojuegoEliminar(string){}

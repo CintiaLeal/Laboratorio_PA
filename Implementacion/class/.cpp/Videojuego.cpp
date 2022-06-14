@@ -24,6 +24,10 @@ dtVideojuego* Videojuego::getVideojuego(){
     return this->videojuego;
 }
 
+IDictionary * Videojuego::getPartidas(){
+    return this->partidas;
+}
+
 //sets
 void Videojuego::setVideojuego(dtVideojuego * juego){
     this->videojuego = juego;

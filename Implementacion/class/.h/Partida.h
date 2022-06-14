@@ -16,6 +16,7 @@ using namespace std;
 class Partida: public ICollectible{
     protected:
         int idPartida;
+        bool activa;
         dtPartida * partida;
         IDictionary * jugadores;
         IDictionary * videojuego;
@@ -27,8 +28,10 @@ class Partida: public ICollectible{
         //get y set
         int getIdPartida();
         dtPartida * getPartida();
+        bool getActiva();
         void setIdPartida(int);
         void setPartida(dtPartida*);
+        void setActiva(bool);
         //metodos
         void eliminarPartida();
         dtMostrarPartida getMostrarPartida();

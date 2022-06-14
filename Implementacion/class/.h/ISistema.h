@@ -36,10 +36,12 @@ public:
     virtual bool existeCategoria(string) = 0;
     virtual Categoria * buscarCat(string) = 0;
     virtual void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *) = 0;
+    virtual void listarVideojuego() = 0;
+    //virtual void elegirVideojuegoEliminar(string) = 0;
 
 //<------------------Operaciones----------------------->
- /* virtual string listarVideojuego() = 0;
-    virtual void elegirVideojuegoEliminar(string) = 0;
+ /* 
+    
     virtual void confirmarEliminarVideojuego() = 0;
     virtual void ingersarJugador(string, string, string, string) = 0;
     virtual void ingresarDesarrollador(string, string, string) = 0;

@@ -7,9 +7,9 @@ using namespace std;
 
 class PartidaIndividual:public Partida{
     private:
-            dtPartidaIndividual * partidaIndividual;
+        dtPartidaIndividual * partidaIndividual;
     public:
-        PartidaIndividual(int idPartida, dtPartida * p,dtPartidaIndividual * partidaIndividual);
+        PartidaIndividual(dtPartidaIndividual *);
         PartidaIndividual();
         ~PartidaIndividual();
 

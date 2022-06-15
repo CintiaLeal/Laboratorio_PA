@@ -6,7 +6,7 @@ using namespace std;
 //constructores
 PartidaMultijugador::PartidaMultijugador(){}
 
-PartidaMultijugador::PartidaMultijugador(int idPartida, dtPartida * p,Videojuego * videojuego ,dtPartidaMultijugador * partida):Partida(idPartida, p, videojuego){
+PartidaMultijugador::PartidaMultijugador(dtPartidaMultijugador * partida){
     this->partidaMultijugador = partida;
     this->comentarios = new OrderedDictionary();
 }

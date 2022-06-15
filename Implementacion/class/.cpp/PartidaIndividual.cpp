@@ -6,7 +6,7 @@ using namespace std;
 //constructores
 PartidaIndividual::PartidaIndividual(){}
 
-PartidaIndividual::PartidaIndividual(int idPartida, dtPartida * p,Videojuego * videojuego,dtPartidaIndividual * partidaIndividual):Partida(idPartida, p, videojuego){
+PartidaIndividual::PartidaIndividual(dtPartidaIndividual * partidaIndividual){
     this->partidaIndividual = partidaIndividual;
 }
 

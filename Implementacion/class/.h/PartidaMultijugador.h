@@ -12,7 +12,7 @@ class PartidaMultijugador:public Partida{
         dtPartidaMultijugador * partidaMultijugador;
         IDictionary * comentarios; 
     public:
-        PartidaMultijugador(int idPartida, dtPartida * p,dtPartidaMultijugador * partidaMultijugador);
+        PartidaMultijugador(dtPartidaMultijugador *);
         PartidaMultijugador();
         ~PartidaMultijugador();
 

@@ -37,7 +37,7 @@ class Pago: public ICollectible{
         void setMetodoPago(string);
         void setActiva(bool);
         //methods
-        //Videojuego getJuego();
+        Videojuego * getJuego();
         dtVideojuego buscarVideojuego(string);
 
         void cambiarEstado();

@@ -17,7 +17,7 @@ class Usuario: public ICollectible{
     protected:
         string email;
         string contrasenia;
-        //IDictionary * partidas; 
+        // 
     public:
         Usuario(string,string);
         Usuario();

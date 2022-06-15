@@ -2,6 +2,7 @@
 #define Suscripcion_
 
 #include "../../ICollection/interfaces/ICollectible.h"
+#include "../.h/Videojuego.h"
 #include <iostream>
 //INCLUIR TIPO SUSCRIPCION
 
@@ -12,6 +13,7 @@ class Suscripcion : public ICollectible{
         string nombre;
         int precio;
         string periodo;
+        Videojuego * vid;
     public:
     //constructores
         Suscripcion();
@@ -20,6 +22,7 @@ class Suscripcion : public ICollectible{
         string getNombre();
         int getPrecio();
         string getPeriodo();
+        Videojuego * getVideojuego();
     //sets
         void setNombre(string);
         void setPrecio(int);

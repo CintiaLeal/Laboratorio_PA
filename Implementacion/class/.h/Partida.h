@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include "../../dtType/.h/dtPartida.h"
-#include "../../dtType/.h/dtVideojuego.h"
 #include "../../class/.h/Usuario.h"
+#include "../../class/.h/Videojuego.h"
 #include "../../dtType/.h/dtUsuario.h"
 #include "../../dtType/.h/dtMostrarPartida.h"
 #include "../../ICollection/interfaces/ICollectible.h"
@@ -20,9 +20,9 @@ class Partida: public ICollectible{
         bool individual;
         dtPartida * partida;
         IDictionary * jugadores;
-        IDictionary * videojuego;
+        Videojuego * videojuego;
     public:
-        Partida(int idPartida, dtPartida *);
+        Partida(int idPartida, dtPartida *, Videojuego *);
         Partida();
         ~Partida();
 
@@ -31,6 +31,8 @@ class Partida: public ICollectible{
         dtPartida * getPartida();
         bool getActiva();
         bool getIndividual();
+        Videojuego * getVideojuego();
+
         void setIdPartida(int);
         void setPartida(dtPartida*);
         void setActiva(bool);

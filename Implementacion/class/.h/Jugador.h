@@ -4,7 +4,7 @@
 
 #include "../../class/.h/Usuario.h"
 #include "../../dtType/.h/dtJugador.h"
-#include "../../dtType/.h/dtPago.h"
+#include "../../class/.h/Pago.h"
 #include "../../ICollection/collections/List.h"
 using namespace std;
 
@@ -12,7 +12,7 @@ class Jugador:public Usuario{
     private:
         string nick;
         string descripcion;
-      
+        IDictionary * partidas;
         ICollection * pagos;
     public:
         Jugador(string, string, string, string);
@@ -21,6 +21,8 @@ class Jugador:public Usuario{
 
         //get y set 
         dtJugador * getJugador();
+        ICollection * getPagos();
+        IDictionary * getPartidas();
 
         void setJugador(dtJugador *);
 
@@ -28,6 +30,8 @@ class Jugador:public Usuario{
         bool member(string);
         string listarVideojuego();
         string getNick();
+        void borrarPagos(string);
+        void borrarPartidas(string);
         void buscarSuscripcion(int);
         void cancelarSuscripcion();
         void nuevoSuscripcion(string);

@@ -5,7 +5,6 @@
 #include "../../dtType/.cpp/dtVideojuego.cpp"
 #include "PartidaMultijugador.h"
 #include "PartidaIndividual.h"
-#include "VJ.h"
 using namespace std;
 
 class Videojuego : public ICollectible{
@@ -22,6 +21,8 @@ class Videojuego : public ICollectible{
         //gets
         dtVideojuego * getVideojuego();
         IDictionary * getPartidas();
+        IDictionary * getSuscripciones();
+        ICollection * getVJ();
         //sets
         void setVideojuego(dtVideojuego*);
         void setSuscripciones(IDictionary *);
@@ -33,7 +34,7 @@ class Videojuego : public ICollectible{
         void agregarVJ(VJ *vj);
         void eliminarVJ(VJ *vj);
         void agregarSuscripcion(Suscripcion *suscr);
-        void eliminarSuscripcion(Suscripcion *suscr);
+        
         void agregarCategoria(Categoria *suscr);
         void eliminarCategoria(Categoria *suscr);
         */
@@ -45,6 +46,7 @@ class Videojuego : public ICollectible{
         void agregarPI(PartidaIndividual);
         string getDescripcion();
         float getCantHorasJug();
+        void eliminarSuscripcion(string);
        // set<DtSuscripciones> listarSusSuscripciones();
         void nuevaSuscripcion(string);
 };

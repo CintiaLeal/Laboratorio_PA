@@ -222,3 +222,23 @@ void Sistema::confirmarEliminarVideojuego(string nombre){
     delete(k);
     delete(vid);
 }
+
+void Sistema::verEstadisticasVideojuego(string nombre){
+    string nom = nombre;
+    bool existe = true;
+    Videojuego * v;
+    do{
+        IKey * k =new String(nom.c_str());
+        if(!dicVideojuego->member(k)){
+            existe = false;
+            cout << "Este videojuego no existe, ingrese uno correcto" << endl;
+            cin >> nom;
+        }else{
+            existe = true;
+            v = (Videojuego *)dicVideojuego->find(k);
+        }
+        delete(k);
+    }while(!existe);
+
+    cout << v->getEstadisticas() << endl;
+}

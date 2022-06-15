@@ -1,4 +1,5 @@
 #include "../.h/Videojuego.h"
+#include "../.cpp/VJ.cpp"
 #include <iostream>
 
 using namespace std;
@@ -8,7 +9,7 @@ Videojuego::Videojuego(){
     this->partidas = new OrderedDictionary();
     this->suscripciones = new OrderedDictionary();  
     this->categorias = new OrderedDictionary();  
-    this->VJ = new List();
+    this->vj = new List();
 }
 
 Videojuego::Videojuego(dtVideojuego * juego){
@@ -16,7 +17,7 @@ Videojuego::Videojuego(dtVideojuego * juego){
     this->partidas = new OrderedDictionary();  
     this->suscripciones = new OrderedDictionary(); 
     this->categorias = new OrderedDictionary();  
-    this->VJ = new List();
+    this->vj = new List();
 }
 
 //gets
@@ -33,7 +34,7 @@ IDictionary * Videojuego::getSuscripciones(){
 }
 
 ICollection * Videojuego::getVJ(){
-    return this->VJ;
+    return this->vj;
 }
 
 //sets
@@ -58,6 +59,25 @@ void Videojuego::eliminarSuscripcion(string nombre){
         this->suscripciones->remove(k);
         delete(sus);
     }
+}
+
+int Videojuego::getEstadisticas(){
+    IIterator * it;
+
+    int cant = 0;
+    int total = 0;
+    for(it = this->vj->getIterator(); it->hasCurrent(); it->next()){
+        VJ * vj = (VJ *)it->getCurrent();
+        total += vj->getPuntaje();
+        cant++;
+    }
+
+    if(total == 0){
+        return 0;
+    }else{
+        return total/cant;
+    }
+    
 }
 
  //asuntos de la coleccion

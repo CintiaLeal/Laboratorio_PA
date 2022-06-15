@@ -1,11 +1,12 @@
 #ifndef partidaMultijugador_
 #define partidaMultijugador_
 #include <iostream>
-#include "../../class/.h/Partida.h"
+#include "Partida.h"
 #include "../../dtType/.h/dtPartidaMultijugador.h"
 #include "../../class/.h/Comentario.h"
 
 using namespace std;
+
 
 class PartidaMultijugador:public Partida{
     private:

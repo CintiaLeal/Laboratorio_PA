@@ -2,16 +2,17 @@
 #define ISISTEMA
 #include <iostream>
 
+#include "../.cpp/Partida.cpp"
+#include "../.cpp/PartidaMultijugador.cpp"
 #include "../.cpp/Usuario.cpp"
 #include "../.cpp/Categoria.cpp"
 #include "../.cpp/Desarrollador.cpp"
 #include "../.cpp/Jugador.cpp"
 #include "../.cpp/Videojuego.cpp"
 #include "../.cpp/Suscripcion.cpp"
-#include "../.cpp/Partida.cpp"
 #include "../.cpp/Comentario.cpp"
 #include "../.cpp/Pago.cpp"
-#include "../.cpp/VJ.cpp"
+//#include "../.h/VJ.h"
 #include "../../ICollection/collections/List.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
@@ -42,6 +43,7 @@ public:
     virtual void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *) = 0;
     virtual void listarVideojuego() = 0;
     virtual void confirmarEliminarVideojuego(string) = 0;
+    virtual void verEstadisticasVideojuego(string) = 0;
 
 //<------------------Operaciones----------------------->
  /* 

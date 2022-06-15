@@ -184,7 +184,20 @@ if(op == 2){
   }
 }
 if(op==3){
+  string nombre;
   sis->listarVideojuego();
+  cout << "Ingrese el videojuego que desea eliminar" << endl;
+  cin >> nombre;
+
+  sis->confirmarEliminarVideojuego(nombre);
+}
+if(op==4){
+  string nombre;
+  sis->listarVideojuego();
+  cout << "Ingrese el videojuego que desea ver las estadisticas" << endl;
+  cin >> nombre;
+  sis->verEstadisticasVideojuego(nombre);
+
 }
 if(op==7){
   cout <<"LISTA CATEGORIAS"<<endl;

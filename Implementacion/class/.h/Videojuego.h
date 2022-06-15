@@ -7,11 +7,13 @@
 #include "PartidaIndividual.h"
 using namespace std;
 
+class Partida;
+
 class Videojuego : public ICollectible{
     private:
         dtVideojuego * videojuego;
         IDictionary * partidas;
-        ICollection * VJ;
+        ICollection * vj;
         IDictionary * suscripciones;
         IDictionary * categorias;
     public:
@@ -27,6 +29,7 @@ class Videojuego : public ICollectible{
         void setVideojuego(dtVideojuego*);
         void setSuscripciones(IDictionary *);
         void setCategorias(IDictionary *);
+        int getEstadisticas();
         //asuntos de la coleccion
         /*
         void agregarPartida(partida *p);

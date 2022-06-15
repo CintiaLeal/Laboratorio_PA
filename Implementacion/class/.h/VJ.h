@@ -4,6 +4,8 @@
 
 using namespace std;
 
+class Jugador;
+
 class VJ: public ICollectible{
     private:
         int puntaje;

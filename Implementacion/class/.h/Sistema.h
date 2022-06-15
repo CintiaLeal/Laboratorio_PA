@@ -24,6 +24,7 @@ class Sistema: public ISistema{
         void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *);
         void listarVideojuego();
         void confirmarEliminarVideojuego(string);
+        void verEstadisticasVideojuego(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

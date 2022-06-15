@@ -4,7 +4,6 @@
 #include <iostream>
 #include "../../dtType/.h/dtPartida.h"
 #include "../../class/.h/Usuario.h"
-#include "../../class/.h/Videojuego.h"
 #include "../../dtType/.h/dtUsuario.h"
 #include "../../dtType/.h/dtMostrarPartida.h"
 #include "../../ICollection/interfaces/ICollectible.h"
@@ -12,6 +11,8 @@
 #include "../../ICollection/String.h"
 #include "../../ICollection/Integer.h"
 using namespace std;
+
+class Videojuego;
 
 class Partida: public ICollectible{
     protected:

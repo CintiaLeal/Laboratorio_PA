@@ -182,6 +182,7 @@ void Sistema::confirmarEliminarVideojuego(string nombre){
     IKey * k = new String(nom.c_str());
     Videojuego * vid = (Videojuego *)dicVideojuego->find(k);
 
+    //Borrar partidas y comentarios
     for(it = vid->getPartidas()->getIterator(); it->hasCurrent(); it->next()){
         Partida * p = (Partida *)it->getCurrent();
         
@@ -202,5 +203,22 @@ void Sistema::confirmarEliminarVideojuego(string nombre){
         delete(k2);
         delete(it->getCurrent());
     }
-    
+
+    //Borrar VJ
+    for(it = vid->getVJ()->getIterator(); it->hasCurrent(); it->next()){
+        VJ * vj = (VJ *)it->getCurrent();
+        Jugador * j = vj->getJugador();
+        //Borra pagos
+        j->borrarPagos(nom);
+        j->borrarPartidas(nom);
+
+        delete(vj);
+    }
+
+    //BorrarSuscripcioens
+    vid->eliminarSuscripcion(nom);
+
+    dicVideojuego->remove(k);
+    delete(k);
+    delete(vid);
 }

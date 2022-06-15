@@ -1,4 +1,4 @@
-#include "class/.h/VJ.h"
+#include "../.h/VJ.h"
 //Constructores
 VJ::VJ(){};
 

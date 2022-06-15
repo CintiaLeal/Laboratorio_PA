@@ -28,6 +28,14 @@ IDictionary * Videojuego::getPartidas(){
     return this->partidas;
 }
 
+IDictionary * Videojuego::getSuscripciones(){
+    return this->suscripciones;
+}
+
+ICollection * Videojuego::getVJ(){
+    return this->VJ;
+}
+
 //sets
 void Videojuego::setVideojuego(dtVideojuego * juego){
     this->videojuego = juego;
@@ -39,6 +47,17 @@ void Videojuego::setSuscripciones(IDictionary * sus){
 
 void Videojuego::setCategorias(IDictionary * cat){
     this->categorias = cat;
+}
+
+void Videojuego::eliminarSuscripcion(string nombre){
+    IIterator * it;
+    for(it = this->suscripciones->getIterator(); it->hasCurrent(); it->next()){
+        Suscripcion * sus = (Suscripcion *)it->getCurrent();
+
+        IKey * k = new String(sus->getNombre().c_str());
+        this->suscripciones->remove(k);
+        delete(sus);
+    }
 }
 
  //asuntos de la coleccion
@@ -58,9 +77,7 @@ void Videojuego::setCategorias(IDictionary * cat){
         void Videojuego::agregarSuscripcion(Suscripcion *suscr){
 
         }
-        void Videojuego::eliminarSuscripcion(Suscripcion *suscr){
-
-        }
+        
         void Videojuego::agregarCategoria(Categoria *cat){
 
         }

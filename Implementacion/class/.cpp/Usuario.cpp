@@ -2,15 +2,12 @@
 #include <stdexcept>
 Usuario::Usuario(string email, string contrasenia){
     this->email = email;
-    this->contrasenia = contrasenia;
-//    this->partidas = new OrderedDictionary();  
+    this->contrasenia = contrasenia;  
 }
-Usuario::Usuario(){
-  //  this->partidas = new OrderedDictionary();  
+Usuario::Usuario(){ 
 }
 
 Usuario::~Usuario(){
-    //delete this->partidas;
 }
 
 string Usuario::getEmail(){

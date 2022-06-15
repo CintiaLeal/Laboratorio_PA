@@ -48,5 +48,9 @@ void Pago::setActiva(bool activa){
     this->activa = activa;
 }
 
+Videojuego * Pago::getJuego(){
+    this->suscripcion->getVideojuego();
+}
+
 //methods
 //primero hay que implementar las colecciones

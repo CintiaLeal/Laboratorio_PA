@@ -26,6 +26,9 @@ string Suscripcion::getPeriodo(){
     return this->periodo;
 }
 
+Videojuego * Suscripcion::getVideojuego(){
+    return this->vid;
+}
 
 //sets
 void Suscripcion::setNombre(string nom){

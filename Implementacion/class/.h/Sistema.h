@@ -14,6 +14,7 @@ class Sistema: public ISistema{
     public:
         virtual ~Sistema();              //Destructor
         static Sistema * getInstancia(); //Devuelve el controlador Sistema (Singleton)
+        string getemailActual();  
         void altaUsuarioJugador(string email,string contrasenia,string nick,string descripcion);
         void altaUsuarioDesarrollador(string email,string contrasenia,string nombreEmpresa);
         void nuevaCategoria(string nombre, string descripcion, int tipo);

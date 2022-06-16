@@ -17,6 +17,7 @@ class Desarrollador:public Usuario{
         //get y set 
         string getNombreEmpresa();
         void setNombreEmpresa(string);
+        string getTipo();
         //void setPartidaIndividual(dtPartidaIndividual*); RANDOM
 
         //metodo

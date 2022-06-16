@@ -6,7 +6,8 @@
 using namespace std;
 
 Sistema * Sistema::instancia = 0;
-
+//Datos actual usuario
+string emailActual = "";
 Sistema::Sistema(){
     this->dicUsuario = new OrderedDictionary();
     this->dicCategoria = new OrderedDictionary();

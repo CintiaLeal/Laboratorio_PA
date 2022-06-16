@@ -25,7 +25,10 @@ ICollection * Jugador::getPagos(){
 IDictionary * Jugador::getPartidas(){
     return this->partidas;
 }
-
+string Jugador::getTipo(){
+    string s = "soyJugador";
+    return s;
+}
 //methods 
 bool Jugador::member(string){}
 

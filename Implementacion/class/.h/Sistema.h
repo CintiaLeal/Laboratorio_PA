@@ -25,6 +25,10 @@ class Sistema: public ISistema{
         void listarVideojuego();
         void confirmarEliminarVideojuego(string);
         void verEstadisticasVideojuego(string);
+        bool existeUsuario(string email,string contrasenia);
+        string iniciarSesionActual(string email);
+        void cerrarSesion();
+        string tipoUsuario(string email);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

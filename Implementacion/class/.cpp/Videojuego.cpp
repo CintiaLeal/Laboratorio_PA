@@ -37,6 +37,10 @@ ICollection * Videojuego::getVJ(){
     return this->vj;
 }
 
+IDictionary * Videojuego::getCategorias(){
+    return this->categorias;
+}
+
 //sets
 void Videojuego::setVideojuego(dtVideojuego * juego){
     this->videojuego = juego;

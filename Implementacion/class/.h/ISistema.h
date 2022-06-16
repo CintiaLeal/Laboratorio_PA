@@ -49,6 +49,7 @@ public:
     virtual void cerrarSesion()=0;
     virtual string getemailActual()=0;
     virtual string tipoUsuario(string email) = 0;
+    virtual void cargarDatosPrueba() = 0;
 
 //<------------------Operaciones----------------------->
  /* 

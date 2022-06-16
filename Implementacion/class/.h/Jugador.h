@@ -23,7 +23,7 @@ class Jugador:public Usuario{
         dtJugador * getJugador();
         ICollection * getPagos();
         IDictionary * getPartidas();
-
+        string getTipo();
         void setJugador(dtJugador *);
 
         //metodo

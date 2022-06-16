@@ -242,3 +242,40 @@ void Sistema::verEstadisticasVideojuego(string nombre){
 
     cout << v->getEstadisticas() << endl;
 }
+
+bool Sistema::existeUsuario(string email,string contrasenia){
+IKey * k = new String(email.c_str());
+Usuario * aux = (Usuario *)dicUsuario->find(k);
+if(dicUsuario->member(k) && aux->getContrasenia() == contrasenia){
+     this->emailActual = email;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+string Sistema::iniciarSesionActual(string email){
+    string sesion = email;
+    return sesion;
+}
+
+void Sistema::cerrarSesion(){
+    this->emailActual = "";    
+}
+
+string Sistema::getemailActual(){
+    return this->emailActual;
+}
+
+string Sistema::tipoUsuario(string email){
+IKey * k = new String(email.c_str());
+Usuario * aux = (Usuario *)dicUsuario->find(k);
+cout << aux->getTipo() << endl;
+if(aux->getTipo()=="soyJugador"){
+    string res ="jugador";
+        return res;
+    }else{
+        string resu ="nojugador";
+        return resu;
+    }
+}

@@ -26,7 +26,7 @@ class Usuario: public ICollectible{
         //get y set
         string getEmail();
         string getContrasenia();
-        
+        virtual string getTipo() =0;
         void setEmail(string);
         void setContrasenia(string);
              

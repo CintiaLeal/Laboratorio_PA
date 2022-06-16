@@ -63,9 +63,29 @@ do{
     }
   
   }else if(op == 2){
+    string email, contrasenia;
+    cout << "Ingrese su emaill" << endl;
+    cin >> email;
+    cout << "Ingrese su contrasenia" << endl;
+    cin >> contrasenia;
+    bool b = sis->existeUsuario(email,contrasenia);
+    if(b!=false){  
+      cout << email << endl;
+      string tipoUsuario = sis->tipoUsuario(email);
+      if(tipoUsuario == "jugador"){
+        menuJugador();
+      }
+      else{
+        menuDesarrollador();
+      }
+    }
+    else{
+      cout << "Usuario o contrasenia incorrectas!" << endl;
+    }
 
   }
-}while(op != 4);*/
+}while(op != 4);
+}*/
 
 menuDesarrollador();
 while (op != 8){

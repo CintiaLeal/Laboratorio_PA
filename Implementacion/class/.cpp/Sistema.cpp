@@ -101,12 +101,21 @@ dtVideojuego* Sistema::altaVideojuego(string nombre, string descripcion){
     return vid;
 }
 
-void Sistema::confirmarPublicarVideojuego(IDictionary * cat, IDictionary * sus, dtVideojuego * videojuego){
+void Sistema::agregarSuscripciones(string nombre, int a, int b, int c, int d){
+    IKey * k = new String(nombre.c_str());
 
+    Videojuego * vid = (Videojuego *)dicVideojuego->find(k);
+    vid->agregarSuscripcion(a,b,c,d);
+   
+}
+
+void Sistema::confirmarPublicarVideojuego(IDictionary * cat, dtVideojuego * videojuego){
     Videojuego * vid = new Videojuego(videojuego);
-    vid->setSuscripciones(sus);
     vid->setCategorias(cat);
     IKey * k = new String(videojuego->getNombre().c_str());
+    IKey * k2 = new String(emailActual.c_str());
+    Desarrollador * d = (Desarrollador *)dicUsuario->find(k2);
+    vid->setEmpresa(d->getNombreEmpresa());
     dicVideojuego->add(k,vid);
 }
 
@@ -248,7 +257,7 @@ bool Sistema::existeUsuario(string email,string contrasenia){
 IKey * k = new String(email.c_str());
 Usuario * aux = (Usuario *)dicUsuario->find(k);
 if(dicUsuario->member(k) && aux->getContrasenia() == contrasenia){
-     this->emailActual = email;
+    emailActual = email;
         return true;
     }else{
         return false;
@@ -261,17 +270,16 @@ string Sistema::iniciarSesionActual(string email){
 }
 
 void Sistema::cerrarSesion(){
-    this->emailActual = "";    
+    emailActual = "";    
 }
 
 string Sistema::getemailActual(){
-    return this->emailActual;
+    return emailActual;
 }
 
 string Sistema::tipoUsuario(string email){
 IKey * k = new String(email.c_str());
 Usuario * aux = (Usuario *)dicUsuario->find(k);
-cout << aux->getTipo() << endl;
 if(aux->getTipo()=="soyJugador"){
     string res ="jugador";
         return res;
@@ -280,3 +288,101 @@ if(aux->getTipo()=="soyJugador"){
         return resu;
     }
 }
+
+bool Sistema::existeVideojuego(string nombre){
+    IKey * k = new String(nombre.c_str());
+    return dicVideojuego->member(k);
+}
+
+void Sistema::verInformacionVideojuego(string nombre){
+    IKey * k = new String(nombre.c_str());
+    Videojuego * v = (Videojuego *)dicVideojuego->find(k);
+
+    cout << "DATOS DE SU VIDEOJUEGO" << endl;
+    cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
+    cout << "Descripcion:" << v->getVideojuego()->getDescripcion() << endl;
+    cout << "Categorias" << endl;
+    IIterator * it;
+    for (it= v->getCategorias()->getIterator();it->hasCurrent();it -> next()){
+            Categoria * u = (Categoria*)it->getCurrent();
+            cout << "-" << u->getNombre() << endl;
+    }
+    cout << "Suscripciones" << endl;
+
+    for(it = v->getSuscripciones()->getIterator(); it->hasCurrent(); it->next()){
+        Suscripcion * s = (Suscripcion *)it->getCurrent();
+        cout << "-Nombre:" << s->getNombre() <<" | Precio:" << s->getPrecio() << endl;
+    }
+    cout << "Empresa:" <<v->getEmpresa() << endl;
+    cout << "Valoracion media:" << v->getEstadisticas() << endl;
+
+    IKey * usu = new String(this->getemailActual().c_str());
+    Usuario * usuario = (Usuario *)dicUsuario->find(usu);
+
+    if(usuario->getTipo() == "soyDesarrollador")
+        cout << "Horas totales jugadas:" << v->getCantHorasJug() << endl;
+
+}
+
+/*
+void Sistema::cargarDatosPrueba(){
+    //Cargar jugadores
+    altaUsuarioJugador("guzmanvera@hotmail.com", "123", "gusbera", "facherazo");
+    altaUsuarioJugador("zebautes@hotmail.com", "123", "reyxtar", "ea");
+    altaUsuarioJugador("hernancabara@hotmail.com", "123", "kuervou", "el mejor soldado");
+    altaUsuarioJugador("cintialeal@hotmail.com", "123", "griffin", "juega re mal");
+    
+    //Cargar desarrolladores
+    altaUsuarioDesarrollador("carlossantana@gmail.com", "123", "amazon");
+    altaUsuarioDesarrollador("elpipe@gmail.com", "123", "ubisoft");
+    altaUsuarioDesarrollador("desarrollador3@gmail.com", "123", "ea");
+    
+    //Cargar Categorías
+    nuevaCategoria("accion","cat1",1);
+    nuevaCategoria("aventura","cat2",1);
+    nuevaCategoria("play","cat3",2);
+    nuevaCategoria("pc","cat4",2);
+    nuevaCategoria("cooperativo","cat5",3);
+    nuevaCategoria("logros","cat6",3);
+
+    //cargar suscripciones
+    Suscripcion * sus1 = new Suscripcion("Mensual", 1, "Temporal");
+    IKey * s1 = new String(sus1->getNombre().c_str());
+    Suscripcion * sus2 = new Suscripcion("Trimestral", 2, "Temporal");
+    IKey * s2 = new String(sus2->getNombre().c_str());
+    Suscripcion * sus3 = new Suscripcion("Anual", 3, "Temporal");
+    IKey * s3 = new String(sus3->getNombre().c_str());
+    Suscripcion * sus4 = new Suscripcion("Vitalicia", 5, "Vitalicia");
+    IKey * s4 = new String(sus4->getNombre().c_str());
+
+    //Cargar videojuegos
+    dtVideojuego * v = new dtVideojuego("Albion", "Juegazo",0);
+    Videojuego * vid1 = new Videojuego(v);
+    vid1->getSuscripciones()->add(s1, sus1);
+    vid1->getSuscripciones()->add(s2, sus2);
+    vid1->getSuscripciones()->add(s3, sus3);
+    vid1->getSuscripciones()->add(s4, sus4);
+    
+    vid1->getCategorias()->add(k2, c2);
+    vid1->getCategorias()->add(k4, c4);
+
+    dtVideojuego * v2 = new dtVideojuego("fifa","El mismo juego todos los años", 0);
+    Videojuego * vid2 = new Videojuego(v2);
+    vid2->getSuscripciones()->add(s1, sus1);
+    vid2->getSuscripciones()->add(s2, sus2);
+    vid2->getSuscripciones()->add(s3, sus3);
+    vid2->getSuscripciones()->add(s4, sus4);
+    vid1->getCategorias()->add(k, c);
+    vid1->getCategorias()->add(k3, c3);
+
+    dtVideojuego * v3 = new dtVideojuego("lol","juego horrible", 0);
+    Videojuego * vid3 = new Videojuego(v3);
+    vid3->getSuscripciones()->add(s1, sus1);
+    vid3->getSuscripciones()->add(s2, sus2);
+    vid3->getSuscripciones()->add(s3, sus3);
+    vid3->getSuscripciones()->add(s4, sus4);
+    vid1->getCategorias()->add(k, c);
+    vid1->getCategorias()->add(k2, c2);
+    vid1->getCategorias()->add(k5, c5);
+}
+*/

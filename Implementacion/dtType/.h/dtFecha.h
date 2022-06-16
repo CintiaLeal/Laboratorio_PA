@@ -17,6 +17,12 @@ class dtFecha{
         int getAnio();
         int getHora();
         int getMinuto();
+        void setDia(int);
+        void setMes(int);
+        void setAnio(int);
+        void setHora(int);
+        void setMinuto(int);
+        void setFechaActual(int,int,int,int,int);
 };
 
 #endif //Dt_Fecha

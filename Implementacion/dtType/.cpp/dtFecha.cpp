@@ -31,3 +31,10 @@ int dtFecha::getMinuto(){
     return this->minuto;
 }
 
+void dtFecha::setFechaActual(int dia,int mes,int anio,int hora,int minuto){
+    this->dia = dia;
+    this->mes = mes;
+    this->anio = anio;
+    this->hora = hora;
+    this-> minuto = minuto;
+}

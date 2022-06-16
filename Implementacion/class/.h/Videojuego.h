@@ -16,6 +16,7 @@ class Videojuego : public ICollectible{
         ICollection * vj;
         IDictionary * suscripciones;
         IDictionary * categorias;
+        string empresa;
     public:
         //constructores
         Videojuego();
@@ -24,12 +25,17 @@ class Videojuego : public ICollectible{
         dtVideojuego * getVideojuego();
         IDictionary * getPartidas();
         IDictionary * getSuscripciones();
+        IDictionary * getCategorias();
         ICollection * getVJ();
+        string getEmpresa();
         //sets
         void setVideojuego(dtVideojuego*);
         void setSuscripciones(IDictionary *);
         void setCategorias(IDictionary *);
         int getEstadisticas();
+        void agregarSuscripcion(int, int, int, int);
+        void setEmpresa(string);
+        float getCantHorasJug();
         //asuntos de la coleccion
         /*
         void agregarPartida(partida *p);
@@ -48,7 +54,7 @@ class Videojuego : public ICollectible{
         void agregarPM(PartidaMultijugador);
         void agregarPI(PartidaIndividual);
         string getDescripcion();
-        float getCantHorasJug();
+        
         void eliminarSuscripcion(string);
        // set<DtSuscripciones> listarSusSuscripciones();
         void nuevaSuscripcion(string);

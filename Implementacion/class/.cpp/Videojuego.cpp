@@ -37,6 +37,14 @@ ICollection * Videojuego::getVJ(){
     return this->vj;
 }
 
+IDictionary * Videojuego::getCategorias(){
+    return this->categorias;
+}
+
+string Videojuego::getEmpresa(){
+    return this->empresa;
+}
+
 //sets
 void Videojuego::setVideojuego(dtVideojuego * juego){
     this->videojuego = juego;
@@ -48,6 +56,10 @@ void Videojuego::setSuscripciones(IDictionary * sus){
 
 void Videojuego::setCategorias(IDictionary * cat){
     this->categorias = cat;
+}
+
+void Videojuego::setEmpresa(string nombre){
+    this->empresa = nombre;
 }
 
 void Videojuego::eliminarSuscripcion(string nombre){
@@ -78,6 +90,34 @@ int Videojuego::getEstadisticas(){
         return total/cant;
     }
     
+}
+
+float Videojuego::getCantHorasJug(){
+    return this->videojuego->getCantHorasJug();
+}
+
+void Videojuego::agregarSuscripcion(int a,int b, int c, int d){
+    Suscripcion * sus = new Suscripcion("Mensual", a, "Temporal");
+    IKey * k = new String(sus->getNombre().c_str());
+    this->suscripciones->add(k, sus);
+    
+    Suscripcion * sus2 = new Suscripcion("Trimestral", b, "Temporal");
+    IKey * k2 = new String(sus2->getNombre().c_str());
+    this->suscripciones->add(k2,sus);
+    
+    Suscripcion * sus3 = new Suscripcion("Anual", c, "Temporal");
+    IKey * k3 = new String(sus3->getNombre().c_str());
+    this->suscripciones->add(k3, sus3);
+    
+    Suscripcion * sus4 = new Suscripcion("Vitalicia", d, "Permanente");
+    IKey * k4 = new String(sus4->getNombre().c_str());
+    this->suscripciones->add(k4,sus4);
+    
+
+    delete(k);
+    delete(k2);
+    delete(k3);
+    delete(k4);
 }
 
  //asuntos de la coleccion

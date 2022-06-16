@@ -40,7 +40,7 @@ public:
     virtual void nuevaCategoria(string nombre, string descripcion,int tipo) = 0;
     virtual bool existeCategoria(string) = 0;
     virtual Categoria * buscarCat(string) = 0;
-    virtual void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *) = 0;
+    virtual void confirmarPublicarVideojuego(IDictionary *, dtVideojuego *) = 0;
     virtual void listarVideojuego() = 0;
     virtual void confirmarEliminarVideojuego(string) = 0;
     virtual void verEstadisticasVideojuego(string) = 0;
@@ -49,6 +49,9 @@ public:
     virtual void cerrarSesion()=0;
     virtual string getemailActual()=0;
     virtual string tipoUsuario(string email) = 0;
+    virtual void agregarSuscripciones(string, int, int, int, int) = 0;
+    virtual void verInformacionVideojuego(string) = 0;
+    virtual bool existeVideojuego(string) = 0;
 
 //<------------------Operaciones----------------------->
  /* 

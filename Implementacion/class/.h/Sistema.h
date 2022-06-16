@@ -22,7 +22,7 @@ class Sistema: public ISistema{
         void listarCategoria();
         bool existeCategoria(string);
         Categoria * buscarCat(string);
-        void confirmarPublicarVideojuego(IDictionary *, IDictionary *, dtVideojuego *);
+        void confirmarPublicarVideojuego(IDictionary *, dtVideojuego *);
         void listarVideojuego();
         void confirmarEliminarVideojuego(string);
         void verEstadisticasVideojuego(string);
@@ -30,6 +30,10 @@ class Sistema: public ISistema{
         string iniciarSesionActual(string email);
         void cerrarSesion();
         string tipoUsuario(string email);
+        //void cargarDatosPrueba();
+        void agregarSuscripciones(string, int, int, int, int);
+        void verInformacionVideojuego(string);
+        bool existeVideojuego(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

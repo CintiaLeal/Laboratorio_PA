@@ -44,6 +44,11 @@ public:
     virtual void listarVideojuego() = 0;
     virtual void confirmarEliminarVideojuego(string) = 0;
     virtual void verEstadisticasVideojuego(string) = 0;
+    virtual bool existeUsuario(string email,string contrasenia) =0;
+    virtual string iniciarSesionActual(string email)=0;
+    virtual void cerrarSesion()=0;
+    virtual string getemailActual()=0;
+    virtual string tipoUsuario(string email) = 0;
 
 //<------------------Operaciones----------------------->
  /* 

@@ -15,6 +15,10 @@ Desarrollador::~Desarrollador(){}
 string Desarrollador::getNombreEmpresa(){
     return this->nombreEmpresa;
 }
+string Desarrollador::getTipo(){
+    string d = "soyDesarrollador";
+    return d;
+}
 //set
 void Desarrollador::setNombreEmpresa(string nombre){
     this->nombreEmpresa = nombre;

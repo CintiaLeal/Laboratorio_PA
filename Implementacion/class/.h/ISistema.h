@@ -52,6 +52,7 @@ public:
     virtual void agregarSuscripciones(string, int, int, int, int) = 0;
     virtual void verInformacionVideojuego(string) = 0;
     virtual bool existeVideojuego(string) = 0;
+    virtual void listarVideojuegoCosto() = 0;
 
 //<------------------Operaciones----------------------->
  /* 
@@ -68,7 +69,7 @@ public:
     //virtual void nuevaPartidaIndividual(String) = 0;
     virtual void confirmarContinuar(int) = 0;
     virtual void confirmarNueva(string) = 0;
-    virtual ICollection * listarVideojuegoConCosto() = 0; //Retorna una lista de dtVideouegoCosto
+     //Retorna una lista de dtVideouegoCosto
     virtual void seleccionarVideojuegoSuscripcion(string) = 0;
     virtual void cancelarSuscr() = 0;
     virtual void confirmarSuscripcion(string,string) = 0;

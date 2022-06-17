@@ -324,6 +324,34 @@ void Sistema::verInformacionVideojuego(string nombre){
 
 }
 
+void Sistema::listarVideojuegoCosto(){
+    IKey * k =new String(this->getemailActual().c_str());
+    Jugador * j =(Jugador *)dicUsuario->find(k);
+    IDictionary * jueguitos = new OrderedDictionary();
+
+    cout << "Usted posee suscripciones activas en estos videojuegos" << endl; 
+    jueguitos = j->listarVideojuegoConCosto();
+
+    cout << "Usted no posee suscripciones activas en estos videojuegos" << endl;
+    IIterator* it;
+    for(it=dicVideojuego->getIterator(); it->hasCurrent(); it->next()){
+        Videojuego * v = (Videojuego *)it->getCurrent();
+        IKey * k2 = new String(v->getVideojuego()->getNombre().c_str());
+        
+        if(!jueguitos->member(k2)){
+            cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
+            IDictionary * aux = v->getSuscripciones();
+            IIterator * it2;
+            for(it2 = aux->getIterator(); it2->hasCurrent(); it2->next()){
+                Suscripcion * s = (Suscripcion *)it2->getCurrent();
+
+                cout << "Nombre:" << s->getNombre() << " | Precio:" << s->getPrecio() << endl;
+            }
+        }
+    }
+    delete(k);
+}
+
 /*
 void Sistema::cargarDatosPrueba(){
     //Cargar jugadores

@@ -42,3 +42,20 @@ void Suscripcion::setPrecio(int precio){
 void Suscripcion::setPeriodo(string periodo){
     this->periodo = periodo;
 }
+
+//methods
+
+Videojuego * Suscripcion::buscarSuscripcion(){
+    Videojuego * v = this->getVideojuego();
+
+    cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
+    IDictionary * aux = v->getSuscripciones();
+    IIterator * it;
+    for(it = aux->getIterator(); it->hasCurrent(); it->next()){
+        Suscripcion * s = (Suscripcion *)it->getCurrent();
+
+        cout << "Nombre:" << s->getNombre() << " | Precio:" << s->getPrecio() << endl;
+    }
+
+    return v;
+}

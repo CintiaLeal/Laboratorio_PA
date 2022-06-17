@@ -28,6 +28,7 @@ class Suscripcion : public ICollectible{
         void setPrecio(int);
         void setPeriodo(string);
     //methods
+        Videojuego * buscarSuscripcion();
 };
 
 #endif

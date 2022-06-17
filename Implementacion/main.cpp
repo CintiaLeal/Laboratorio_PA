@@ -87,6 +87,13 @@ int main()
         if (tipoUsuario == "jugador")
         {
           menuJugador();
+          int opcionMenuJugador;
+          do{
+            cin >> opcionMenuJugador;
+            if(opcionMenuJugador == 1){
+              sis->listarVideojuegoCosto();
+            }
+          }while(opcionMenuJugador != 8);
         }
         else
         {

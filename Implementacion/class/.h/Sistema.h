@@ -34,6 +34,7 @@ class Sistema: public ISistema{
         void agregarSuscripciones(string, int, int, int, int);
         void verInformacionVideojuego(string);
         bool existeVideojuego(string);
+        void listarVideojuegoCosto();
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
         void ingersarJugador(string,string,string,string);

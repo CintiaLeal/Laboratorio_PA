@@ -31,11 +31,13 @@ class Pago: public ICollectible{
         dtFecha getFechaC();
         string getMetodoPago();
         bool getActiva();
+        Suscripcion * getSuscripcion();
         //sets
         void setFechaV(dtFecha);
         void setFechaC(dtFecha);
         void setMetodoPago(string);
         void setActiva(bool);
+        void setSuscripcion(Suscripcion *);
         //methods
         Videojuego * getJuego();
         dtVideojuego buscarVideojuego(string);

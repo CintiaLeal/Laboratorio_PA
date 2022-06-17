@@ -31,6 +31,10 @@ bool Pago::getActiva(){
     return this->activa;
 }
 
+Suscripcion * Pago::getSuscripcion(){
+    return this->suscripcion;
+}
+
 //sets
 void Pago::setFechaV(dtFecha FechaV){
     this->fechaV = FechaV;
@@ -46,6 +50,10 @@ void Pago::setMetodoPago(string metodoPago){
 
 void Pago::setActiva(bool activa){
     this->activa = activa;
+}
+
+void Pago::setSuscripcion(Suscripcion * s){
+    this->suscripcion = s;
 }
 
 Videojuego * Pago::getJuego(){

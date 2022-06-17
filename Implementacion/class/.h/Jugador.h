@@ -36,6 +36,7 @@ class Jugador:public Usuario{
         void cancelarSuscripcion();
         void nuevoSuscripcion(string);
         void cancelar();
+        IDictionary * listarVideojuegoConCosto();
 };
 #endif 
 

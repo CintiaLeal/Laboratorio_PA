@@ -70,3 +70,23 @@ void Jugador::cancelarSuscripcion(){}
 void Jugador::nuevoSuscripcion(string){}
 
 void Jugador::cancelar(){}
+
+IDictionary * Jugador::listarVideojuegoConCosto(){
+    IIterator * it;
+    Suscripcion * s;
+    IDictionary * jueguitos = new OrderedDictionary();
+    if(this->pagos->isEmpty()){
+        cout << "hola" << endl;
+    }else{
+        for(it=this->pagos->getIterator(); it->hasCurrent(); it->next()){
+            Pago * p = (Pago *)it->getCurrent();
+            if(p->getActiva()){
+                s = p->getSuscripcion();
+                Videojuego * v = s->buscarSuscripcion();
+                IKey * k = new String(v->getVideojuego()->getNombre().c_str());
+                jueguitos->add(k, v);
+            }
+        }
+    }
+    return jueguitos;
+}

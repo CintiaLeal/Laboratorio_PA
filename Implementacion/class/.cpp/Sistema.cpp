@@ -331,6 +331,9 @@ void Sistema::listarVideojuegoCosto(){
 
     cout << "Usted posee suscripciones activas en estos videojuegos" << endl; 
     jueguitos = j->listarVideojuegoConCosto();
+    if(jueguitos->isEmpty()){
+        cout << "N/A" << endl;
+    }
 
     cout << "Usted no posee suscripciones activas en estos videojuegos" << endl;
     IIterator* it;
@@ -349,7 +352,22 @@ void Sistema::listarVideojuegoCosto(){
             }
         }
     }
-    delete(k);
+}
+
+void Sistema::seleccionarVideojuegoSuscripcion(string nombre){
+    bool existe = false;
+    string nom = nombre;
+    do{
+        IKey * k = new String(nom.c_str());
+        if(dicVideojuego->member(k)){
+            existe = true;
+        }else{
+            cout << "Ingrese un videojuego que exista" << endl;
+            cin >> nom;
+        }
+    }while(!existe);
+
+    
 }
 
 /*

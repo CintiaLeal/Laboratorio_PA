@@ -59,3 +59,11 @@ Videojuego * Suscripcion::buscarSuscripcion(){
 
     return v;
 }
+
+bool Suscripcion::iguales(string nombre){
+    if(this->vid->getVideojuego()->getNombre() == nombre){
+        return true;
+    }else{
+        return false;
+    }
+}

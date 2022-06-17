@@ -29,6 +29,7 @@ class Suscripcion : public ICollectible{
         void setPeriodo(string);
     //methods
         Videojuego * buscarSuscripcion();
+        bool iguales(string);
 };
 
 #endif

@@ -86,12 +86,16 @@ int main()
         string tipoUsuario = sis->tipoUsuario(email);
         if (tipoUsuario == "jugador")
         {
-          menuJugador();
           int opcionMenuJugador;
           do{
+            menuJugador();
             cin >> opcionMenuJugador;
             if(opcionMenuJugador == 1){
+              string nombre;
               sis->listarVideojuegoCosto();
+              cout << "Ingrese el videojuego al que se desea suscribir" << endl;
+              cin >> nombre;
+              sis->seleccionarVideojuegoSuscripcion(nombre);
             }
           }while(opcionMenuJugador != 8);
         }

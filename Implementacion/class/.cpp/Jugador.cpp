@@ -4,8 +4,8 @@
 using namespace std;
 
 Jugador::Jugador(){
-    ICollection * pagos = new List();
-    IDictionary * partidas = new OrderedDictionary();
+    this->pagos = new List();
+    this->partidas = new OrderedDictionary();
 }
 Jugador::~Jugador(){
     
@@ -13,8 +13,8 @@ Jugador::~Jugador(){
 Jugador::Jugador(string email, string contrasenia,string nick, string descripcion): Usuario(email, contrasenia){
     this->nick = nick;
     this->descripcion = descripcion;
-    ICollection * pagos = new List();
-    IDictionary * partidas = new OrderedDictionary();
+    this->pagos = new List();
+    this->partidas = new OrderedDictionary();
   
 }
 
@@ -63,7 +63,19 @@ void Jugador::borrarPartidas(string nombre){
     }
 }
 
-void Jugador::buscarSuscripcion(int){}
+void Jugador::buscarSuscripcion(string nombre){
+    IIterator * it;
+    for(it=pagos->getIterator(); it->hasCurrent(); it->next()){
+        Pago * p = (Pago *)it->getCurrent();
+
+            if(p->getActiva()){
+                if(p->getSuscripcion()->getNombre() == "Vitalicia"){
+                    cout << "Su suscripcion es vitalicia, no se puede cancelar." << endl;
+                    return;
+                }
+            }
+    }
+}
 
 void Jugador::cancelarSuscripcion(){}
 
@@ -76,7 +88,7 @@ IDictionary * Jugador::listarVideojuegoConCosto(){
     Suscripcion * s;
     IDictionary * jueguitos = new OrderedDictionary();
     if(this->pagos->isEmpty()){
-        cout << "hola" << endl;
+        return jueguitos;
     }else{
         for(it=this->pagos->getIterator(); it->hasCurrent(); it->next()){
             Pago * p = (Pago *)it->getCurrent();

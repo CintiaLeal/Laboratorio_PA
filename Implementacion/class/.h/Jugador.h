@@ -32,7 +32,7 @@ class Jugador:public Usuario{
         string getNick();
         void borrarPagos(string);
         void borrarPartidas(string);
-        void buscarSuscripcion(int);
+        void buscarSuscripcion(string);
         void cancelarSuscripcion();
         void nuevoSuscripcion(string);
         void cancelar();

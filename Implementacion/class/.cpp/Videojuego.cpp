@@ -120,6 +120,7 @@ void Videojuego::agregarSuscripcion(int a,int b, int c, int d){
     delete(k4);
 }
 
+
  //asuntos de la coleccion
         /*
         void Videojuego::agregarPartida(partida *p){

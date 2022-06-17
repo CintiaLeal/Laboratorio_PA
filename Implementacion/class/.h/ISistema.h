@@ -53,7 +53,9 @@ public:
     virtual void verInformacionVideojuego(string) = 0;
     virtual bool existeVideojuego(string) = 0;
     virtual void listarVideojuegoCosto() = 0;
-    virtual void seleccionarVideojuegoSuscripcion(string) = 0;
+    virtual bool seleccionarVideojuegoSuscripcion(string) = 0;
+    virtual void cancelar(string) = 0;
+    virtual void confirmarSuscripcion(string,string,string) = 0;
 
 //<------------------Operaciones----------------------->
  /* 
@@ -72,9 +74,9 @@ public:
     virtual void confirmarNueva(string) = 0;
      //Retorna una lista de dtVideouegoCosto
     
-    virtual void cancelarSuscr() = 0;
-    virtual void confirmarSuscripcion(string,string) = 0;
-    virtual void cancelar() = 0;*/
+    
+    
+    */
 
     virtual int hola() = 0;
 

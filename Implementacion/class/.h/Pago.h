@@ -17,24 +17,24 @@ using namespace std;
 
 class Pago: public ICollectible{
     private:
-        dtFecha fechaV;
-        dtFecha fechaContrato;
+        dtFecha * fechaV;
+        dtFecha * fechaContrato;
         string metodoPago;
         bool activa;
         Suscripcion *suscripcion;
     public:
         //constructores
         Pago();
-        Pago(dtFecha, dtFecha, string, bool, Suscripcion *);
+        Pago(dtFecha*, dtFecha*, string, bool, Suscripcion *);
         //gets
-        dtFecha getFechaV();
-        dtFecha getFechaC();
+        dtFecha * getFechaV();
+        dtFecha * getFechaC();
         string getMetodoPago();
         bool getActiva();
         Suscripcion * getSuscripcion();
         //sets
-        void setFechaV(dtFecha);
-        void setFechaC(dtFecha);
+        void setFechaV(dtFecha*);
+        void setFechaC(dtFecha*);
         void setMetodoPago(string);
         void setActiva(bool);
         void setSuscripcion(Suscripcion *);

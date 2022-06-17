@@ -1,4 +1,5 @@
 #include "../.h/Jugador.h"
+
 #include <iostream>
 
 using namespace std;
@@ -63,25 +64,80 @@ void Jugador::borrarPartidas(string nombre){
     }
 }
 
-void Jugador::buscarSuscripcion(string nombre){
+bool Jugador::buscarSuscripcion(string nombre){ //retorna true si el videojuego seleccionado no tiene pagos activos asociados o si desea cancelar la suscr actual
     IIterator * it;
     for(it=pagos->getIterator(); it->hasCurrent(); it->next()){
         Pago * p = (Pago *)it->getCurrent();
-
+        //se encuentra un pago para el videojuego seleccionado
+        if(p->getSuscripcion()->iguales(nombre)){
+            //tiene una suscripcion activa
             if(p->getActiva()){
+                //la suscripcion es vitalicia
                 if(p->getSuscripcion()->getNombre() == "Vitalicia"){
                     cout << "Su suscripcion es vitalicia, no se puede cancelar." << endl;
-                    return;
+                    return false;
+                }
+                //la suscripcion es temporal
+                else{
+                    cout<<"Usted posee una suscripcion temporal:"<<endl;
+                    cout<< "Nombre:" << p->getSuscripcion()->getNombre();
+                    cout<< "Precio:" << p->getSuscripcion()->getPrecio();
+                    cout<<"Desea cancelar su suscripcion actual? 1-Si || 2-No"<<endl;
+                    int op;
+                    cin >> op;
+                    if(op == 2){ //No desea cancelar su suscripcion actual
+                        return false;
+                    }
+                    else{ //desea cancelar su suscripcion actual
+                        p->setActiva(false);
+                        return true;
+                    }
                 }
             }
+        }     
     }
+    return true;
 }
 
 void Jugador::cancelarSuscripcion(){}
 
-void Jugador::nuevoSuscripcion(string){}
+void Jugador::nuevoSuscripcion(string met, Suscripcion* s, dtFecha * f){
+    int mes = f->getMes(), anio = f->getAnio();
+    if(s->getNombre() == "Mensual"){
+        if(mes == 12){
+            mes = 1;
+            anio ++;
+        }
+        else {mes++;}
+    }
+    if(s->getNombre() == "Trimestral"){
+        if((mes + 3) > 12){
+            mes = (mes + 3) - 12;
+            anio ++;
+        }
+    }
+    if(s->getNombre() == "Anual"){
+        anio ++;
+    }
+     if(s->getNombre() == "Vitalicia"){
+        anio = 2420;
+    }
+    dtFecha * fv = new dtFecha(f->getDia() , mes, anio, f->getHora(), f->getMinuto());
+    bool act = true;
+    Pago * p = new Pago(fv, f, met, act, s);
+    this->pagos->add(p);
+}
 
-void Jugador::cancelar(){}
+void Jugador::cancelar(string nombre){
+    IIterator * it;
+    for(it=pagos->getIterator(); it->hasCurrent(); it->next()){
+        Pago * p = (Pago *)it->getCurrent();
+        //se encuentra el pago 
+        if(p->getSuscripcion()->iguales(nombre)){
+            p->setActiva(true);
+        }
+    }    
+}
 
 IDictionary * Jugador::listarVideojuegoConCosto(){
     IIterator * it;

@@ -8,6 +8,7 @@ using namespace std;
 Sistema * Sistema::instancia = 0;
 //Datos actual usuario
 string emailActual = "";
+dtFecha *fecha = new dtFecha(21, 6, 2022, 12, 0);
 Sistema::Sistema(){
     this->dicUsuario = new OrderedDictionary();
     this->dicCategoria = new OrderedDictionary();
@@ -354,21 +355,32 @@ void Sistema::listarVideojuegoCosto(){
     }
 }
 
-void Sistema::seleccionarVideojuegoSuscripcion(string nombre){
-    bool existe = false;
-    string nom = nombre;
-    do{
-        IKey * k = new String(nom.c_str());
-        if(dicVideojuego->member(k)){
-            existe = true;
-        }else{
-            cout << "Ingrese un videojuego que exista" << endl;
-            cin >> nom;
-        }
-    }while(!existe);
-
-    
+bool Sistema::seleccionarVideojuegoSuscripcion(string nombre){
+    IKey * k =new String(this->getemailActual().c_str());
+    Jugador * j =(Jugador *)dicUsuario->find(k);
+    return j->buscarSuscripcion(nombre);    
 }
+
+ void Sistema::cancelar(string nombre){
+    IKey * k =new String(this->getemailActual().c_str());
+    Jugador * j =(Jugador *)dicUsuario->find(k);
+    j->cancelar(nombre);
+ }
+
+ void Sistema::confirmarSuscripcion(string tipo, string met, string nombre){
+    IKey * k = new String(nombre.c_str());
+    Videojuego * v = (Videojuego *)dicVideojuego->find(k);
+    IIterator * it;
+    for(it = v->getSuscripciones()->getIterator(); it->hasCurrent(); it->next()){
+        Suscripcion * s = (Suscripcion *)it->getCurrent();
+        if(s->getNombre() == tipo){
+            IKey * k =new String(this->getemailActual().c_str());
+            Jugador * j =(Jugador *)dicUsuario->find(k);
+            j->nuevoSuscripcion(met, s, fecha);
+        }
+    }
+
+ }
 
 /*
 void Sistema::cargarDatosPrueba(){

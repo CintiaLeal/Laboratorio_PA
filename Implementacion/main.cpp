@@ -27,7 +27,7 @@ using namespace std;
 int op;
 int opcionMenuDesarrollador;
 ISistema *sis = Fabrica::crearSistema();
-dtFecha *fecha = new dtFecha(21, 6, 2022, 12, 0);
+
 
 int main()
 {
@@ -94,8 +94,32 @@ int main()
               string nombre;
               sis->listarVideojuegoCosto();
               cout << "Ingrese el videojuego al que se desea suscribir" << endl;
-              cin >> nombre;
-              sis->seleccionarVideojuegoSuscripcion(nombre);
+              do{
+                  cin >> nombre;
+              }while(!sis->existeVideojuego(nombre));
+              if(sis->seleccionarVideojuegoSuscripcion(nombre)){
+                cout<< "Ingrese el tipo de suscripcion que desea contratar" << endl;
+                string tipo;
+                cin >> tipo;
+                cout<< "Ingrese el metodo de pago que desea utilizar" << endl;
+                string met;
+                cin >> met;
+                cout<<"Desea confirmar su nueva suscripcion? 1-Si || 2-No"<<endl;
+                    int op;
+                    do{
+                      cin >> op;
+                      if(op != 1 && op != 2){
+                        cout<<"Ingrese una opcion correcta"<<endl;
+                      }
+                    }while(op != 1 && op != 2);
+                    if(op == 2){
+                      sis->cancelar(nombre);
+                    }
+                    if(op == 1){
+                      sis->confirmarSuscripcion(tipo, met,nombre);
+                    }
+              }
+              
             }
           }while(opcionMenuJugador != 8);
         }

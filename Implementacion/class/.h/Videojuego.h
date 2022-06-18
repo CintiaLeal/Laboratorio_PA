@@ -55,7 +55,7 @@ class Videojuego : public ICollectible{
         void agregarPI(PartidaIndividual);
         string getDescripcion();
         
-        void eliminarSuscripcion(string);
+        void eliminarSuscripcion();
        // set<DtSuscripciones> listarSusSuscripciones();
         void nuevaSuscripcion(string);
 };

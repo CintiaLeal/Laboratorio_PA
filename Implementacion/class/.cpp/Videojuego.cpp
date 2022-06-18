@@ -62,15 +62,22 @@ void Videojuego::setEmpresa(string nombre){
     this->empresa = nombre;
 }
 
-void Videojuego::eliminarSuscripcion(string nombre){
+void Videojuego::eliminarSuscripcion(){
+   
     IIterator * it;
+        
+
     for(it = this->suscripciones->getIterator(); it->hasCurrent(); it->next()){
+
         Suscripcion * sus = (Suscripcion *)it->getCurrent();
 
-        IKey * k = new String(sus->getNombre().c_str());
-        this->suscripciones->remove(k);
+        cout<<sus->getNombre().c_str()<<endl;
+
+        //this->suscripciones->remove(k);
         delete(sus);
+
     }
+
 }
 
 int Videojuego::getEstadisticas(){

@@ -193,7 +193,6 @@ void Sistema::confirmarEliminarVideojuego(string nombre){
 
     IIterator * it;
     IIterator * it2;
-
     IKey * k = new String(nom.c_str());
     Videojuego * vid = (Videojuego *)dicVideojuego->find(k);
 
@@ -218,7 +217,6 @@ void Sistema::confirmarEliminarVideojuego(string nombre){
         delete(k2);
         delete(it->getCurrent());
     }
-
     //Borrar VJ
     for(it = vid->getVJ()->getIterator(); it->hasCurrent(); it->next()){
         VJ * vj = (VJ *)it->getCurrent();
@@ -229,10 +227,8 @@ void Sistema::confirmarEliminarVideojuego(string nombre){
 
         delete(vj);
     }
-
     //BorrarSuscripcioens
-    vid->eliminarSuscripcion(nom);
-
+    vid->eliminarSuscripcion();
     dicVideojuego->remove(k);
     delete(k);
     delete(vid);

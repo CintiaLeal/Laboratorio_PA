@@ -13,6 +13,8 @@ Suscripcion::Suscripcion(string nombre, int precio, string periodo){
     this->periodo = periodo;
 }
 
+
+
 //gets
 string Suscripcion::getNombre(){
     return this->nombre;
@@ -43,10 +45,14 @@ void Suscripcion::setPeriodo(string periodo){
     this->periodo = periodo;
 }
 
+void Suscripcion::setVid(Videojuego* vid){
+    this->vid = vid;
+}
+
 //methods
 
 Videojuego * Suscripcion::buscarSuscripcion(){
-    Videojuego * v = this->getVideojuego();
+    Videojuego * v = this->vid;
 
     cout << "Nombre:" << v->getVideojuego()->getNombre() << endl;
     IDictionary * aux = v->getSuscripciones();

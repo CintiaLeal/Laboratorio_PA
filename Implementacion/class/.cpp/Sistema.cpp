@@ -107,7 +107,11 @@ void Sistema::agregarSuscripciones(string nombre, int a, int b, int c, int d){
 
     Videojuego * vid = (Videojuego *)dicVideojuego->find(k);
     vid->agregarSuscripcion(a,b,c,d);
-   
+    IIterator * it;
+    for(it = vid->getSuscripciones()->getIterator(); it->hasCurrent(); it->next()){
+        Suscripcion * s = (Suscripcion *)it->getCurrent();
+        s->setVid(vid); 
+    }
 }
 
 void Sistema::confirmarPublicarVideojuego(IDictionary * cat, dtVideojuego * videojuego){
@@ -335,6 +339,14 @@ void Sistema::listarVideojuegoCosto(){
     if(jueguitos->isEmpty()){
         cout << "N/A" << endl;
     }
+    else{
+         IIterator * it3;
+            for(it3 = jueguitos->getIterator(); it3->hasCurrent(); it3->next()){
+                Videojuego * v = (Videojuego *)it3->getCurrent();
+
+                cout << "Nombre:" << v->getVideojuego()->getNombre() << endl; 
+            }
+    }
 
     cout << "Usted no posee suscripciones activas en estos videojuegos" << endl;
     IIterator* it;
@@ -358,8 +370,7 @@ void Sistema::listarVideojuegoCosto(){
 bool Sistema::seleccionarVideojuegoSuscripcion(string nombre){
     IKey * k =new String(this->getemailActual().c_str());
     Jugador * j =(Jugador *)dicUsuario->find(k);
-    j->buscarSuscripcion(nombre);
-    return true;    
+    return j->buscarSuscripcion(nombre);    
 }
 
 void Sistema::cancelar(string nombre){
@@ -369,7 +380,7 @@ void Sistema::cancelar(string nombre){
 }
 
  void Sistema::confirmarSuscripcion(string tipo, string met, string nombre){
-    IKey * k = new String(nombre.c_str());
+     IKey * k = new String(nombre.c_str());
     Videojuego * v = (Videojuego *)dicVideojuego->find(k);
     IIterator * it;
     for(it = v->getSuscripciones()->getIterator(); it->hasCurrent(); it->next()){
@@ -380,10 +391,12 @@ void Sistema::cancelar(string nombre){
             j->nuevoSuscripcion(met, s, fecha);
         }
     }
-
  }
 
 /*
+
+
+
 void Sistema::cargarDatosPrueba(){
     //Cargar jugadores
     altaUsuarioJugador("guzmanvera@hotmail.com", "123", "gusbera", "facherazo");

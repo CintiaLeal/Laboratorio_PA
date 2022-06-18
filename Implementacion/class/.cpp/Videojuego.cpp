@@ -103,7 +103,7 @@ void Videojuego::agregarSuscripcion(int a,int b, int c, int d){
     
     Suscripcion * sus2 = new Suscripcion("Trimestral", b, "Temporal");
     IKey * k2 = new String(sus2->getNombre().c_str());
-    this->suscripciones->add(k2,sus);
+    this->suscripciones->add(k2,sus2);
     
     Suscripcion * sus3 = new Suscripcion("Anual", c, "Temporal");
     IKey * k3 = new String(sus3->getNombre().c_str());

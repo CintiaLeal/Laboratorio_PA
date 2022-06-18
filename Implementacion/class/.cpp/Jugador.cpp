@@ -150,7 +150,7 @@ IDictionary * Jugador::listarVideojuegoConCosto(){
             Pago * p = (Pago *)it->getCurrent();
             if(p->getActiva()){
                 s = p->getSuscripcion();
-                Videojuego * v = s->buscarSuscripcion();
+                Videojuego * v = s->getVideojuego();
                 IKey * k = new String(v->getVideojuego()->getNombre().c_str());
                 jueguitos->add(k, v);
             }

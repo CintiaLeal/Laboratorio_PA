@@ -358,14 +358,15 @@ void Sistema::listarVideojuegoCosto(){
 bool Sistema::seleccionarVideojuegoSuscripcion(string nombre){
     IKey * k =new String(this->getemailActual().c_str());
     Jugador * j =(Jugador *)dicUsuario->find(k);
-    return j->buscarSuscripcion(nombre);    
+    j->buscarSuscripcion(nombre);
+    return true;    
 }
 
- void Sistema::cancelar(string nombre){
+void Sistema::cancelar(string nombre){
     IKey * k =new String(this->getemailActual().c_str());
     Jugador * j =(Jugador *)dicUsuario->find(k);
     j->cancelar(nombre);
- }
+}
 
  void Sistema::confirmarSuscripcion(string tipo, string met, string nombre){
     IKey * k = new String(nombre.c_str());

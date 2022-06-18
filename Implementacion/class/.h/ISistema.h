@@ -53,9 +53,9 @@ public:
     virtual void verInformacionVideojuego(string) = 0;
     virtual bool existeVideojuego(string) = 0;
     virtual void listarVideojuegoCosto() = 0;
-    virtual bool seleccionarVideojuegoSuscripcion(string) = 0;
-    virtual void cancelar(string) = 0;
-    virtual void confirmarSuscripcion(string,string,string) = 0;
+    virtual bool seleccionarVideojuegoSuscripcion(string nombre)= 0;
+    virtual void cancelar(string nombre)= 0;
+    virtual void confirmarSuscripcion(string tipo, string met, string nombre)= 0;
 
 //<------------------Operaciones----------------------->
  /* 

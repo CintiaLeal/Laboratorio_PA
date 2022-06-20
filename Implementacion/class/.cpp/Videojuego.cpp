@@ -159,12 +159,7 @@ string Videojuego::getNombre(){
 
  }
 
-void Videojuego::agregarPM(PartidaMultijugador){
-
-}
-void Videojuego::agregarPI(PartidaIndividual){
-
-}/*
+/*
 string Videojuego::getDescripcion(){
 return this->videojuego->getDescripcion();
 }

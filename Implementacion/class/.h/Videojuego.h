@@ -52,8 +52,6 @@ class Videojuego : public ICollectible{
         //methods
         string getNombre();
         void eliminarVideojuego();
-        void agregarPM(PartidaMultijugador);
-        void agregarPI(PartidaIndividual);
         string getDescripcion();
         
         void eliminarSuscripcion();

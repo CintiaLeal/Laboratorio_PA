@@ -4,6 +4,7 @@
 #include "Partida.h"
 #include "../../dtType/.h/dtPartidaMultijugador.h"
 #include "../../class/.h/Comentario.h"
+#include "../../ICollection/collections/List.h"
 
 using namespace std;
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+class Jugador;
 class PMJ: public ICollectible{
     private:
         dtFecha * horaSalida;

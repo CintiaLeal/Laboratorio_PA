@@ -3,7 +3,8 @@
 #include <iostream>
 
 #include "../../class/.h/Usuario.h"
-#include "../../class/.h/PMJ.h"
+#include "../../dtType/.h/dtFecha.h"
+
 #include "../../dtType/.h/dtJugador.h"
 #include "../../class/.h/Pago.h"
 #include "../../ICollection/collections/List.h"

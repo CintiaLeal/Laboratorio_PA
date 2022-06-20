@@ -1,6 +1,8 @@
 #include "../.h/Jugador.h"
 #include "PartidaIndividual.cpp"
 #include "../../dtType/.cpp/DtPartidaIndividual.cpp"
+#include "../../dtType/.cpp/DtPartidaMultijugador.cpp"
+#include "../../class/.cpp/PMJ.cpp"
 #include <iostream>
 
 using namespace std;
@@ -310,10 +312,11 @@ bool Jugador::listarPartidasActivas(){
             if (pmj->getHoraSalida() == NULL){
                 pmj->setHoraSalida(fecha);
         }
-}
+        }
     
     
     }
+    this->partidas->remove(kid);
  }
 
  float Jugador::calcularDuracion(dtFecha * fi, dtFecha * ff){

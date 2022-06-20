@@ -4,12 +4,13 @@
 #include "dtPartida.h"
 #include "dtFecha.h"
 using namespace std;
-class dtPartidaMultijugador{
+class dtPartidaMultijugador: public dtPartida{
     private:
        bool EnVivo;
     public:
-        dtPartidaMultijugador(bool);
-        dtFecha getFecha();
+       dtPartidaMultijugador();
+        dtPartidaMultijugador(int, dtFecha *, float, bool);
+        bool getEnVivo();
         ~dtPartidaMultijugador();
 };
 #endif //Dt_PartidaMultijugador

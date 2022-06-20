@@ -72,12 +72,10 @@ void Videojuego::eliminarSuscripcion(){
     for(it = this->suscripciones->getIterator(); it->hasCurrent(); it->next()){
 
         Suscripcion * sus = (Suscripcion *)it->getCurrent();
-
-        cout<<sus->getNombre().c_str()<<endl;
-
-        //this->suscripciones->remove(k);
+        IKey * k = new String(sus->getNombre().c_str());
+        this->suscripciones->remove(k);
         delete(sus);
-
+        delete(k);
     }
 
 }
@@ -121,12 +119,7 @@ void Videojuego::agregarSuscripcion(int a,int b, int c, int d){
     Suscripcion * sus4 = new Suscripcion("Vitalicia", d, "Permanente");
     IKey * k4 = new String(sus4->getNombre().c_str());
     this->suscripciones->add(k4,sus4);
-    
 
-    delete(k);
-    delete(k2);
-    delete(k3);
-    delete(k4);
 }
 
 

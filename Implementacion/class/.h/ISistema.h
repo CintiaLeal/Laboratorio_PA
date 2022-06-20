@@ -58,9 +58,12 @@ public:
     virtual void confirmarSuscripcion(string tipo, string met, string nombre)= 0;
     virtual void puntuarVideojuego(string nomVideojuego, int punto) = 0;
     virtual void listarVideojuegoDescripcion() = 0;
-    virtual void listarVideojuegoSuscripcion() = 0;
-    virtual void listarPartidas(string) = 0;
-
+    virtual bool listarVideojuegoSuscripcion() = 0;
+    virtual bool listarPartidas(string) = 0;
+    virtual void confirmarPartidaIndCont(string, int) = 0;
+    virtual void confirmarPartidaInd(string) = 0;
+    virtual bool listarPartidasActivas() = 0;
+    virtual void confirmarFinalizarPartida(int)=0;
 //<------------------Operaciones----------------------->
  /* 
     

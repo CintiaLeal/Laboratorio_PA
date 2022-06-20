@@ -142,32 +142,67 @@ int main()
             if(opcionMenuJugador == 3){
               string nombre;
               int tipo;
-              sis->listarVideojuegoSuscripcion();
+              if(sis->listarVideojuegoSuscripcion()){
+                  cout << "Ingrese el videojuego que desea jugar" << endl;
+                  do{
+                    cin >> nombre;
+                  }while(!sis->existeVideojuego(nombre));
 
-              cout << "Ingrese el videojuego que desea jugar" << endl;
-              do{
-                cin >> nombre;
-              }while(!sis->existeVideojuego(nombre));
+                  cout << "Ingrese el tipo de la partida: 1-Individual || 2-Multijugador" << endl;
+                  do{
+                    cin >> tipo;
+                  }while(tipo!=2 && tipo!=1);
 
-              cout << "Ingrese el tipo de la partida: 1-Individual || 2-Multijugador" << endl;
-              do{
-                cin >> tipo;
-              }while(tipo!=2 || tipo!=1);
+                  if(tipo == 1){
+                    cout << "Desea continuar una partida? 1-si || 2-no" << endl;
+                    do{
+                      cin >> tipo;
+                    }while(tipo != 1 && tipo!=2);
 
-              if(tipo == 1){
-                cout << "Desea continuar una partida? 1-si || 2-no" << endl;
-                do{
-                  cin >> tipo;
-                }while(tipo != 1 || tipo!=2);
+                    if(tipo == 1){
+                      if(sis->listarPartidas(nombre)){
+                         cout<< "Seleccione el id de la partida que desea continuar"<<endl;
+                         int p;
+                         cin>>p;
+                        cout<< "Desea confirmar? 1-si || 2-no"<<endl;
+                         int opc;
+                         do{
+                            cin >> opc;
+                          }while(opc != 1 && opc!=2);
+                          if(opc == 1){
+                            sis->confirmarPartidaIndCont(nombre, p);
+                            cout<<"Partida creada con exito"<<endl;
+                          }
+                      }                     
 
-                if(tipo == 1){
-                  sis->listarPartidas(nombre);
-                }else{
-
-                }
-              }else{
-                
+                    }else{
+                        cout<< "Desea confirmar? 1-si || 2-no"<<endl;
+                        int opc;
+                         do{
+                            cin >> opc;
+                          }while(opc != 1 && opc!=2);
+                          if(opc == 1){
+                            sis->confirmarPartidaInd(nombre);
+                            cout<<"Partida creada con exito"<<endl;
+                          }
+                    }
+                  }else{
+                    
+                  }
               }
+              else {
+                cout<<"No puede iniciar una nueva partida porque no posee suscripciones activas a ningun videojuego" <<endl;
+              }
+            }
+            if(opcionMenuJugador == 5){
+              cout<<"Usted posee las siguientes partidas activas:"<<endl;
+              if(sis->listarPartidasActivas()){
+                cout<<"Ingrese el Id de la partida que desea finalizar:"<<endl;
+                int idf;
+                cin>>idf;
+                sis->confirmarFinalizarPartida(idf);
+              }
+              else {cout<<"No posee partidas activas";}
             }
 
           }while(opcionMenuJugador != 8);
@@ -210,15 +245,15 @@ int main()
 
               sis->listarCategoria();
 
-              cout << "Seleccione las categorías de su videojuego" << endl;
-              cout << "Debe incluir al menos una categoría de tipo Plataforma y Genero" << endl;
-              cout << "Ingrese 0 para salir" << endl;
               IDictionary *aux = new OrderedDictionary();
               string opcion;
               int gen = 0;
               int plat = 0;
               do
               {
+              cout << "Seleccione las categorias de su videojuego" << endl;
+              cout << "Debe incluir al menos una categoria de tipo Plataforma y Genero" << endl;
+              cout << "Ingrese 0 para salir" << endl;
                 do
                 {
                   cin >> opcion;

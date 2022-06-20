@@ -1,7 +1,7 @@
 #ifndef Dt_PartidaIndividual
 #define Dt_PartidaIndividual
 #include <iostream>
-#include "dtPartida.h"
+#include "../.cpp/dtPartida.cpp"
 #include "dtFecha.h"
 using namespace std;
 
@@ -10,8 +10,8 @@ class dtPartidaIndividual:public dtPartida{
        dtPartidaIndividual* continua;
     public:
         dtPartidaIndividual();
-        dtFecha getFecha();
-        float getDuracion();
+        dtPartidaIndividual( int, dtFecha *, float, dtPartidaIndividual*);
+        dtPartidaIndividual* getContinua();
         ~dtPartidaIndividual();
 };
 #endif //Dt_PartidaIndividual

@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "../../class/.h/Usuario.h"
+#include "../../class/.h/PMJ.h"
 #include "../../dtType/.h/dtJugador.h"
 #include "../../class/.h/Pago.h"
 #include "../../ICollection/collections/List.h"
@@ -37,7 +38,13 @@ class Jugador:public Usuario{
         void nuevoSuscripcion(string, Suscripcion *, dtFecha*);
         void cancelar(string);
         IDictionary * listarVideojuegoConCosto();
-        void listarPartidas(string);
+        bool listarPartidas(string);
+        void cambiarEstado(int);
+        void createNuevaIndcont(string, int, int, dtFecha *);
+        void createNuevaInd(string, int,dtFecha *);
+        bool listarPartidasActivas();
+        void finalizarPartida(int, dtFecha*);
+        float calcularDuracion(dtFecha*, dtFecha*);
 };
 #endif 
 

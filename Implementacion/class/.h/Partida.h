@@ -19,30 +19,28 @@ class Partida: public ICollectible{
         int idPartida;
         bool activa;
         bool individual;
-        dtPartida * partida;
-        IDictionary * jugadores;
         Videojuego * videojuego;
     public:
-        Partida(int idPartida, dtPartida *, Videojuego *);
+        Partida(int idPartida, Videojuego *);
         Partida();
         ~Partida();
 
         //get y set
         int getIdPartida();
-        dtPartida * getPartida();
         bool getActiva();
         bool getIndividual();
         Videojuego * getVideojuego();
 
         void setIdPartida(int);
-        void setPartida(dtPartida*);
         void setActiva(bool);
         void setIndividual(bool);
+        void setVideoJuego(Videojuego *);
         //metodos
         void eliminarPartida();
         dtMostrarPartida getMostrarPartida();
         void confirmarPartida(int);
         void continuar();
+        
 };
 
 #endif //Partida class

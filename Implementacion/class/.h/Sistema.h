@@ -40,8 +40,12 @@ class Sistema: public ISistema{
        void confirmarSuscripcion(string tipo, string met, string nombre);
        void puntuarVideojuego(string nomVideojuego, int punto);
        void listarVideojuegoDescripcion();
-       void listarVideojuegoSuscripcion();
-       void listarPartidas(string);
+       bool listarVideojuegoSuscripcion();
+       bool listarPartidas(string);
+       void confirmarPartidaIndCont(string, int);
+       void confirmarPartidaInd(string);
+       bool listarPartidasActivas();
+       void confirmarFinalizarPartida(int);
         //void seleccionarVideojuegoSuscripcion(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);
@@ -54,7 +58,7 @@ class Sistema: public ISistema{
         //DtInfoVideojuego ingresarInfoVideojuego(set<float>,set<String>,set<String>,set<String>);
         
         //DtMostrarPartida listarPartidas();
-        void confirmarPartida(int);
+        
         string nuevaPartidaMultijugador(string,bool);
         //void confirmarMultijugador(set<String>);
         void nuevaPartidaIndividual(string);

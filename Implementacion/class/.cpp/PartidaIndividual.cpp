@@ -19,3 +19,4 @@ dtPartidaIndividual * PartidaIndividual::getPartidaIndividual(){
 void PartidaIndividual::setPartidaIndividual(dtPartidaIndividual * partidaIndividual){
     this->partidaIndividual = partidaIndividual;
 }
+PartidaIndividual::~PartidaIndividual(){}

@@ -5,15 +5,17 @@
 using namespace std;
 class dtPartida{
     private:
-        int idPartida;
+        int id;
         dtFecha * fecha;
         float duracion;
     public:
         dtPartida();
-        dtPartida(int , dtFecha * , float );
-        int getIdPartida();
+        dtPartida(int, dtFecha * , float );
         dtFecha *getFecha();
         float getDuracion();
+        int getId();
         ~dtPartida();
+        void imprimirFecha(dtFecha *);
+        void setDuracion(float);
 };
 #endif //Dt_Partida

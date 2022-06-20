@@ -9,6 +9,7 @@ using namespace std;
 class PartidaIndividual:public Partida{
     private:
         dtPartidaIndividual * partidaIndividual;
+        
     public:
         PartidaIndividual(dtPartidaIndividual *);
         PartidaIndividual();

@@ -9,6 +9,8 @@ Sistema * Sistema::instancia = 0;
 //Datos actual usuario
 string emailActual = "";
 dtFecha *fecha = new dtFecha(21, 6, 2022, 12, 0);
+int idAutoIncremental = 1;
+
 Sistema::Sistema(){
     this->dicUsuario = new OrderedDictionary();
     this->dicCategoria = new OrderedDictionary();
@@ -363,18 +365,26 @@ void Sistema::listarVideojuegoCosto(){
     }
 }
 
-void Sistema::listarVideojuegoSuscripcion(){
+bool Sistema::listarVideojuegoSuscripcion(){
     IKey * k =new String(this->getemailActual().c_str());
     Jugador * j =(Jugador *)dicUsuario->find(k);
     IIterator * it;
 
-    cout << "Usted posee suscripciones activas en estos videojuegos" << endl; 
+    int cont = 0;
+
+    cout << "Usted posee suscripciones activas en estos videojuegos:" << endl; 
     for(it=j->getPagos()->getIterator(); it->hasCurrent(); it->next()){
         Pago * p = (Pago *)it->getCurrent();
-        cout << p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() << endl;
+        if(p->getActiva()){
+            cout << p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() << endl;
+            cont ++;
+        }
     }
-
-
+    if (cont == 0){
+        cout<<"N/A"<<endl;
+        return false;
+        } //no hay suscripciones activas a ningun videojuego
+    else {return true;}
 }
 
 bool Sistema::seleccionarVideojuegoSuscripcion(string nombre){
@@ -420,11 +430,42 @@ void Sistema::listarVideojuegoDescripcion(){
     }
 }
 
-void Sistema::listarPartidas(string nombre){
+bool Sistema::listarPartidas(string nombre){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
-    j->listarPartidas(nombre);
+    return j->listarPartidas(nombre);
+}
+
+void Sistema::confirmarPartidaIndCont(string nombre, int pa){
+    IKey * k = new String(this->getemailActual().c_str());
+
+    Jugador * j = (Jugador *)dicUsuario->find(k);
+    j->cambiarEstado(pa);
+    j->createNuevaIndcont(nombre, pa, idAutoIncremental, fecha);
+    idAutoIncremental++;
+}
+
+void Sistema::confirmarPartidaInd(string nombre){
+    IKey * k = new String(this->getemailActual().c_str());
+
+    Jugador * j = (Jugador *)dicUsuario->find(k);
+    j->createNuevaInd(nombre,idAutoIncremental,fecha);
+    idAutoIncremental++;
+}   
+
+bool Sistema::listarPartidasActivas(){
+    IKey * k = new String(this->getemailActual().c_str());
+
+    Jugador * j = (Jugador *)dicUsuario->find(k);
+    return j->listarPartidasActivas();
+}
+
+void Sistema::confirmarFinalizarPartida(int id){
+    IKey * k = new String(this->getemailActual().c_str());
+
+    Jugador * j = (Jugador *)dicUsuario->find(k);
+    j->finalizarPartida(id,fecha);
 }
 
 /*

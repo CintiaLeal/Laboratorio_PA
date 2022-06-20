@@ -1,5 +1,6 @@
 #include "../.h/Jugador.h"
-
+#include "PartidaIndividual.cpp"
+#include "../../dtType/.cpp/DtPartidaIndividual.cpp"
 #include <iostream>
 
 using namespace std;
@@ -7,6 +8,7 @@ using namespace std;
 Jugador::Jugador(){
     this->pagos = new List();
     this->partidas = new OrderedDictionary();
+    
 }
 Jugador::~Jugador(){
     
@@ -84,7 +86,12 @@ bool Jugador::buscarSuscripcion(string nombre){ //retorna true si el videojuego 
                     cout<< "Precio:" << p->getSuscripcion()->getPrecio();
                     cout<<"Desea cancelar su suscripcion actual? 1-Si || 2-No"<<endl;
                     int op;
-                    cin >> op;
+                    do{
+                      cin >> op;
+                      if(op != 1 && op != 2){
+                        cout<<"Ingrese una opcion correcta"<<endl;
+                      }
+                      }while(op != 1 && op != 2);
                     if(op == 2){ //No desea cancelar su suscripcion actual
                         return false;
                     }
@@ -159,14 +166,162 @@ IDictionary * Jugador::listarVideojuegoConCosto(){
     return jueguitos;
 }
 
-void Jugador::listarPartidas(string nombre){
+bool Jugador::listarPartidas(string nombre){
     IIterator * it;
-
+    int cont = 0;
     for(it=this->getPartidas()->getIterator();it->hasCurrent();it->next()){
         PartidaIndividual * p = (PartidaIndividual *)it->getCurrent();
         
         if(p->getVideojuego()->getVideojuego()->getNombre() == nombre){
-            cout << "ID:" << p->getIdPartida() << " Fecha|Hora:" << /*p->getPartida()->getFecha()*/ " Duracion:" << p->getPartida()->getDuracion() << endl;
+            if(!p->getActiva()){
+                cout << "ID:" << p->getIdPartida() << " Fecha|Hora: ";
+                p->getPartidaIndividual()->imprimirFecha(p->getPartidaIndividual()->getFecha());
+                cout << " Duracion:" << p->getPartidaIndividual()->getDuracion() << endl;
+                cont++;
+            }
         }
     }
+    if(cont == 0){
+        //no se encontraron partidas para ese juego
+        cout<<"no se encontraron partidas para ese juego"<<endl;
+        return false;
+    }
+    else {return true;}
 }
+
+void Jugador::cambiarEstado(int pa){
+IIterator * it;
+    for(it=this->getPartidas()->getIterator();it->hasCurrent();it->next()){
+        PartidaIndividual * p = (PartidaIndividual *)it->getCurrent();
+        if (p->getIdPartida()==pa){
+            p->setActiva(true);
+        }
+}
+}
+
+void Jugador::createNuevaIndcont(string nom, int pa, int id, dtFecha * fecha){
+    dtPartidaIndividual * dtPCont;
+    IKey * k = new Integer(pa);
+    PartidaIndividual * pcont = (PartidaIndividual *)this->partidas->find(k);
+    if(pcont->getIdPartida() == pa){
+        dtPCont = pcont->getPartidaIndividual();
+    }
+    IKey * k2 = new String(nom.c_str());
+    IIterator * it2;
+    Videojuego * vid;
+    for(it2=this->pagos->getIterator();it2->hasCurrent();it2->next()){
+        Pago * p = (Pago*)it2->getCurrent();
+        if(p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() == nom){
+             vid = p->getSuscripcion()->getVideojuego();
+        }
+        
+    }
+    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, dtPCont);
+    PartidaIndividual * pi = new PartidaIndividual(dtpi);
+    pi->setActiva(true);
+    pi->setIdPartida(id);
+    pi->setIndividual(true);
+    pi->setVideoJuego(vid);
+    IKey * kid = new Integer(id);
+    this->partidas->add(kid, pi);
+}
+
+void Jugador::createNuevaInd(string nom, int id, dtFecha * fecha){
+    IIterator * it2;
+    Videojuego * vid;
+    for(it2=this->pagos->getIterator();it2->hasCurrent();it2->next()){
+        Pago * p = (Pago*)it2->getCurrent();
+        if(p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() == nom){
+             vid = p->getSuscripcion()->getVideojuego();
+        }
+    }
+    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, NULL);
+    PartidaIndividual * pi = new PartidaIndividual(dtpi);
+    pi->setActiva(true);
+    pi->setIdPartida(id);
+    pi->setIndividual(true);
+    pi->setVideoJuego(vid);
+    IKey * kid = new Integer(id);
+    this->partidas->add(kid, pi);
+}
+
+bool Jugador::listarPartidasActivas(){
+    IIterator * it;
+    int cont = 0;
+    for(it=this->getPartidas()->getIterator();it->hasCurrent();it->next()){
+        Partida * p = (Partida *)it->getCurrent();
+            if(p->getActiva()){
+                cout << "ID:" << p->getIdPartida() << " VideoJuego ";
+                cout << p->getVideojuego()->getVideojuego()->getNombre();
+                if(p->getIndividual()){
+                    PartidaIndividual * pi = (PartidaIndividual*)p;
+                    cout<<"Fecha|Hora:  ";
+                    pi->getPartidaIndividual()->imprimirFecha(pi->getPartidaIndividual()->getFecha());
+                    if (pi->getPartidaIndividual() != NULL){
+                        cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getId();
+                    }
+                }
+                else{
+                    PartidaMultijugador * pm = (PartidaMultijugador *)p;
+                    cout<<"Fecha|Hora:  ";
+                    pm->getPartidaMultijugador()->imprimirFecha(pm->getPartidaMultijugador()->getFecha()) ;
+                    cout<<"La partida ";
+                    if(pm->getPartidaMultijugador()->getEnVivo()){
+                        cout<<"SI ";
+                    }
+                    else{cout<<"NO ";} 
+                    cout<<"fue transmitida en vivo"<<endl;
+                    cout<<"Jugadores que se unieron a la partida: "<< endl;
+                    IIterator * it2;
+                    for(it2=pm->getJugadores()->getIterator();it2->hasCurrent();it2->next()){
+                        Jugador * jug =(Jugador*) it2->getCurrent();
+                        cout<<jug->getNick()<<endl;
+                    }
+                }
+                cont++;
+            }
+        
+    }
+    if(cont == 0){
+        //no se encontraron partidas para ese juego
+        cout<<"no se encontraron partidas para ese juego"<<endl;
+        return false;
+    }
+    else {return true;}
+}
+
+ void Jugador::finalizarPartida(int id, dtFecha* fecha){
+    IKey * kid = new Integer(id);
+    Partida * p = (Partida*)this->partidas->find(kid);
+    if(p->getIndividual()){
+        PartidaIndividual * pi = (PartidaIndividual*)p;
+        dtFecha * fechaI = pi->getPartidaIndividual()->getFecha();
+        pi->setActiva(false);
+        pi->getPartidaIndividual()->setDuracion(calcularDuracion(fechaI, fecha));
+    }
+    else{
+        PartidaMultijugador * pm = (PartidaMultijugador*)p;
+        dtFecha * fechaI = pm->getPartidaMultijugador()->getFecha();
+        pm->setActiva(false);
+        pm->getPartidaMultijugador()->setDuracion(calcularDuracion(fechaI, fecha));
+        IIterator * it;
+        for(it= pm->getPMJ()->getIterator();it->hasCurrent();it->next()){
+            PMJ * pmj = (PMJ *)it->getCurrent();
+            if (pmj->getHoraSalida() == NULL){
+                pmj->setHoraSalida(fecha);
+        }
+}
+    
+    
+    }
+ }
+
+ float Jugador::calcularDuracion(dtFecha * fi, dtFecha * ff){
+    float dur = 0;
+    dur = dur + (( ff->getAnio() - fi->getAnio() ) * 8640);
+    dur = dur + (( ff->getMes() - fi->getMes() ) * 720);
+    dur = dur + (( ff->getDia() - fi->getDia() ) * 24);
+    dur = dur + ( ff->getHora() - fi->getHora() );
+    dur = dur + ( ( ff->getMinuto() - fi->getMinuto() ) / 60  );
+    return dur;
+ }

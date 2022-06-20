@@ -6,12 +6,10 @@ using namespace std;
 //constructores
 Partida::Partida(){}
 
-Partida::Partida(int idPartida, dtPartida * p, Videojuego * vid){
+Partida::Partida(int idPartida, Videojuego * vid){
     this->idPartida = idPartida;
-    this->partida = p;
     this->videojuego = vid;
     this->activa = true;
-    this->jugadores = new OrderedDictionary();
 }
 
 //destructor
@@ -19,9 +17,6 @@ Partida::~Partida(){}
 //gets
 int Partida::getIdPartida(){
     return this->idPartida;
-}
-dtPartida *Partida::getPartida(){
-    return this->partida;
 }
 
 bool Partida::getActiva(){
@@ -40,9 +35,6 @@ Videojuego * Partida::getVideojuego(){
 void Partida::setIdPartida(int idPartida){
     this->idPartida = idPartida;
 }
-void Partida::setPartida(dtPartida *p){
-    this->partida = p;
-}
 
 void Partida::setActiva(bool b){
     this->activa = b;
@@ -51,6 +43,11 @@ void Partida::setActiva(bool b){
 void Partida::setIndividual(bool b){
     this->individual = b;
 }
+
+void Partida::setVideoJuego(Videojuego * v){
+    this->videojuego = v;
+}
+
 
 //methods
 /*

@@ -12,6 +12,8 @@ class PartidaMultijugador:public Partida{
     private:
         dtPartidaMultijugador * partidaMultijugador;
         IDictionary * comentarios; 
+        IDictionary * jugadores; 
+        ICollection * pmj;
     public:
         PartidaMultijugador(dtPartidaMultijugador *);
         PartidaMultijugador();
@@ -22,7 +24,8 @@ class PartidaMultijugador:public Partida{
         void setPartidaMultijugador(dtPartidaMultijugador*);
 
         IDictionary * getComentarios();
-        
+        IDictionary * getJugadores();
+        ICollection * getPMJ();
         //metodo
         void confirmarPartida(int);
         void agregarPartida(string);

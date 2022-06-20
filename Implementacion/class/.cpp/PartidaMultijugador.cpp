@@ -4,11 +4,17 @@
 using namespace std;
 
 //constructores
-PartidaMultijugador::PartidaMultijugador(){}
+PartidaMultijugador::PartidaMultijugador(){
+     this->comentarios = new OrderedDictionary();
+    this->jugadores = new OrderedDictionary();
+    this->pmj = new List();
+}
 
 PartidaMultijugador::PartidaMultijugador(dtPartidaMultijugador * partida){
     this->partidaMultijugador = partida;
     this->comentarios = new OrderedDictionary();
+    this->jugadores = new OrderedDictionary();
+    this->pmj = new List();
 }
 
 PartidaMultijugador::~PartidaMultijugador(){
@@ -21,6 +27,14 @@ dtPartidaMultijugador * PartidaMultijugador::getPartidaMultijugador(){
 
 IDictionary * PartidaMultijugador::getComentarios(){
     return this->comentarios;
+}
+
+IDictionary * PartidaMultijugador::getJugadores(){
+    return this->jugadores;
+}
+
+ICollection * PartidaMultijugador::getPMJ(){
+    return this->pmj;
 }
 
 //sets

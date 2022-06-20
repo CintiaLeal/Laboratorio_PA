@@ -120,7 +120,26 @@ int main()
                     }
               }
               
+            }if(opcionMenuJugador == 2){
+              cout<<"Videojuegos"<<endl;
+              string nomVid;
+              int punto;
+              sis->listarVideojuegoDescripcion();
+              do{
+              cin>>nomVid;
+              if(sis->existeVideojuego(nomVid)){
+
+                cout<<"Ingrese un numero del 1 al 5"<<endl;
+                do{
+                cin>>punto;
+                }
+                while(punto<1 && punto>5);
+                sis->puntuarVideojuego(nomVid, punto);
+              }
+              }
+              while(!sis->existeVideojuego(nomVid)); 
             }
+
           }while(opcionMenuJugador != 8);
         }
         else

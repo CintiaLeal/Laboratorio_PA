@@ -32,6 +32,7 @@ class Videojuego : public ICollectible{
         void setVideojuego(dtVideojuego*);
         void setSuscripciones(IDictionary *);
         void setCategorias(IDictionary *);
+       
         int getEstadisticas();
         void agregarSuscripcion(int, int, int, int);
         void setEmpresa(string);

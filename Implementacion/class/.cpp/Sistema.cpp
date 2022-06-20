@@ -376,7 +376,8 @@ void Sistema::cancelar(string nombre){
 }
 
  void Sistema::confirmarSuscripcion(string tipo, string met, string nombre){
-     IKey * k = new String(nombre.c_str());
+    IKey * k = new String(nombre.c_str());
+
     Videojuego * v = (Videojuego *)dicVideojuego->find(k);
     IIterator * it;
     for(it = v->getSuscripciones()->getIterator(); it->hasCurrent(); it->next()){
@@ -387,8 +388,23 @@ void Sistema::cancelar(string nombre){
             j->nuevoSuscripcion(met, s, fecha);
         }
     }
- }
+}
+void Sistema::puntuarVideojuego(string nomVideojuego, int punto){
+    IKey * k = new String(nomVideojuego.c_str());
+    Videojuego * v = (Videojuego *)dicVideojuego->find(k);
+    IKey * kuser =new String(this->getemailActual().c_str());
+    Jugador * j =(Jugador *)dicUsuario->find(kuser);
+    VJ * newjv = new VJ(punto,j);
+    v->getVJ()->add(newjv);
+}
 
+void Sistema::listarVideojuegoDescripcion(){
+    IIterator * it;
+    for(it=this->dicVideojuego->getIterator();it->hasCurrent(); it->next()){
+        Videojuego * v = (Videojuego*)it->getCurrent();
+        cout << "Nombre:" << v->getVideojuego()->getNombre() <<" Descripcion:"<<v->getVideojuego()->getDescripcion()<< endl;
+    }
+}
 /*
 
 

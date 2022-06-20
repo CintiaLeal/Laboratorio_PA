@@ -62,6 +62,8 @@ void Videojuego::setEmpresa(string nombre){
     this->empresa = nombre;
 }
 
+
+//Metodos
 void Videojuego::eliminarSuscripcion(){
    
     IIterator * it;

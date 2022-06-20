@@ -12,7 +12,7 @@
 #include "../.cpp/Suscripcion.cpp"
 #include "../.cpp/Comentario.cpp"
 #include "../.cpp/Pago.cpp"
-//#include "../.h/VJ.h"
+#include "../.h/VJ.h"
 #include "../../ICollection/collections/List.cpp"
 #include "../../ICollection\collections\ListIterator.cpp"
 #include "../../ICollection\collections\ListNode.cpp"
@@ -56,6 +56,8 @@ public:
     virtual bool seleccionarVideojuegoSuscripcion(string nombre)= 0;
     virtual void cancelar(string nombre)= 0;
     virtual void confirmarSuscripcion(string tipo, string met, string nombre)= 0;
+    virtual void puntuarVideojuego(string nomVideojuego, int punto) = 0;
+    virtual void listarVideojuegoDescripcion() = 0;
 
 //<------------------Operaciones----------------------->
  /* 

@@ -40,6 +40,8 @@ class Sistema: public ISistema{
        void confirmarSuscripcion(string tipo, string met, string nombre);
        void puntuarVideojuego(string nomVideojuego, int punto);
        void listarVideojuegoDescripcion();
+       void listarVideojuegoSuscripcion();
+       void listarPartidas(string);
         //void seleccionarVideojuegoSuscripcion(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);

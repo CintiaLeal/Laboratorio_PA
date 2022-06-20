@@ -133,11 +133,41 @@ int main()
                 do{
                 cin>>punto;
                 }
-                while(punto<1 && punto>5);
+                while(punto<1 || punto>5);
                 sis->puntuarVideojuego(nomVid, punto);
               }
               }
               while(!sis->existeVideojuego(nomVid)); 
+            }
+            if(opcionMenuJugador == 3){
+              string nombre;
+              int tipo;
+              sis->listarVideojuegoSuscripcion();
+
+              cout << "Ingrese el videojuego que desea jugar" << endl;
+              do{
+                cin >> nombre;
+              }while(!sis->existeVideojuego(nombre));
+
+              cout << "Ingrese el tipo de la partida: 1-Individual || 2-Multijugador" << endl;
+              do{
+                cin >> tipo;
+              }while(tipo!=2 || tipo!=1);
+
+              if(tipo == 1){
+                cout << "Desea continuar una partida? 1-si || 2-no" << endl;
+                do{
+                  cin >> tipo;
+                }while(tipo != 1 || tipo!=2);
+
+                if(tipo == 1){
+                  sis->listarPartidas(nombre);
+                }else{
+
+                }
+              }else{
+                
+              }
             }
 
           }while(opcionMenuJugador != 8);

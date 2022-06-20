@@ -363,6 +363,20 @@ void Sistema::listarVideojuegoCosto(){
     }
 }
 
+void Sistema::listarVideojuegoSuscripcion(){
+    IKey * k =new String(this->getemailActual().c_str());
+    Jugador * j =(Jugador *)dicUsuario->find(k);
+    IIterator * it;
+
+    cout << "Usted posee suscripciones activas en estos videojuegos" << endl; 
+    for(it=j->getPagos()->getIterator(); it->hasCurrent(); it->next()){
+        Pago * p = (Pago *)it->getCurrent();
+        cout << p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() << endl;
+    }
+
+
+}
+
 bool Sistema::seleccionarVideojuegoSuscripcion(string nombre){
     IKey * k =new String(this->getemailActual().c_str());
     Jugador * j =(Jugador *)dicUsuario->find(k);
@@ -405,6 +419,14 @@ void Sistema::listarVideojuegoDescripcion(){
         cout << "Nombre:" << v->getVideojuego()->getNombre() <<" Descripcion:"<<v->getVideojuego()->getDescripcion()<< endl;
     }
 }
+
+void Sistema::listarPartidas(string nombre){
+    IKey * k = new String(this->getemailActual().c_str());
+
+    Jugador * j = (Jugador *)dicUsuario->find(k);
+    j->listarPartidas(nombre);
+}
+
 /*
 
 

@@ -158,3 +158,15 @@ IDictionary * Jugador::listarVideojuegoConCosto(){
     }
     return jueguitos;
 }
+
+void Jugador::listarPartidas(string nombre){
+    IIterator * it;
+
+    for(it=this->getPartidas()->getIterator();it->hasCurrent();it->next()){
+        PartidaIndividual * p = (PartidaIndividual *)it->getCurrent();
+        
+        if(p->getVideojuego()->getVideojuego()->getNombre() == nombre){
+            cout << "ID:" << p->getIdPartida() << " Fecha|Hora:" << /*p->getPartida()->getFecha()*/ " Duracion:" << p->getPartida()->getDuracion() << endl;
+        }
+    }
+}

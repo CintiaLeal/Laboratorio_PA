@@ -37,6 +37,7 @@ class Jugador:public Usuario{
         void nuevoSuscripcion(string, Suscripcion *, dtFecha*);
         void cancelar(string);
         IDictionary * listarVideojuegoConCosto();
+        void listarPartidas(string);
 };
 #endif 
 

@@ -23,6 +23,7 @@ class PartidaMultijugador:public Partida{
         //get y set 
         dtPartidaMultijugador * getPartidaMultijugador();
         void setPartidaMultijugador(dtPartidaMultijugador*);
+        void setPmj(ICollection*);
 
         IDictionary * getComentarios();
         IDictionary * getJugadores();

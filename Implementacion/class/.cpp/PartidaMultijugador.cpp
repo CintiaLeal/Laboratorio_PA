@@ -42,6 +42,11 @@ void PartidaMultijugador::setPartidaMultijugador(dtPartidaMultijugador * partida
     this->partidaMultijugador = partida;
 }
 
+void PartidaMultijugador::setPmj(ICollection * p){
+    this->pmj = p;
+}
+
+
 void PartidaMultijugador::setJugadores(IDictionary * dic){
     this->jugadores = dic;
 }

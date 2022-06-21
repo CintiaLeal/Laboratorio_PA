@@ -489,11 +489,15 @@ bool Sistema::listarJugadoresSuscripciones(string nombre){
     int cont = 0;
 
     for(it=dicUsuario->getIterator(); it->hasCurrent(); it->next()){
-        Jugador * u = (Jugador *)it->getCurrent();
-        if(u->existeSus(nombre)){
-            cout << "Nickname:" << u->getNick() << endl;
+        Usuario * u = (Usuario *)it->getCurrent();
+        if (u->getTipo() != "soyDesarrollador"){
+            Jugador * j = (Jugador *)u;
+            if(j->existeSus(nombre)){
+            cout << "Nickname:" << j->getNick() << endl;
             cont++;
         }
+        }
+        
     }
 
     if(cont == 0)

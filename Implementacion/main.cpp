@@ -200,7 +200,7 @@ int main()
                     if(!sis->listarJugadoresSuscripciones(nombre)){
                       cout << "No hay jugadores para agregar a la partida" << endl;
                     }else{
-                      cout << "Ingrese los jugadores que participaran" << endl;
+                      cout << "Ingrese los jugadores que participaran, presione '0' para finalizar el ingreso"   << endl;
                       string jugadores;
                       IDictionary * aux = new OrderedDictionary();
                       do{
@@ -209,8 +209,15 @@ int main()
                         if(sis->existeUsu(jugadores) != NULL)
                           aux->add(k,sis->existeUsu(jugadores));
                       }while(jugadores != "0");
-                      
-                      sis->CrearPartidaMultijugador(vivo, aux, nombre);
+                      cout<< "Desea confirmar? 1-si || 2-no"<<endl;
+                        int opc;
+                         do{
+                            cin >> opc;
+                          }while(opc != 1 && opc!=2);
+                          if(opc == 1){
+                            sis->CrearPartidaMultijugador(vivo, aux, nombre);
+                            cout<<"Partida creada con exito"<<endl;
+                          }
                     }
 
                     

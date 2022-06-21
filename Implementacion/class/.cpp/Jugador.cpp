@@ -40,7 +40,7 @@ bool Jugador::member(string){}
 string Jugador::listarVideojuego(){}
 
 string Jugador::getNick(){
-    return this->getNick();
+    return this->nick;
 }
 
 void Jugador::borrarPagos(string nombre){
@@ -341,8 +341,6 @@ bool Jugador::listarPartidasActivas(){
                 pmj->setHoraSalida(fecha);
         }
         }
-    
-    
     }
  }
 
@@ -359,7 +357,7 @@ bool Jugador::listarPartidasActivas(){
  void Jugador::crearMultijugador(int id, dtFecha * fecha, bool vivo, string nombre, IDictionary * aux){
     dtPartidaMultijugador * dtpm = new dtPartidaMultijugador(id, fecha, 0, vivo);
     PartidaMultijugador * pm = new PartidaMultijugador(dtpm);
-
+    
     pm->setJugadores(aux);
     pm->setActiva(true);
     pm->setIdPartida(id);
@@ -374,6 +372,18 @@ bool Jugador::listarPartidasActivas(){
         }
     }
     pm->setVideoJuego(vid);
+
+
+    ICollection * pmjs = new List();
+    IIterator * itx;
+    for(itx = aux->getIterator(); itx->hasCurrent(); itx->next()){
+        Jugador * j = (Jugador *)itx->getCurrent();
+
+        PMJ * pmj = new PMJ(NULL, j);
+        pmjs->add(j);
+    }
+
+    pm->setPmj(pmjs);
 
     IKey * k = new Integer(id);
     this->partidas->add(k, pm);

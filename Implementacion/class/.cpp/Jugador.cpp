@@ -350,3 +350,8 @@ bool Jugador::listarPartidasActivas(){
     dur = dur + ( ( ff->getMinuto() - fi->getMinuto() ) / 60  );
     return dur;
  }
+
+ void Jugador::crearMultijugador(int id, dtFecha * fecha, bool vivo, IDictionary * aux){
+    dtPartidaMultijugador * dtpm = new dtPartidaMultijugador();
+    PartidaMultijugador * pm = new PartidaMultijugador();
+ }

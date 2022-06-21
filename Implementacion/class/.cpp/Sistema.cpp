@@ -502,7 +502,14 @@ bool Sistema::listarJugadoresSuscripciones(string nombre){
         return true;
 }
 
+void Sistema::CrearPartidaMultijugador(bool vivo, IDictionary * aux){
+    IKey * k = new String(this->getemailActual().c_str());
 
+    Jugador * j = (Jugador *)dicUsuario->find(k);
+    dtFecha * fechasis = new dtFecha(fecha->getDia(), fecha->getMes(), fecha->getAnio(), fecha->getHora(), fecha->getMinuto());
+
+    j->crearMultijugador(idAutoIncremental, fechasis, vivo, aux);
+}
 
 void Sistema::cargarDatosPrueba(){
     altaUsuarioJugador("gamer@mail.com", "123", "gamer", "a");

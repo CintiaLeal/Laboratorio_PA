@@ -209,7 +209,7 @@ int main()
                         aux->add(k,sis->existeUsu(jugadores));
                     }while(jugadores != "0");
                     
-                    
+                    sis->CrearPartidaMultijugador(vivo, aux);
                   }
               }
               else {

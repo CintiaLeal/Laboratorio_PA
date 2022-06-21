@@ -1,0 +1,1 @@
+ sis->confirmarFinalizarPartida(idf);

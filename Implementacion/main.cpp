@@ -219,8 +219,6 @@ int main()
                             cout<<"Partida creada con exito"<<endl;
                           }
                     }
-
-                    
                   }
               }
               else {
@@ -452,7 +450,7 @@ int main()
   }
   else if (op == 3)
   {
-    // sis->cargarDatosPrueba();
+    sis->cargarDatosPrueba();
   }
 }
 while (op != 4)

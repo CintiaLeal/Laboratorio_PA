@@ -112,20 +112,15 @@ bool Jugador::existeSus(string nombre){
     IIterator * it;
     bool existe = false;
     for(it=pagos->getIterator(); it->hasCurrent(); it->next()){
-        cout << "Entra 2" << endl;
         Pago * p = (Pago *)it->getCurrent();
-        cout << "Entra al for" << endl;
         //se encuentra un pago para el videojuego seleccionado
         if(p->getSuscripcion()->iguales(nombre)){
-            cout << "entra el if" << endl;
             //tiene una suscripcion activa
             if(p->getActiva()){
-                cout << "existre true" << endl;
                 existe = true;
             }
         }     
     }
-    cout << "sale" << endl;
     return existe;
 }
 

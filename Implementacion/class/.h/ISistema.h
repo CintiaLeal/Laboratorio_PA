@@ -64,6 +64,7 @@ public:
     virtual void confirmarPartidaInd(string) = 0;
     virtual bool listarPartidasActivas() = 0;
     virtual void confirmarFinalizarPartida(int)=0;
+    virtual void cargarDatosPrueba()=0;
 //<------------------Operaciones----------------------->
  /* 
     

@@ -208,7 +208,7 @@ void Jugador::createNuevaIndcont(string nom, int pa, int id, dtFecha * fecha){
     if(pcont->getIdPartida() == pa){
         dtPCont = pcont->getPartidaIndividual();
     }
-    IKey * k2 = new String(nom.c_str());
+    int aux = pcont->getPartidaIndividual()->getId();
     IIterator * it2;
     Videojuego * vid;
     for(it2=this->pagos->getIterator();it2->hasCurrent();it2->next()){
@@ -216,14 +216,14 @@ void Jugador::createNuevaIndcont(string nom, int pa, int id, dtFecha * fecha){
         if(p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() == nom){
              vid = p->getSuscripcion()->getVideojuego();
         }
-        
     }
-    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, dtPCont);
+    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, dtPCont,true);
     PartidaIndividual * pi = new PartidaIndividual(dtpi);
     pi->setActiva(true);
     pi->setIdPartida(id);
     pi->setIndividual(true);
     pi->setVideoJuego(vid);
+    pi->getPartidaIndividual()->getContinua()->setId(aux);
     IKey * kid = new Integer(id);
     this->partidas->add(kid, pi);
 }
@@ -237,8 +237,9 @@ void Jugador::createNuevaInd(string nom, int id, dtFecha * fecha){
              vid = p->getSuscripcion()->getVideojuego();
         }
     }
-    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, NULL);
-    PartidaIndividual * pi = new PartidaIndividual(dtpi);
+    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, NULL,false);
+    PartidaIndividual * pi = new PartidaIndividual();
+    pi->setPartidaIndividual(dtpi);
     pi->setActiva(true);
     pi->setIdPartida(id);
     pi->setIndividual(true);
@@ -259,8 +260,9 @@ bool Jugador::listarPartidasActivas(){
                     PartidaIndividual * pi = (PartidaIndividual*)p;
                     cout<<"Fecha|Hora:  ";
                     pi->getPartidaIndividual()->imprimirFecha(pi->getPartidaIndividual()->getFecha());
-                    if (pi->getPartidaIndividual() != NULL){
-                        cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getId();
+                    if (pi->getPartidaIndividual()->getCont()){
+                        cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getContinua()->getId() << endl;;
+                    }else{
                     }
                 }
                 else{
@@ -316,7 +318,6 @@ bool Jugador::listarPartidasActivas(){
     
     
     }
-    this->partidas->remove(kid);
  }
 
  float Jugador::calcularDuracion(dtFecha * fi, dtFecha * ff){

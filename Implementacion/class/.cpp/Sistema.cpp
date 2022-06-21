@@ -441,7 +441,6 @@ void Sistema::confirmarPartidaIndCont(string nombre, int pa){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
-    j->cambiarEstado(pa);
     j->createNuevaIndcont(nombre, pa, idAutoIncremental, fecha);
     idAutoIncremental++;
 }
@@ -468,68 +467,38 @@ void Sistema::confirmarFinalizarPartida(int id){
     j->finalizarPartida(id,fecha);
 }
 
-/*
+
 
 
 
 void Sistema::cargarDatosPrueba(){
-    //Cargar jugadores
-    altaUsuarioJugador("guzmanvera@hotmail.com", "123", "gusbera", "facherazo");
-    altaUsuarioJugador("zebautes@hotmail.com", "123", "reyxtar", "ea");
-    altaUsuarioJugador("hernancabara@hotmail.com", "123", "kuervou", "el mejor soldado");
-    altaUsuarioJugador("cintialeal@hotmail.com", "123", "griffin", "juega re mal");
-    
+    altaUsuarioJugador("gamer@mail.com", "123", "gamer", "a");
+    altaUsuarioJugador("ari@mail.com", "123", "ari", "a");
+    altaUsuarioJugador("ibai@mail.com", "123", "ibai", "a");
+    altaUsuarioJugador("camila@mail.com", "123", "camila", "a");
+
     //Cargar desarrolladores
-    altaUsuarioDesarrollador("carlossantana@gmail.com", "123", "amazon");
-    altaUsuarioDesarrollador("elpipe@gmail.com", "123", "ubisoft");
-    altaUsuarioDesarrollador("desarrollador3@gmail.com", "123", "ea");
-    
+    altaUsuarioDesarrollador("ironhide@email.com", "123", "Ironhide Game Studio");
+    altaUsuarioDesarrollador("epic@mail.com", "123", "Epic Games");
+    altaUsuarioDesarrollador("mojang@mail.com", "123", "Mojang Studios");
+    altaUsuarioDesarrollador("ea@mail.com", "123", "EA Sports");
+
     //Cargar Categorías
-    nuevaCategoria("accion","cat1",1);
-    nuevaCategoria("aventura","cat2",1);
-    nuevaCategoria("play","cat3",2);
-    nuevaCategoria("pc","cat4",2);
-    nuevaCategoria("cooperativo","cat5",3);
-    nuevaCategoria("logros","cat6",3);
+    nuevaCategoria("PC","cat3",2);
+    nuevaCategoria("PS4","cat4",2);
+    nuevaCategoria("Xbox One","cat4",2);
+    nuevaCategoria("Deporte","cat1",1);
+    nuevaCategoria("Supervivencia","cat2",1);
+    nuevaCategoria("Estrategia","cat2",1);
+    nuevaCategoria("Teen","Su contenido está dirigido a jóvenes de 13 años en adelante",3);
+    nuevaCategoria("E","Su contenido está dirigido para todo público",3);
+    nuevaCategoria("Acción","cat2",1);
+    nuevaCategoria("Aventura","cat2",1);
+    nuevaCategoria("Switch","cat4",2);
+    nuevaCategoria("Xbox X","cat4",2);
+    nuevaCategoria("PS5","cat4",2);
 
-    //cargar suscripciones
-    Suscripcion * sus1 = new Suscripcion("Mensual", 1, "Temporal");
-    IKey * s1 = new String(sus1->getNombre().c_str());
-    Suscripcion * sus2 = new Suscripcion("Trimestral", 2, "Temporal");
-    IKey * s2 = new String(sus2->getNombre().c_str());
-    Suscripcion * sus3 = new Suscripcion("Anual", 3, "Temporal");
-    IKey * s3 = new String(sus3->getNombre().c_str());
-    Suscripcion * sus4 = new Suscripcion("Vitalicia", 5, "Vitalicia");
-    IKey * s4 = new String(sus4->getNombre().c_str());
-
-    //Cargar videojuegos
-    dtVideojuego * v = new dtVideojuego("Albion", "Juegazo",0);
-    Videojuego * vid1 = new Videojuego(v);
-    vid1->getSuscripciones()->add(s1, sus1);
-    vid1->getSuscripciones()->add(s2, sus2);
-    vid1->getSuscripciones()->add(s3, sus3);
-    vid1->getSuscripciones()->add(s4, sus4);
+    //Cargar Videojuegos
     
-    vid1->getCategorias()->add(k2, c2);
-    vid1->getCategorias()->add(k4, c4);
-
-    dtVideojuego * v2 = new dtVideojuego("fifa","El mismo juego todos los años", 0);
-    Videojuego * vid2 = new Videojuego(v2);
-    vid2->getSuscripciones()->add(s1, sus1);
-    vid2->getSuscripciones()->add(s2, sus2);
-    vid2->getSuscripciones()->add(s3, sus3);
-    vid2->getSuscripciones()->add(s4, sus4);
-    vid1->getCategorias()->add(k, c);
-    vid1->getCategorias()->add(k3, c3);
-
-    dtVideojuego * v3 = new dtVideojuego("lol","juego horrible", 0);
-    Videojuego * vid3 = new Videojuego(v3);
-    vid3->getSuscripciones()->add(s1, sus1);
-    vid3->getSuscripciones()->add(s2, sus2);
-    vid3->getSuscripciones()->add(s3, sus3);
-    vid3->getSuscripciones()->add(s4, sus4);
-    vid1->getCategorias()->add(k, c);
-    vid1->getCategorias()->add(k2, c2);
-    vid1->getCategorias()->add(k5, c5);
 }
-*/
+

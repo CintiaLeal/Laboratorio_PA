@@ -8,10 +8,12 @@ using namespace std;
 class dtPartidaIndividual:public dtPartida{
     private:
        dtPartidaIndividual* continua;
+       bool contin;
     public:
         dtPartidaIndividual();
-        dtPartidaIndividual( int, dtFecha *, float, dtPartidaIndividual*);
+        dtPartidaIndividual( int, dtFecha *, float, dtPartidaIndividual*, bool);
         dtPartidaIndividual* getContinua();
+        bool getCont();
         ~dtPartidaIndividual();
 };
 #endif //Dt_PartidaIndividual

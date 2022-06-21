@@ -30,7 +30,7 @@ class Sistema: public ISistema{
         string iniciarSesionActual(string email);
         void cerrarSesion();
         string tipoUsuario(string email);
-        //void cargarDatosPrueba();
+        void cargarDatosPrueba();
         void agregarSuscripciones(string, int, int, int, int);
         void verInformacionVideojuego(string);
         bool existeVideojuego(string);

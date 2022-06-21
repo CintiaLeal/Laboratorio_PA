@@ -13,6 +13,7 @@ class dtPartida{
         dtPartida(int, dtFecha * , float );
         dtFecha *getFecha();
         float getDuracion();
+        void setId(int);
         int getId();
         ~dtPartida();
         void imprimirFecha(dtFecha *);

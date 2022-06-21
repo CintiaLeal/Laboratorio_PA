@@ -38,3 +38,7 @@ void dtPartida::imprimirFecha(dtFecha * fecha){
    cout<<"HORA: "<< fecha->getHora()<<endl; 
    cout<<"MINUTO: "<< fecha->getMinuto()<<endl; 
 }
+
+void dtPartida::setId(int d){
+    this->id = d;
+}

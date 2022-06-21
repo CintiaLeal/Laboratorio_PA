@@ -108,6 +108,23 @@ bool Jugador::buscarSuscripcion(string nombre){ //retorna true si el videojuego 
     return true;
 }
 
+bool Jugador::existeSus(string nombre){
+    IIterator * it;
+    bool existe = false;
+    for(it=pagos->getIterator(); it->hasCurrent(); it->next()){
+        Pago * p = (Pago *)it->getCurrent();
+        //se encuentra un pago para el videojuego seleccionado
+        if(p->getSuscripcion()->iguales(nombre)){
+            //tiene una suscripcion activa
+            if(p->getActiva()){
+                existe = true;
+            }
+        }     
+    }
+    return existe;
+}
+
+
 void Jugador::cancelarSuscripcion(){}
 
 void Jugador::nuevoSuscripcion(string met, Suscripcion* s, dtFecha * f){

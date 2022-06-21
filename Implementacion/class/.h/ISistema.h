@@ -65,6 +65,8 @@ public:
     virtual bool listarPartidasActivas() = 0;
     virtual void confirmarFinalizarPartida(int)=0;
     virtual void cargarDatosPrueba()=0;
+    virtual bool listarJugadoresSuscripciones(string)=0;
+    virtual Jugador * existeUsu(string) = 0;
 //<------------------Operaciones----------------------->
  /* 
     

@@ -46,6 +46,7 @@ class Jugador:public Usuario{
         bool listarPartidasActivas();
         void finalizarPartida(int, dtFecha*);
         float calcularDuracion(dtFecha*, dtFecha*);
+        bool existeSus(string);
 };
 #endif 
 

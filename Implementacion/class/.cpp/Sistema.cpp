@@ -267,6 +267,19 @@ if(dicUsuario->member(k) && aux->getContrasenia() == contrasenia){
     }
 }
 
+Jugador * Sistema::existeUsu(string nick){
+    IIterator * it;
+
+    for(it=dicUsuario->getIterator(); it->hasCurrent(); it->next()){
+        Jugador * j = (Jugador *)it->getCurrent();
+
+        if(j->getNick() == nick){
+            return j;
+        }
+    }
+    return NULL;
+}
+
 string Sistema::iniciarSesionActual(string email){
     string sesion = email;
     return sesion;
@@ -471,7 +484,23 @@ void Sistema::confirmarFinalizarPartida(int id){
     j->finalizarPartida(id,fechasis);
 }
 
+bool Sistema::listarJugadoresSuscripciones(string nombre){
+    IIterator * it;
+    int cont = 0;
 
+    for(it=dicUsuario->getIterator(); it->hasCurrent(); it->next()){
+        Jugador * u = (Jugador *)it->getCurrent();
+        if(u->existeSus(nombre)){
+            cout << "Nickname:" << u->getNick() << endl;
+            cont++;
+        }
+    }
+
+    if(cont == 0)
+        return false;
+    else
+        return true;
+}
 
 
 

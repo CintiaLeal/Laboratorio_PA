@@ -46,6 +46,8 @@ class Sistema: public ISistema{
        void confirmarPartidaInd(string);
        bool listarPartidasActivas();
        void confirmarFinalizarPartida(int);
+       bool listarJugadoresSuscripciones(string);
+       Jugador * existeUsu(string);
         //void seleccionarVideojuegoSuscripcion(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);

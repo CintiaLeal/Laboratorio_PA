@@ -187,6 +187,28 @@ int main()
                           }
                     }
                   }else{
+                    cout << "Será transmitida en vivo? 1-Si || 2-No" << endl;
+                    bool vivo = false;
+                    int vi;
+                    do{
+                      cin >> vi;
+                    }while(vi!=1 && vi!=2);
+                    if(vi==1){
+                      vivo = true;
+                    }
+                    cout << "Jugadores" << endl;
+                    sis->listarJugadoresSuscripciones(nombre);
+
+                    cout << "Ingrese los jugadores que participaran" << endl;
+                    string jugadores;
+                    IDictionary * aux = new OrderedDictionary();
+                    do{
+                      cin >> jugadores;
+                      IKey * k = new String(jugadores.c_str());
+                      if(sis->existeUsu(jugadores) != NULL)
+                        aux->add(k,sis->existeUsu(jugadores));
+                    }while(jugadores != "0");
+                    
                     
                   }
               }

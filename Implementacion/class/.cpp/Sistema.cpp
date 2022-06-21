@@ -441,7 +441,6 @@ void Sistema::confirmarPartidaIndCont(string nombre, int pa){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
-    j->cambiarEstado(pa);
     j->createNuevaIndcont(nombre, pa, idAutoIncremental, fecha);
     idAutoIncremental++;
 }
@@ -450,7 +449,8 @@ void Sistema::confirmarPartidaInd(string nombre){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
-    j->createNuevaInd(nombre,idAutoIncremental,fecha);
+    dtFecha * fechasis = new dtFecha(fecha->getDia(), fecha->getMes(), fecha->getAnio(), fecha->getHora(), fecha->getMinuto());
+    j->createNuevaInd(nombre,idAutoIncremental,fechasis);
     idAutoIncremental++;
 }   
 

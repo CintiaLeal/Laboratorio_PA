@@ -237,7 +237,7 @@ void Jugador::createNuevaInd(string nom, int id, dtFecha * fecha){
              vid = p->getSuscripcion()->getVideojuego();
         }
     }
-    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0, NULL);
+    dtPartidaIndividual * dtpi = new dtPartidaIndividual(id, fecha, 0,NULL);
     PartidaIndividual * pi = new PartidaIndividual(dtpi);
     pi->setActiva(true);
     pi->setIdPartida(id);
@@ -257,11 +257,13 @@ bool Jugador::listarPartidasActivas(){
                 cout << p->getVideojuego()->getVideojuego()->getNombre();
                 if(p->getIndividual()){
                     PartidaIndividual * pi = (PartidaIndividual*)p;
-                    cout<<"Fecha|Hora:  ";
+                    cout<<" Fecha|Hora:"<<endl;
                     pi->getPartidaIndividual()->imprimirFecha(pi->getPartidaIndividual()->getFecha());
-                    if (pi->getPartidaIndividual() != NULL){
-                        cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getId();
+
+                    if (pi->getPartidaIndividual()->getContinua() != NULL){
+                        cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getContinua()->getId()<<endl;
                     }
+                    else{cout<<"No es continuacion de ninguna partida"<<endl; }
                 }
                 else{
                     PartidaMultijugador * pm = (PartidaMultijugador *)p;

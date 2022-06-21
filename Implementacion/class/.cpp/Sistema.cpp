@@ -502,13 +502,13 @@ bool Sistema::listarJugadoresSuscripciones(string nombre){
         return true;
 }
 
-void Sistema::CrearPartidaMultijugador(bool vivo, IDictionary * aux){
+void Sistema::CrearPartidaMultijugador(bool vivo, IDictionary * aux, string nombre){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
     dtFecha * fechasis = new dtFecha(fecha->getDia(), fecha->getMes(), fecha->getAnio(), fecha->getHora(), fecha->getMinuto());
 
-    j->crearMultijugador(idAutoIncremental, fechasis, vivo, aux);
+    j->crearMultijugador(idAutoIncremental, fechasis, vivo, nombre, aux);
 }
 
 void Sistema::cargarDatosPrueba(){

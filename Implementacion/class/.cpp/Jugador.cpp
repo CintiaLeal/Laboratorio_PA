@@ -112,15 +112,20 @@ bool Jugador::existeSus(string nombre){
     IIterator * it;
     bool existe = false;
     for(it=pagos->getIterator(); it->hasCurrent(); it->next()){
+        cout << "Entra 2" << endl;
         Pago * p = (Pago *)it->getCurrent();
+        cout << "Entra al for" << endl;
         //se encuentra un pago para el videojuego seleccionado
         if(p->getSuscripcion()->iguales(nombre)){
+            cout << "entra el if" << endl;
             //tiene una suscripcion activa
             if(p->getActiva()){
+                cout << "existre true" << endl;
                 existe = true;
             }
         }     
     }
+    cout << "sale" << endl;
     return existe;
 }
 
@@ -351,7 +356,33 @@ bool Jugador::listarPartidasActivas(){
     return dur;
  }
 
- void Jugador::crearMultijugador(int id, dtFecha * fecha, bool vivo, IDictionary * aux){
-    dtPartidaMultijugador * dtpm = new dtPartidaMultijugador();
-    PartidaMultijugador * pm = new PartidaMultijugador();
+ void Jugador::crearMultijugador(int id, dtFecha * fecha, bool vivo, string nombre, IDictionary * aux){
+    dtPartidaMultijugador * dtpm = new dtPartidaMultijugador(id, fecha, 0, vivo);
+    PartidaMultijugador * pm = new PartidaMultijugador(dtpm);
+
+    pm->setJugadores(aux);
+    pm->setActiva(true);
+    pm->setIdPartida(id);
+    pm->setIndividual(false);
+    
+    IIterator * it2;
+    Videojuego * vid;
+    for(it2=this->pagos->getIterator();it2->hasCurrent();it2->next()){
+        Pago * p = (Pago*)it2->getCurrent();
+        if(p->getSuscripcion()->getVideojuego()->getVideojuego()->getNombre() == nombre){
+             vid = p->getSuscripcion()->getVideojuego();
+        }
+    }
+    pm->setVideoJuego(vid);
+
+    IKey * k = new Integer(id);
+    this->partidas->add(k, pm);
+
+
+    IIterator * it;
+    for(it = aux->getIterator(); it->hasCurrent(); it->next()){
+        Jugador * j = (Jugador *)it->getCurrent();
+
+        j->getPartidas()->add(k,pm);
+    }
  }

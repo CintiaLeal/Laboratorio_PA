@@ -48,7 +48,7 @@ class Sistema: public ISistema{
        void confirmarFinalizarPartida(int);
        bool listarJugadoresSuscripciones(string);
        Jugador * existeUsu(string);
-       void CrearPartidaMultijugador(bool, IDictionary *);
+       void CrearPartidaMultijugador(bool, IDictionary *, string);
         //void seleccionarVideojuegoSuscripcion(string);
     /*    //<------------------Operaciones----------------------->
         //void confirmarAltaUsuario(string,string,string,string);

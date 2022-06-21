@@ -197,19 +197,23 @@ int main()
                       vivo = true;
                     }
                     cout << "Jugadores" << endl;
-                    sis->listarJugadoresSuscripciones(nombre);
+                    if(!sis->listarJugadoresSuscripciones(nombre)){
+                      cout << "No hay jugadores para agregar a la partida" << endl;
+                    }else{
+                      cout << "Ingrese los jugadores que participaran" << endl;
+                      string jugadores;
+                      IDictionary * aux = new OrderedDictionary();
+                      do{
+                        cin >> jugadores;
+                        IKey * k = new String(jugadores.c_str());
+                        if(sis->existeUsu(jugadores) != NULL)
+                          aux->add(k,sis->existeUsu(jugadores));
+                      }while(jugadores != "0");
+                      
+                      sis->CrearPartidaMultijugador(vivo, aux, nombre);
+                    }
 
-                    cout << "Ingrese los jugadores que participaran" << endl;
-                    string jugadores;
-                    IDictionary * aux = new OrderedDictionary();
-                    do{
-                      cin >> jugadores;
-                      IKey * k = new String(jugadores.c_str());
-                      if(sis->existeUsu(jugadores) != NULL)
-                        aux->add(k,sis->existeUsu(jugadores));
-                    }while(jugadores != "0");
                     
-                    sis->CrearPartidaMultijugador(vivo, aux);
                   }
               }
               else {

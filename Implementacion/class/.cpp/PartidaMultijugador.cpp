@@ -41,3 +41,7 @@ ICollection * PartidaMultijugador::getPMJ(){
 void PartidaMultijugador::setPartidaMultijugador(dtPartidaMultijugador * partida){
     this->partidaMultijugador = partida;
 }
+
+void PartidaMultijugador::setJugadores(IDictionary * dic){
+    this->jugadores = dic;
+}

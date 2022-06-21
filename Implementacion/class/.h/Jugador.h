@@ -47,7 +47,7 @@ class Jugador:public Usuario{
         void finalizarPartida(int, dtFecha*);
         float calcularDuracion(dtFecha*, dtFecha*);
         bool existeSus(string);
-        void crearMultijugador(int, dtFecha *, bool, IDictionary *);
+        void crearMultijugador(int, dtFecha *, bool, string , IDictionary *);
 };
 #endif 
 

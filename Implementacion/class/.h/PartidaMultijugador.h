@@ -30,6 +30,7 @@ class PartidaMultijugador:public Partida{
         //metodo
         void confirmarPartida(int);
         void agregarPartida(string);
+        void setJugadores(IDictionary * );
         //El getPatidas del diagrama suponemos que es el getPartidaMultijugador y no lo ponemos 
 };
 

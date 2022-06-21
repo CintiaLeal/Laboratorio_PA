@@ -67,7 +67,7 @@ public:
     virtual void cargarDatosPrueba()=0;
     virtual bool listarJugadoresSuscripciones(string)=0;
     virtual Jugador * existeUsu(string) = 0;
-    virtual void CrearPartidaMultijugador(bool, IDictionary *) = 0;
+    virtual void CrearPartidaMultijugador(bool, IDictionary *, string) = 0;
 //<------------------Operaciones----------------------->
  /* 
     

@@ -442,6 +442,8 @@ void Sistema::confirmarPartidaIndCont(string nombre, int pa){
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
     j->createNuevaIndcont(nombre, pa, idAutoIncremental, fecha);
+    dtFecha * fechasis = new dtFecha(fecha->getDia(), fecha->getMes(), fecha->getAnio(), fecha->getHora(), fecha->getMinuto());
+    j->createNuevaIndcont(nombre, pa, idAutoIncremental, fechasis);
     idAutoIncremental++;
 }
 
@@ -449,7 +451,8 @@ void Sistema::confirmarPartidaInd(string nombre){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
-    j->createNuevaInd(nombre,idAutoIncremental,fecha);
+    dtFecha * fechasis = new dtFecha(fecha->getDia(), fecha->getMes(), fecha->getAnio(), fecha->getHora(), fecha->getMinuto());
+    j->createNuevaInd(nombre,idAutoIncremental,fechasis);
     idAutoIncremental++;
 }   
 
@@ -464,7 +467,8 @@ void Sistema::confirmarFinalizarPartida(int id){
     IKey * k = new String(this->getemailActual().c_str());
 
     Jugador * j = (Jugador *)dicUsuario->find(k);
-    j->finalizarPartida(id,fecha);
+    dtFecha * fechasis = new dtFecha(fecha->getDia(), fecha->getMes(), fecha->getAnio(), fecha->getHora(), fecha->getMinuto());
+    j->finalizarPartida(id,fechasis);
 }
 
 

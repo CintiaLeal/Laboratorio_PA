@@ -258,12 +258,16 @@ bool Jugador::listarPartidasActivas(){
                 cout << p->getVideojuego()->getVideojuego()->getNombre();
                 if(p->getIndividual()){
                     PartidaIndividual * pi = (PartidaIndividual*)p;
-                    cout<<"Fecha|Hora:  ";
+                    cout<<" Fecha|Hora:"<<endl;
                     pi->getPartidaIndividual()->imprimirFecha(pi->getPartidaIndividual()->getFecha());
                     if (pi->getPartidaIndividual()->getCont()){
                         cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getContinua()->getId() << endl;;
                     }else{
                     }
+                    if (pi->getPartidaIndividual()->getContinua() != NULL){
+                        cout<<"Es continuacion de la partida: "<< pi->getPartidaIndividual()->getContinua()->getId()<<endl;
+                    }
+                    else{cout<<"No es continuacion de ninguna partida"<<endl; }
                 }
                 else{
                     PartidaMultijugador * pm = (PartidaMultijugador *)p;

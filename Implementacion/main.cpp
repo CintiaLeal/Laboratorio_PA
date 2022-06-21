@@ -201,8 +201,9 @@ int main()
                 int idf;
                 cin>>idf;
                 sis->confirmarFinalizarPartida(idf);
+                cout<<"Partida finalizada con exito"<<endl;
               }
-              else {cout<<"No posee partidas activas";}
+              
             }
 
           }while(opcionMenuJugador != 8);

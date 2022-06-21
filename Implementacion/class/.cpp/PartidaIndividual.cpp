@@ -6,8 +6,8 @@ using namespace std;
 //constructores
 PartidaIndividual::PartidaIndividual(){}
 
-PartidaIndividual::PartidaIndividual(dtPartidaIndividual * partidaIndividual){
-    this->partidaIndividual = partidaIndividual;
+PartidaIndividual::PartidaIndividual(dtPartidaIndividual * pi){
+    this->partidaIndividual = pi;
 }
 
 //gets
